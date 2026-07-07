@@ -2042,12 +2042,6 @@ input:focus,
   cursor: pointer;
 }
 
-.select-none {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-
 .resize-none {
   resize: none;
 }
@@ -3307,10 +3301,6 @@ input:focus,
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
-}
-
-.text-blue-600\/10 {
-  color: rgb(37 99 235 / 0.1);
 }
 
 .text-blue-600\/20 {
