@@ -1,0 +1,35 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Modern Portfolio Website",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "build": "tailwindcss -i ./public/css/input.css -o ./public/css/style.css",
+    "build:css": "tailwindcss -i ./public/css/input.css -o ./public/css/style.css"
+  },
+  "keywords": [
+    "portfolio",
+    "nodejs",
+    "tailwindcss"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.5.2",
+    "body-parser": "^1.20.5",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "ejs": "^3.1.10",
+    "express": "^4.22.2",
+    "express-validator": "^7.3.2",
+    "nodemailer": "^9.0.3",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

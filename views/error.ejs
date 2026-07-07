@@ -1,0 +1,35 @@
+<%- include('./layouts/header.ejs') %>
+
+<div class="pt-32 pb-20">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center animate-fade-in-up">
+      <div class="mb-8">
+        <i class="fas fa-server text-9xl text-red-500 mb-4 inline-block animate-bounce-slow"></i>
+      </div>
+      
+      <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Server Error</h2>
+      <p class="text-xl text-slate-600 dark:text-slate-300 mb-4">
+        <%= message || 'Something went wrong on our end!' %>
+      </p>
+      
+      <div class="bg-red-50 dark:bg-red-950/20 border border-red-300 dark:border-red-800 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+        <p class="text-red-800 dark:text-red-300 font-mono text-sm">
+          <%= typeof error !== 'undefined' && error ? error.message : 'An unexpected error occurred' %>
+        </p>
+      </div>
+      
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/" class="btn-primary">
+          <i class="fas fa-home"></i>
+          <span>Go Home</span>
+        </a>
+        <a href="/contact" class="btn-secondary">
+          <i class="fas fa-envelope"></i>
+          <span>Contact Support</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<%- include('./layouts/footer.ejs') %>

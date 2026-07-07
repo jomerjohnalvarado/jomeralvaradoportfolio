@@ -1,0 +1,71 @@
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-gray-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="text-3xl font-black cursor-pointer no-underline">
+          <span class="gradient-text">Jojohn</span>
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-8 items-center">
+        <a href="/" class="nav-link <%= page === 'home' ? 'active' : '' %> no-underline">
+          <i class="fas fa-home mr-2"></i>Home
+        </a>
+        <a href="/about" class="nav-link <%= page === 'about' ? 'active' : '' %> no-underline">
+          <i class="fas fa-user mr-2"></i>About
+        </a>
+        <a href="/skills" class="nav-link <%= page === 'skills' ? 'active' : '' %> no-underline">
+          <i class="fas fa-brain mr-2"></i>Skills
+        </a>
+        <a href="/projects" class="nav-link <%= page === 'projects' ? 'active' : '' %> no-underline">
+          <i class="fas fa-rocket mr-2"></i>Projects
+        </a>
+        <a href="/contact" class="nav-link-cta <%= page === 'contact' ? 'active' : '' %> no-underline">
+          <i class="fas fa-envelope mr-2"></i>Contact
+        </a>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle ml-4" title="Toggle dark mode">
+          <i class="fas fa-sun theme-icon" style="display: block;"></i>
+          <i class="fas fa-moon theme-icon" style="display: none;"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button & Theme Toggle -->
+      <div class="md:hidden flex items-center gap-4">
+        <button id="theme-toggle-mobile" class="theme-toggle" title="Toggle dark mode">
+          <i class="fas fa-sun theme-icon" style="display: block;"></i>
+          <i class="fas fa-moon theme-icon" style="display: none;"></i>
+        </button>
+        <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition text-slate-900 dark:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-gray-200 dark:border-slate-800">
+    <div class="px-4 py-4 space-y-2">
+      <a href="/" class="block nav-link-mobile <%= page === 'home' ? 'active' : '' %> no-underline">
+        <i class="fas fa-home mr-2"></i>Home
+      </a>
+      <a href="/about" class="block nav-link-mobile <%= page === 'about' ? 'active' : '' %> no-underline">
+        <i class="fas fa-user mr-2"></i>About
+      </a>
+      <a href="/skills" class="block nav-link-mobile <%= page === 'skills' ? 'active' : '' %> no-underline">
+        <i class="fas fa-brain mr-2"></i>Skills
+      </a>
+      <a href="/projects" class="block nav-link-mobile <%= page === 'projects' ? 'active' : '' %> no-underline">
+        <i class="fas fa-rocket mr-2"></i>Projects
+      </a>
+      <a href="/contact" class="block nav-link-mobile-cta <%= page === 'contact' ? 'active' : '' %> no-underline">
+        <i class="fas fa-envelope mr-2"></i>Contact
+      </a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,945 @@
+<%- include('./layouts/header.ejs') %>
+
+<div class="pt-32 pb-20 min-h-screen relative overflow-hidden text-gray-900 dark:text-slate-100">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         ANIMATED BACKGROUND — ENHANCED WITH MORE TECH ICONS
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <!-- Base gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-50 dark:from-slate-950 dark:via-blue-950/70 dark:to-indigo-950/40"></div>
+
+        <!-- Scan lines -->
+        <svg class="absolute inset-0 w-full h-full opacity-20 dark:opacity-30" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   style="stop-color:#1e40af;stop-opacity:0"/>
+                    <stop offset="50%"  style="stop-color:#1e40af;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#1e40af;stop-opacity:0"/>
+                </linearGradient>
+                <linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   style="stop-color:#3b82f6;stop-opacity:0"/>
+                    <stop offset="50%"  style="stop-color:#3b82f6;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/>
+                </linearGradient>
+                <linearGradient id="lg3" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   style="stop-color:#6366f1;stop-opacity:0"/>
+                    <stop offset="50%"  style="stop-color:#6366f1;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"/>
+                </linearGradient>
+                <linearGradient id="lg4" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   style="stop-color:#06b6d4;stop-opacity:0"/>
+                    <stop offset="50%"  style="stop-color:#06b6d4;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0"/>
+                </linearGradient>
+                <linearGradient id="lg5" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   style="stop-color:#8b5cf6;stop-opacity:0"/>
+                    <stop offset="50%"  style="stop-color:#8b5cf6;stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0"/>
+                </linearGradient>
+                <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+                    <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(30,64,175,0.3)" stroke-width="1"/>
+                </pattern>
+                <pattern id="grid-dot" width="60" height="60" patternUnits="userSpaceOnUse">
+                    <circle cx="30" cy="30" r="1.5" fill="rgba(59,130,246,0.25)" />
+                </pattern>
+            </defs>
+            <!-- More scan lines with varied colors -->
+            <line x1="0" y1="8%"  x2="100%" y2="8%"  stroke="url(#lg1)" stroke-width="2" class="animate-scan-line" style="animation-delay:0s"/>
+            <line x1="0" y1="22%" x2="100%" y2="22%" stroke="url(#lg2)" stroke-width="2" class="animate-scan-line" style="animation-delay:0.8s"/>
+            <line x1="0" y1="36%" x2="100%" y2="36%" stroke="url(#lg4)" stroke-width="2" class="animate-scan-line" style="animation-delay:1.6s"/>
+            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="url(#lg3)" stroke-width="2" class="animate-scan-line" style="animation-delay:2.4s"/>
+            <line x1="0" y1="64%" x2="100%" y2="64%" stroke="url(#lg5)" stroke-width="2" class="animate-scan-line" style="animation-delay:3.2s"/>
+            <line x1="0" y1="78%" x2="100%" y2="78%" stroke="url(#lg2)" stroke-width="2" class="animate-scan-line" style="animation-delay:1.2s"/>
+            <line x1="0" y1="92%" x2="100%" y2="92%" stroke="url(#lg1)" stroke-width="2" class="animate-scan-line" style="animation-delay:2s"/>
+        </svg>
+
+        <!-- Grid overlays -->
+        <svg class="absolute inset-0 w-full h-full opacity-10 dark:opacity-40" preserveAspectRatio="none">
+            <rect width="100%" height="100%" fill="url(#grid)"/>
+        </svg>
+        <svg class="absolute inset-0 w-full h-full opacity-5 dark:opacity-20" preserveAspectRatio="none">
+            <rect width="100%" height="100%" fill="url(#grid-dot)"/>
+        </svg>
+
+        <!-- ═══ FLOATING TECH ICONS — EXPANDED ═══ -->
+        <!-- Row 1: General tech -->
+        <div class="absolute top-20 left-20 w-24 h-24 opacity-30 dark:opacity-20 animate-float-tech" style="animation-delay:0s">
+            <div class="w-full h-full border-2 border-blue-600/60 dark:border-blue-500/50 rounded-2xl rotate-45 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fas fa-code text-blue-700 dark:text-blue-400 text-3xl -rotate-45"></i>
+            </div>
+        </div>
+        <div class="absolute top-40 right-32 w-20 h-20 opacity-30 dark:opacity-20 animate-float-tech" style="animation-delay:2s">
+            <div class="w-full h-full border-2 border-indigo-600/60 dark:border-indigo-500/50 rounded-full flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fas fa-server text-indigo-700 dark:text-indigo-400 text-2xl"></i>
+            </div>
+        </div>
+        <div class="absolute bottom-40 left-1/4 w-28 h-28 opacity-30 dark:opacity-20 animate-float-tech" style="animation-delay:4s">
+            <div class="w-full h-full border-2 border-blue-600/60 dark:border-blue-500/50 rounded-2xl flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fas fa-database text-blue-700 dark:text-blue-400 text-3xl"></i>
+            </div>
+        </div>
+        <div class="absolute bottom-20 right-20 w-24 h-24 opacity-30 dark:opacity-20 animate-float-tech" style="animation-delay:1s">
+            <div class="w-full h-full border-2 border-blue-600/60 dark:border-blue-500/50 rounded-full flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fas fa-microchip text-blue-700 dark:text-blue-400 text-2xl"></i>
+            </div>
+        </div>
+        <div class="absolute top-1/2 right-1/4 w-20 h-20 opacity-30 dark:opacity-20 animate-float-tech" style="animation-delay:3s">
+            <div class="w-full h-full border-2 border-indigo-600/60 dark:border-indigo-500/50 rounded-2xl flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fas fa-network-wired text-indigo-700 dark:text-indigo-400 text-xl"></i>
+            </div>
+        </div>
+
+        <!-- Row 2: Programming languages & frameworks -->
+        <div class="absolute top-32 left-1/3 w-16 h-16 opacity-25 dark:opacity-15 animate-float-tech" style="animation-delay:0.6s">
+            <div class="w-full h-full border-2 border-cyan-600/60 dark:border-cyan-500/50 rounded-xl rotate-12 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fab fa-js text-cyan-700 dark:text-cyan-400 text-xl -rotate-12"></i>
+            </div>
+        </div>
+        <div class="absolute top-1/3 left-10 w-14 h-14 opacity-25 dark:opacity-15 animate-float-tech" style="animation-delay:2.6s">
+            <div class="w-full h-full border-2 border-violet-600/60 dark:border-violet-500/50 rounded-xl -rotate-6 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fab fa-python text-violet-700 dark:text-violet-400 text-lg rotate-6"></i>
+            </div>
+        </div>
+        <div class="absolute bottom-1/3 left-1/3 w-18 h-18 opacity-25 dark:opacity-15 animate-float-tech" style="animation-delay:1.8s">
+            <div class="w-full h-full border-2 border-orange-600/60 dark:border-orange-500/50 rounded-xl rotate-45 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fab fa-java text-orange-700 dark:text-orange-400 text-xl -rotate-45"></i>
+            </div>
+        </div>
+        <div class="absolute bottom-32 right-1/4 w-16 h-16 opacity-25 dark:opacity-15 animate-float-tech" style="animation-delay:0.3s">
+            <div class="w-full h-full border-2 border-pink-600/60 dark:border-pink-500/50 rounded-xl -rotate-12 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fab fa-react text-pink-700 dark:text-pink-400 text-xl rotate-12"></i>
+            </div>
+        </div>
+        <div class="absolute top-1/2 left-2/3 w-14 h-14 opacity-25 dark:opacity-15 animate-float-tech" style="animation-delay:3.8s">
+            <div class="w-full h-full border-2 border-emerald-600/60 dark:border-emerald-500/50 rounded-xl rotate-6 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fab fa-php text-emerald-700 dark:text-emerald-400 text-lg -rotate-6"></i>
+            </div>
+        </div>
+
+        <!-- Row 3: DevOps, cloud & tools -->
+        <div class="absolute top-60 right-10 w-18 h-18 opacity-25 dark:opacity-15 animate-float-tech" style="animation-delay:1.4s">
+            <div class="w-full h-full border-2 border-sky-600/60 dark:border-sky-500/50 rounded-2xl rotate-3 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fab fa-git-alt text-sky-700 dark:text-sky-400 text-xl -rotate-3"></i>
+            </div>
+        </div>
+        <div class="absolute bottom-1/4 right-1/5 w-16 h-16 opacity-25 dark:opacity-15 animate-float-tech" style="animation-delay:2.2s">
+            <div class="w-full h-full border-2 border-amber-600/60 dark:border-amber-500/50 rounded-full flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fas fa-cloud text-amber-700 dark:text-amber-400 text-xl"></i>
+            </div>
+        </div>
+        <div class="absolute top-1/4 right-1/3 w-14 h-14 opacity-25 dark:opacity-15 animate-float-tech" style="animation-delay:0.9s">
+            <div class="w-full h-full border-2 border-rose-600/60 dark:border-rose-500/50 rounded-xl -rotate-8 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fas fa-terminal text-rose-700 dark:text-rose-400 text-lg rotate-8"></i>
+            </div>
+        </div>
+        <div class="absolute top-2/3 right-1/3 w-18 h-18 opacity-25 dark:opacity-15 animate-float-tech" style="animation-delay:4.2s">
+            <div class="w-full h-full border-2 border-teal-600/60 dark:border-teal-500/50 rounded-2xl rotate-12 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fas fa-cogs text-teal-700 dark:text-teal-400 text-xl -rotate-12"></i>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/3 w-16 h-16 opacity-25 dark:opacity-15 animate-float-tech" style="animation-delay:3.4s">
+            <div class="w-full h-full border-2 border-fuchsia-600/60 dark:border-fuchsia-500/50 rounded-xl rotate-6 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+                <i class="fas fa-laptop-code text-fuchsia-700 dark:text-fuchsia-400 text-lg -rotate-6"></i>
+            </div>
+        </div>
+
+        <!-- Row 4: Extra tech icons -->
+        <div class="absolute top-1/4 left-2/3 w-14 h-14 opacity-20 dark:opacity-12 animate-float-tech" style="animation-delay:5s">
+            <div class="w-full h-full border-2 border-blue-600/50 dark:border-blue-500/40 rounded-lg rotate-45 flex items-center justify-center bg-white/5 dark:bg-black/5 backdrop-blur-sm">
+                <i class="fas fa-robot text-blue-600 dark:text-blue-400 text-lg -rotate-45"></i>
+            </div>
+        </div>
+        <div class="absolute bottom-2/3 left-1/5 w-16 h-16 opacity-20 dark:opacity-12 animate-float-tech" style="animation-delay:1s">
+            <div class="w-full h-full border-2 border-indigo-600/50 dark:border-indigo-500/40 rounded-2xl -rotate-3 flex items-center justify-center bg-white/5 dark:bg-black/5 backdrop-blur-sm">
+                <i class="fas fa-shield-alt text-indigo-600 dark:text-indigo-400 text-lg rotate-3"></i>
+            </div>
+        </div>
+        <div class="absolute top-3/4 right-2/3 w-14 h-14 opacity-20 dark:opacity-12 animate-float-tech" style="animation-delay:3s">
+            <div class="w-full h-full border-2 border-cyan-600/50 dark:border-cyan-500/40 rounded-full flex items-center justify-center bg-white/5 dark:bg-black/5 backdrop-blur-sm">
+                <i class="fas fa-bolt text-cyan-600 dark:text-cyan-400 text-lg"></i>
+            </div>
+        </div>
+
+        <!-- ═══ FLOATING CODE BRACKETS ═══ -->
+        <div class="absolute top-28 left-2/3 text-4xl font-mono font-bold text-blue-600/20 dark:text-blue-400/15 animate-float-bracket" style="animation-delay:0.3s">
+            { }
+        </div>
+        <div class="absolute bottom-32 left-1/5 text-3xl font-mono font-bold text-indigo-600/20 dark:text-indigo-400/15 animate-float-bracket" style="animation-delay:1.8s">
+            &lt; / &gt;
+        </div>
+        <div class="absolute top-1/3 right-1/5 text-4xl font-mono font-bold text-cyan-600/15 dark:text-cyan-400/12 animate-float-bracket" style="animation-delay:2.6s">
+            [ ]
+        </div>
+        <div class="absolute bottom-1/3 left-2/3 text-3xl font-mono font-bold text-violet-600/15 dark:text-violet-400/12 animate-float-bracket" style="animation-delay:0.9s">
+            ( )
+        </div>
+        <div class="absolute top-2/3 right-1/4 text-3xl font-mono font-bold text-rose-600/15 dark:text-rose-400/12 animate-float-bracket" style="animation-delay:3.8s">
+            { &lt; / &gt; }
+        </div>
+        <div class="absolute top-10 left-1/2 text-2xl font-mono font-bold text-blue-600/12 dark:text-blue-400/10 animate-float-bracket" style="animation-delay:4.5s">
+            &lt; code &gt;
+        </div>
+
+        <!-- ═══ TERMINAL CURSOR ═══ -->
+        <div class="absolute top-1/2 left-8 text-sm font-mono text-blue-600/20 dark:text-blue-400/15 animate-terminal-cursor hidden sm:block" style="animation-delay:0s">
+            <span class="opacity-80">$</span>
+            <span class="text-cyan-600/25 dark:text-cyan-400/20"> npm install --save</span>
+            <span class="inline-block w-2 h-4 bg-blue-600/30 dark:bg-blue-400/25 ml-1 animate-blink-cursor"></span>
+        </div>
+        <div class="absolute bottom-1/4 right-8 text-sm font-mono text-indigo-600/20 dark:text-indigo-400/15 animate-terminal-cursor" style="animation-delay:3s">
+            <span class="opacity-80">$</span>
+            <span class="text-violet-600/25 dark:text-violet-400/20"> git push origin main</span>
+            <span class="inline-block w-2 h-4 bg-indigo-600/30 dark:bg-indigo-400/25 ml-1 animate-blink-cursor"></span>
+        </div>
+        <div class="absolute top-3/4 left-1/4 text-sm font-mono text-cyan-600/20 dark:text-cyan-400/15 animate-terminal-cursor" style="animation-delay:6s">
+            <span class="opacity-80">$</span>
+            <span class="text-sky-600/25 dark:text-sky-400/20"> yarn build</span>
+            <span class="inline-block w-2 h-4 bg-cyan-600/30 dark:bg-cyan-400/25 ml-1 animate-blink-cursor"></span>
+        </div>
+
+        <!-- ═══ PARTICLES — EXPANDED ═══ -->
+        <div class="absolute inset-0 opacity-40 dark:opacity-100">
+            <!-- Blue particles -->
+            <div class="absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue"   style="top:15%;left:10%;animation-delay:0s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue"   style="top:35%;left:70%;animation-delay:1.5s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue"   style="top:60%;left:20%;animation-delay:3s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue"   style="top:75%;right:15%;animation-delay:4.5s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue"   style="top:45%;left:5%;animation-delay:6s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue"   style="top:85%;left:60%;animation-delay:7.5s"></div>
+
+            <!-- Indigo particles -->
+            <div class="absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top:25%;right:30%;animation-delay:0.8s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top:50%;left:45%;animation-delay:2.3s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top:80%;left:30%;animation-delay:3.8s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top:10%;left:50%;animation-delay:5.2s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top:65%;right:5%;animation-delay:6.8s"></div>
+
+            <!-- Sky/Cyan particles -->
+            <div class="absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky"     style="top:40%;right:10%;animation-delay:1.2s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky"     style="top:70%;right:50%;animation-delay:2.8s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky"     style="top:20%;left:80%;animation-delay:4.2s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky"     style="top:55%;left:15%;animation-delay:5.8s"></div>
+
+            <!-- Violet/Purple particles -->
+            <div class="absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top:30%;left:55%;animation-delay:0.5s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top:90%;right:30%;animation-delay:2s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top:5%;right:60%;animation-delay:3.5s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top:48%;right:45%;animation-delay:5s"></div>
+
+            <!-- Teal particles -->
+            <div class="absolute w-1.5 h-1.5 bg-teal-500 dark:bg-teal-400 rounded-full animate-tech-float shadow-glow-teal"   style="top:10%;right:15%;animation-delay:0.2s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-teal-500 dark:bg-teal-400 rounded-full animate-tech-float shadow-glow-teal"   style="top:95%;left:40%;animation-delay:1.7s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-teal-500 dark:bg-teal-400 rounded-full animate-tech-float shadow-glow-teal"   style="top:38%;left:80%;animation-delay:3.1s"></div>
+
+            <!-- Rose/Pink particles -->
+            <div class="absolute w-1.5 h-1.5 bg-rose-500 dark:bg-rose-400 rounded-full animate-tech-float shadow-glow-rose"   style="top:78%;left:10%;animation-delay:0.7s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-rose-500 dark:bg-rose-400 rounded-full animate-tech-float shadow-glow-rose"   style="top:18%;left:40%;animation-delay:2.2s"></div>
+            <div class="absolute w-1.5 h-1.5 bg-rose-500 dark:bg-rose-400 rounded-full animate-tech-float shadow-glow-rose"   style="top:60%;right:70%;animation-delay:3.7s"></div>
+        </div>
+
+        <!-- ═══ ANIMATED ORBITS ═══ -->
+        <div class="absolute top-1/4 left-1/3 w-64 h-64 opacity-20 dark:opacity-30">
+            <svg class="w-full h-full animate-rotate-slow" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#lg1)" stroke-width="0.5" opacity="0.5"/>
+                <circle cx="50" cy="50" r="30" fill="none" stroke="url(#lg2)" stroke-width="0.5" opacity="0.5"/>
+                <circle cx="50" cy="50" r="15" fill="none" stroke="url(#lg3)" stroke-width="0.5" opacity="0.5"/>
+                <circle cx="95" cy="50" r="2.5" fill="#1e40af" class="animate-orbit-1"/>
+                <circle cx="50" cy="5"  r="2.5" fill="#3b82f6" class="animate-orbit-2"/>
+                <circle cx="5"  cy="50" r="2.5" fill="#6366f1" class="animate-orbit-3"/>
+            </svg>
+        </div>
+        <!-- Second orbit ring (smaller, different position) -->
+        <div class="absolute bottom-1/3 right-1/4 w-48 h-48 opacity-15 dark:opacity-20">
+            <svg class="w-full h-full animate-rotate-slow" viewBox="0 0 100 100" preserveAspectRatio="none" style="animation-duration:25s;animation-direction:reverse">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="url(#lg4)" stroke-width="0.4" opacity="0.4"/>
+                <circle cx="50" cy="50" r="25" fill="none" stroke="url(#lg5)" stroke-width="0.4" opacity="0.4"/>
+                <circle cx="90" cy="50" r="2" fill="#06b6d4" class="animate-orbit-1" style="animation-duration:8s"/>
+                <circle cx="50" cy="10" r="2" fill="#8b5cf6" class="animate-orbit-2" style="animation-duration:8s"/>
+            </svg>
+        </div>
+
+        <!-- ═══ STATUS LIGHTS — EXPANDED ═══ -->
+        <div class="absolute top-20 right-1/3 w-3 h-3 bg-blue-500 rounded-full animate-status-pulse" style="animation-delay:0s">
+            <div class="absolute inset-0 bg-blue-500 rounded-full animate-status-ping"></div>
+        </div>
+        <div class="absolute top-1/3 left-1/4 w-3 h-3 bg-indigo-500 rounded-full animate-status-pulse" style="animation-delay:1s">
+            <div class="absolute inset-0 bg-indigo-500 rounded-full animate-status-ping"></div>
+        </div>
+        <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-sky-500 rounded-full animate-status-pulse" style="animation-delay:2s">
+            <div class="absolute inset-0 bg-sky-500 rounded-full animate-status-ping"></div>
+        </div>
+        <div class="absolute top-2/3 left-10 w-2.5 h-2.5 bg-violet-500 rounded-full animate-status-pulse" style="animation-delay:0.5s">
+            <div class="absolute inset-0 bg-violet-500 rounded-full animate-status-ping"></div>
+        </div>
+        <div class="absolute bottom-20 left-1/3 w-2.5 h-2.5 bg-teal-500 rounded-full animate-status-pulse" style="animation-delay:1.5s">
+            <div class="absolute inset-0 bg-teal-500 rounded-full animate-status-ping"></div>
+        </div>
+        <div class="absolute top-1/2 right-10 w-2.5 h-2.5 bg-rose-500 rounded-full animate-status-pulse" style="animation-delay:2.5s">
+            <div class="absolute inset-0 bg-rose-500 rounded-full animate-status-ping"></div>
+        </div>
+
+        <!-- ═══ GLOWING ORBS ═══ -->
+        <div class="absolute top-0 left-1/3 w-96 h-96 bg-gradient-to-br from-blue-200/20 to-indigo-200/15 dark:from-blue-500/10 dark:to-indigo-500/5 rounded-full blur-3xl animate-pulse-glow"></div>
+        <div class="absolute top-1/2 right-0 w-96 h-96 bg-gradient-to-br from-indigo-200/20 to-blue-200/15 dark:from-indigo-500/10 dark:to-blue-500/5 rounded-full blur-3xl animate-pulse-glow" style="animation-delay:1s"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/20 to-indigo-200/15 dark:from-blue-500/10 dark:to-indigo-500/5 rounded-full blur-3xl animate-pulse-glow" style="animation-delay:2s"></div>
+        <!-- Extra orb -->
+        <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-gradient-to-br from-cyan-200/15 to-violet-200/10 dark:from-cyan-500/8 dark:to-violet-500/5 rounded-full blur-3xl animate-pulse-glow" style="animation-delay:3s"></div>
+
+        <!-- ═══ BINARY / MATRIX DECORATION ═══ -->
+        <div class="absolute bottom-10 right-10 text-xs font-mono text-blue-600/10 dark:text-blue-400/8 select-none animate-matrix-float hidden sm:block" style="animation-delay:0s">
+            01001101 01100001 01101011 01100101<br>
+            01101001 01110100 00100000 01101000<br>
+            01100001 01110000 01110000 01100101 01101110
+        </div>
+        <div class="absolute top-10 left-10 text-xs font-mono text-indigo-600/8 dark:text-indigo-400/6 select-none animate-matrix-float" style="animation-delay:4s">
+            01110100 01100101 01100011 01101000<br>
+            00100000 01101001 01110011 00100000<br>
+            01100001 01110111 01100101 01110011 01101111 01101101 01100101
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PAGE HEADER
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 relative z-10">
+        <div class="text-center animate-fade-in-up">
+
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg
+                  bg-gradient-to-r from-blue-100 to-indigo-100
+                  dark:from-blue-900/40 dark:to-indigo-900/40
+                  border-t-2 border-l-2 border-blue-600 dark:border-blue-500/60
+                  mb-6 backdrop-blur-sm hover:scale-105 transition-transform duration-300 shadow-lg">
+                <i class="fas fa-bolt text-blue-700 dark:text-blue-400"></i>
+                <span class="text-sm font-bold text-blue-800 dark:text-blue-300">My Arsenal</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-black mb-6 animate-fade-in-up" style="animation-delay:0.1s">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-blue-400 dark:to-indigo-400">
+                    Skills &
+                </span>
+                <br/>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 to-blue-700 dark:from-indigo-400 dark:to-blue-400">
+                    Technologies
+                </span>
+            </h1>
+
+            <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay:0.2s">
+                A comprehensive overview of the technologies, tools and expertise I bring to every project.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SKILLS PROFICIENCY — FULL-WIDTH HORIZONTAL BARS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
+
+        <!-- Section divider -->
+        <div class="flex items-center justify-center gap-3 mb-10 animate-fade-in-up">
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent to-blue-500/50 dark:to-blue-400/40"></div>
+            <span class="flex items-center gap-2 text-lg font-bold text-gray-700 dark:text-gray-300 px-4">
+                <i class="fas fa-chart-bar text-blue-600 dark:text-blue-400"></i>
+                Skill Proficiency
+            </span>
+            <div class="h-px flex-1 bg-gradient-to-l from-transparent to-blue-500/50 dark:to-blue-400/40"></div>
+        </div>
+
+        <%
+          const skillsOverview = [
+            { name: 'Web Development',              pct: 60, icon: 'globe',      from: '#1d4ed8', to: '#3b82f6', shadow: 'rgba(59,130,246,0.55)'  },
+            { name: 'Graphic Design',               pct: 70, icon: 'palette',    from: '#1e3a8a', to: '#2563eb', shadow: 'rgba(37,99,235,0.55)'   },
+            { name: 'Photography',                  pct: 80, icon: 'camera',     from: '#1e40af', to: '#60a5fa', shadow: 'rgba(96,165,250,0.55)'  },
+            { name: 'Photo & Video Editing',        pct: 75, icon: 'film',       from: '#1d4ed8', to: '#818cf8', shadow: 'rgba(129,140,248,0.55)' },
+            { name: 'AI Prompting',                 pct: 85, icon: 'brain',      from: '#2563eb', to: '#38bdf8', shadow: 'rgba(56,189,248,0.55)'  },
+            { name: 'IT Support & Troubleshooting', pct: 75, icon: 'wrench',     from: '#1e3a8a', to: '#6366f1', shadow: 'rgba(99,102,241,0.55)'  },
+            { name: 'Office & Task Management',     pct: 90, icon: 'tasks',      from: '#1d4ed8', to: '#93c5fd', shadow: 'rgba(147,197,253,0.55)' },
+            { name: 'Versatile & Analytical',       pct: 80, icon: 'chart-bar',  from: '#1e40af', to: '#4f46e5', shadow: 'rgba(79,70,229,0.55)'   },
+            { name: 'App Development (Flutter)',    pct: 50, icon: 'mobile-alt', from: '#1e3a8a', to: '#3b82f6', shadow: 'rgba(59,130,246,0.55)'  },
+            { name: 'Programming',                  pct: 40, icon: 'code',       from: '#1d4ed8', to: '#7dd3fc', shadow: 'rgba(125,211,252,0.55)' }
+          ];
+        %>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <% skillsOverview.forEach((skill, i) => { %>
+            <div
+            class="group skill-card bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl p-5 shadow-md
+            border-t-2 border-l-2 border-blue-500 dark:border-blue-500/70
+            transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
+            style="animation-delay:<%= i * 0.07 %>s;
+            --hover-shadow: <%= skill.shadow %>;
+            --bar-from: <%= skill.from %>;
+            --bar-to:   <%= skill.to %>;">
+
+            <!-- Top row: icon + name + percentage -->
+            <div class="flex items-center gap-4 mb-4">
+
+                <!-- Icon bubble -->
+                <div class="w-12 h-12 flex-shrink-0 rounded-xl
+                      bg-gradient-to-br from-blue-100 to-indigo-100
+                      dark:from-blue-900/60 dark:to-indigo-900/50
+                      border border-blue-300 dark:border-blue-600/60
+                      flex items-center justify-center shadow-inner
+                      group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                    <i class="fas fa-<%= skill.icon %> text-lg text-blue-700 dark:text-blue-300"></i>
+                </div>
+
+                <!-- Name -->
+                <p class="flex-1 font-bold text-gray-800 dark:text-slate-100 text-sm leading-tight">
+                    <%= skill.name %>
+                </p>
+
+                <!-- Percentage badge -->
+                <span class="flex-shrink-0 px-2.5 py-1 rounded-lg text-xs font-black
+                      bg-blue-100 dark:bg-blue-900/40
+                      text-blue-700 dark:text-blue-300
+                      border border-blue-300 dark:border-blue-600/60">
+                    <%= skill.pct %>%
+                </span>
+            </div>
+
+            <!-- Progress bar track -->
+            <div class="relative w-full h-3 bg-gray-200 dark:bg-slate-700/80 rounded-full overflow-visible">
+
+                <!-- Tick marks at 25 / 50 / 75 -->
+                <% [25, 50, 75].forEach(tick => { %>
+                <div class="absolute top-1/2 -translate-y-1/2 flex flex-col items-center z-10"
+                style="left:<%= tick %>%;">
+                <div class="w-px h-5 -mt-1 bg-blue-400/50 dark:bg-blue-400/40"></div>
+            </div>
+            <% }); %>
+
+            <!-- Filled bar -->
+            <div class="skill-bar h-full rounded-full relative overflow-hidden"
+            style="width:0%;
+            background: linear-gradient(90deg, var(--bar-from), var(--bar-to));
+            transition: width 1s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: 0 0 10px var(--hover-shadow);"
+            data-width="<%= skill.pct %>%">
+            <!-- Shimmer -->
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-shimmer"></div>
+        </div>
+    </div>
+
+    <!-- Scale labels -->
+    <div class="flex justify-between mt-2 px-0.5">
+        <span class="text-xs text-gray-400 dark:text-blue-900/60 dark:text-slate-500 font-medium">0%</span>
+        <span class="text-xs text-gray-400 dark:text-slate-500 font-medium">25%</span>
+        <span class="text-xs text-gray-400 dark:text-slate-500 font-medium">50%</span>
+        <span class="text-xs text-gray-400 dark:text-slate-500 font-medium">75%</span>
+        <span class="text-xs text-gray-400 dark:text-slate-500 font-medium">100%</span>
+    </div>
+
+</div>
+<% }); %>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TECH STACK + CERTIFICATIONS
+═══════════════════════════════════════════════════════════ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
+
+    <div class="flex items-center justify-center gap-3 mb-10 animate-fade-in-up">
+        <div class="h-px flex-1 bg-gradient-to-r from-transparent to-indigo-500/50 dark:to-indigo-400/40"></div>
+        <span class="flex items-center gap-2 text-lg font-bold text-gray-700 dark:text-gray-300 px-4">
+            <i class="fas fa-layers text-indigo-600 dark:text-indigo-400"></i>
+            Tech Stack & Credentials
+        </span>
+        <div class="h-px flex-1 bg-gradient-to-l from-transparent to-indigo-500/50 dark:to-indigo-400/40"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+        <!-- Key Expertise -->
+        <div class="group/card bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl p-8 shadow-md
+                border-t-2 border-l-2 border-blue-600 dark:border-blue-500/70
+                hover:shadow-[0_0_28px_6px_rgba(59,130,246,0.45)]
+                transition-all duration-300 hover:-translate-y-1 animate-fade-in-up">
+            <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-gray-900 dark:text-slate-100">
+                <span class="w-10 h-10 rounded-xl
+                      bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/60 dark:to-indigo-900/50
+                      border border-blue-300 dark:border-blue-600/60
+                      flex items-center justify-center shadow-inner
+                      group-hover/card:scale-110 group-hover/card:rotate-6 transition-all duration-300">
+                    <i class="fas fa-laptop text-blue-700 dark:text-blue-400"></i>
+                </span>
+                Key Expertise
+            </h3>
+            <div class="space-y-3">
+                <%
+                  const stacks = [
+                    { title: 'Web Development',  items: 'React, Vue.js, Tailwind CSS, JavaScript / TypeScript', icon: 'globe'      },
+                    { title: 'Business Tools',   items: 'Office Software, Power BI, SmartBooks, Task Mgmt',     icon: 'briefcase'  },
+                    { title: 'Creative Suite',   items: 'Graphic Design, Photography, Video Editing',            icon: 'palette'    },
+                    { title: 'Mobile & AI',      items: 'Flutter, App Development, AI Prompting',               icon: 'mobile-alt' }
+                  ];
+                  stacks.forEach((s, si) => {
+                %>
+                <div class="flex items-start gap-3 p-4 rounded-xl
+                      bg-blue-50 dark:bg-blue-950/30
+                      border-t-2 border-l-2 border-blue-400 dark:border-blue-600/50
+                      hover:shadow-[0_0_12px_3px_rgba(59,130,246,0.3)]
+                      transition-all duration-300 group/item">
+                    <span class="w-8 h-8 rounded-lg
+                          bg-blue-100 dark:bg-blue-900/50
+                          border border-blue-300 dark:border-blue-600/50
+                          flex items-center justify-center flex-shrink-0 mt-0.5
+                          group-hover/item:scale-110 transition-transform">
+                        <i class="fas fa-<%= s.icon %> text-blue-700 dark:text-blue-400 text-sm"></i>
+                    </span>
+                    <div>
+                        <p class="font-bold text-gray-900 dark:text-slate-100 text-sm"><%= s.title %></p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mt-0.5"><%= s.items %></p>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="group/card bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl p-8 shadow-md
+                border-t-2 border-l-2 border-indigo-600 dark:border-indigo-500/70
+                hover:shadow-[0_0_28px_6px_rgba(99,102,241,0.45)]
+                transition-all duration-300 hover:-translate-y-1 animate-fade-in-up" style="animation-delay:0.1s">
+            <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-gray-900 dark:text-slate-100">
+                <span class="w-10 h-10 rounded-xl
+                      bg-gradient-to-br from-indigo-100 to-blue-100 dark:from-indigo-900/60 dark:to-blue-900/50
+                      border border-indigo-300 dark:border-indigo-600/60
+                      flex items-center justify-center shadow-inner
+                      group-hover/card:scale-110 group-hover/card:rotate-6 transition-all duration-300">
+                    <i class="fas fa-certificate text-indigo-700 dark:text-indigo-400"></i>
+                </span>
+                Certifications
+            </h3>
+            <div class="space-y-3">
+                <%
+                  const certs = [
+                    { title: 'NC III Bookkeeping Holder',  desc: 'Professional Bookkeeping Certification', icon: 'award'          },
+                    { title: 'Certificate of Completion',  desc: 'SmartBooks & Power BI',                  icon: 'book'           },
+                    { title: 'Continued Learning',         desc: 'Pursuing new certifications & skills',   icon: 'graduation-cap' }
+                  ];
+                  certs.forEach(c => {
+                %>
+                <div class="flex items-start gap-3 p-4 rounded-xl
+                      bg-indigo-50 dark:bg-indigo-950/30
+                      border-t-2 border-l-2 border-indigo-400 dark:border-indigo-600/50
+                      hover:shadow-[0_0_12px_3px_rgba(99,102,241,0.3)]
+                      transition-all duration-300 group/item">
+                    <span class="w-8 h-8 rounded-lg
+                          bg-indigo-100 dark:bg-indigo-900/50
+                          border border-indigo-300 dark:border-indigo-600/50
+                          flex items-center justify-center flex-shrink-0 mt-0.5
+                          group-hover/item:scale-110 transition-transform">
+                        <i class="fas fa-<%= c.icon %> text-indigo-700 dark:text-indigo-400 text-sm"></i>
+                    </span>
+                    <div>
+                        <p class="font-bold text-gray-900 dark:text-slate-100 text-sm flex items-center gap-2">
+                            <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse inline-block"></span>
+                            <%= c.title %>
+                        </p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mt-0.5"><%= c.desc %></p>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+
+    <!-- Always Learning -->
+    <div class="group/card bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl p-8 shadow-md
+            border-t-2 border-l-2 border-sky-500 dark:border-sky-500/70
+            hover:shadow-[0_0_28px_6px_rgba(14,165,233,0.4)]
+            transition-all duration-300 hover:-translate-y-1 animate-fade-in-up" style="animation-delay:0.2s">
+        <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-gray-900 dark:text-slate-100">
+            <span class="w-10 h-10 rounded-xl
+                  bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900/60 dark:to-blue-900/50
+                  border border-sky-300 dark:border-sky-600/60
+                  flex items-center justify-center shadow-inner
+                  group-hover/card:scale-110 group-hover/card:rotate-6 transition-all duration-300">
+                <i class="fas fa-brain text-sky-700 dark:text-sky-400"></i>
+            </span>
+            Always Learning
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <%
+              const learning = [
+                { title: 'Web Developer',   desc: 'Advancing full-stack development skills',    icon: 'code'       },
+                { title: 'Automation',      desc: 'Process automation & workflow optimization',  icon: 'cogs'       },
+                { title: 'App Development', desc: 'Expanding mobile app development expertise', icon: 'mobile-alt' }
+              ];
+              learning.forEach(l => {
+            %>
+            <div class="flex items-start gap-3 p-4 rounded-xl
+                  bg-sky-50 dark:bg-sky-950/30
+                  border-t-2 border-l-2 border-sky-400 dark:border-sky-600/50
+                  hover:shadow-[0_0_12px_3px_rgba(14,165,233,0.3)]
+                  transition-all duration-300 group/item">
+                <span class="w-8 h-8 rounded-lg
+                      bg-sky-100 dark:bg-sky-900/50
+                      border border-sky-300 dark:border-sky-600/50
+                      flex items-center justify-center flex-shrink-0 mt-0.5
+                      group-hover/item:scale-110 transition-transform">
+                    <i class="fas fa-<%= l.icon %> text-sky-700 dark:text-sky-400 text-sm"></i>
+                </span>
+                <div>
+                    <p class="font-bold text-gray-900 dark:text-slate-100 text-sm flex items-center gap-2">
+                        <span class="w-2 h-2 bg-sky-500 rounded-full animate-pulse inline-block"></span>
+                        <%= l.title %>
+                    </p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 mt-0.5"><%= l.desc %></p>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DOWNLOAD RESUME CTA
+═══════════════════════════════════════════════════════════ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="group/cta relative
+            bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800
+            dark:from-blue-800 dark:via-indigo-800 dark:to-blue-900
+            rounded-3xl p-12 shadow-2xl overflow-hidden
+            border-t-2 border-l-2 border-blue-900/50
+            transition-all duration-300 hover:scale-[1.02]
+            hover:shadow-[0_0_50px_10px_rgba(59,130,246,0.4)]
+            animate-fade-in-up text-center">
+
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute top-0 right-0 w-80 h-80 bg-white rounded-full blur-3xl
+                    group-hover/cta:scale-150 transition-transform duration-700"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full blur-3xl
+                    group-hover/cta:scale-150 transition-transform duration-700"></div>
+        </div>
+
+        <div class="relative z-10">
+            <div class="w-20 h-20 mx-auto rounded-2xl
+                    bg-white/20 border border-white/30 backdrop-blur-sm
+                    flex items-center justify-center mb-6 shadow-lg
+                    group-hover/cta:scale-110 group-hover/cta:rotate-6 transition-all duration-300">
+                <i class="fas fa-file-pdf text-4xl text-white animate-bounce-slow"></i>
+            </div>
+
+            <h2 class="text-4xl font-black text-white mb-3">Download My Resume</h2>
+            <p class="text-lg text-blue-100 mb-8 max-w-xl mx-auto">
+                Get the full picture — detailed experience, projects and skills in one document.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/resume.pdf"
+                class="group/btn inline-flex items-center justify-center gap-2 px-8 py-4
+                bg-white text-blue-700 font-bold rounded-xl shadow-lg
+                hover:bg-blue-50 hover:scale-105 hover:shadow-xl
+                transition-all duration-300 border-t-2 border-l-2 border-blue-200">
+                <i class="fas fa-download group-hover/btn:animate-bounce-slow"></i>
+                <span>Download PDF</span>
+            </a>
+            <a href="/contact"
+            class="group/btn2 inline-flex items-center justify-center gap-2 px-8 py-4
+            border-t-2 border-l-2 border-white/60 text-white font-bold rounded-xl
+            hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+            <i class="fas fa-envelope group-hover/btn2:rotate-12 transition-transform"></i>
+            <span>Contact Me</span>
+        </a>
+    </div>
+</div>
+</div>
+</section>
+
+</div>
+
+<!-- ===================== BACK TO TOP BUTTON ===================== -->
+<button id="backToTop" 
+class="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group opacity-0 invisible translate-y-4"
+onclick="scrollToTop()"
+aria-label="Back to top">
+<i class="fas fa-arrow-up text-xl group-hover:-translate-y-1 transition-transform duration-300"></i>
+<span class="absolute -top-2 -right-2 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-[10px] font-bold animate-pulse">↑</span>
+</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     STYLES
+═══════════════════════════════════════════════════════════ -->
+<style>
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+
+    /* ===== SMOOTH DARK/LIGHT MODE TRANSITIONS ===== */
+    /* Apply to all elements that change with theme */
+    * {
+        transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        fill 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Optimize performance by limiting transition to specific elements */
+    body,
+    .bg-white, .dark .bg-white,
+    .bg-slate-50, .dark .bg-slate-50,
+    .bg-slate-100, .dark .bg-slate-100,
+    .bg-slate-200, .dark .bg-slate-200,
+    .bg-slate-900, .dark .bg-slate-900,
+    .bg-slate-950, .dark .bg-slate-950,
+    .bg-blue-50, .dark .bg-blue-50,
+    .bg-blue-100, .dark .bg-blue-100,
+    .bg-indigo-50, .dark .bg-indigo-50,
+    .bg-indigo-100, .dark .bg-indigo-100,
+    .text-gray-900, .dark .text-gray-900,
+    .text-gray-700, .dark .text-gray-700,
+    .text-gray-600, .dark .text-gray-600,
+    .text-gray-400, .dark .text-gray-400,
+    .text-slate-100, .dark .text-slate-100,
+    .border-slate-200, .dark .border-slate-200,
+    .border-slate-300, .dark .border-slate-300,
+    .border-blue-300, .dark .border-blue-300,
+    .border-blue-600, .dark .border-blue-600,
+    .shadow-lg, .dark .shadow-lg,
+    .shadow-xl, .dark .shadow-xl,
+    .backdrop-blur-sm, .dark .backdrop-blur-sm {
+        transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Smooth gradient transitions */
+    .bg-gradient-to-br,
+    .bg-gradient-to-r,
+    .bg-gradient-to-t,
+    .from-white, .dark .from-white,
+    .from-blue-50, .dark .from-blue-50,
+    .from-indigo-50, .dark .from-indigo-50,
+    .to-blue-50, .dark .to-blue-50,
+    .to-indigo-50, .dark .to-indigo-50,
+    .via-blue-50, .dark .via-blue-50,
+    .via-indigo-50, .dark .via-indigo-50 {
+        transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Skill card transitions */
+    .skill-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Particle glows — expanded */
+    .shadow-glow-blue   { box-shadow: 0 0 10px rgba(30,64,175,0.8),  0 0 20px rgba(30,64,175,0.4);  }
+    .shadow-glow-indigo { box-shadow: 0 0 10px rgba(79,70,229,0.8),  0 0 20px rgba(79,70,229,0.4);  }
+    .shadow-glow-sky    { box-shadow: 0 0 10px rgba(14,165,233,0.8), 0 0 20px rgba(14,165,233,0.4); }
+    .shadow-glow-violet { box-shadow: 0 0 10px rgba(139,92,246,0.8), 0 0 20px rgba(139,92,246,0.4); }
+    .shadow-glow-teal   { box-shadow: 0 0 10px rgba(20,184,166,0.8), 0 0 20px rgba(20,184,166,0.4); }
+    .shadow-glow-rose   { box-shadow: 0 0 10px rgba(244,63,94,0.8),  0 0 20px rgba(244,63,94,0.4);  }
+
+    /* Skill card hover glow via CSS variable */
+    .skill-card:hover {
+        box-shadow: 0 0 26px 5px var(--hover-shadow);
+    }
+
+    /* Shimmer sweep on filled bar */
+    @keyframes shimmer {
+        0%   { transform: translateX(-100%); }
+        100% { transform: translateX(200%);  }
+    }
+    .animate-shimmer {
+        animation: shimmer 2.2s linear infinite;
+        will-change: transform;
+    }
+
+    /* Scan lines */
+    @keyframes scan-line {
+        0%,100% { opacity:0; transform:translateX(-100%) translateZ(0); }
+        50%     { opacity:1; }
+    }
+    .animate-scan-line { animation: scan-line 4s ease-in-out infinite; will-change: transform,opacity; }
+
+    /* Floating bg icons */
+    @keyframes float-tech {
+        0%,100% { transform: translateY(0)     rotateZ(0deg)  translateZ(0); }
+        25%     { transform: translateY(-20px)  rotateZ(5deg)  translateZ(0); }
+        50%     { transform: translateY(-40px)  rotateZ(0deg)  translateZ(0); }
+        75%     { transform: translateY(-20px)  rotateZ(-5deg) translateZ(0); }
+    }
+    .animate-float-tech { animation: float-tech 8s ease-in-out infinite; will-change: transform; }
+
+    /* Floating code brackets */
+    @keyframes float-bracket {
+        0%,100% { transform: translateY(0) scale(1) rotate(0deg); opacity:0.2; }
+        25%     { transform: translateY(-15px) scale(1.05) rotate(2deg); opacity:0.35; }
+        50%     { transform: translateY(-30px) scale(0.95) rotate(-2deg); opacity:0.5; }
+        75%     { transform: translateY(-15px) scale(1.05) rotate(1deg); opacity:0.35; }
+    }
+    .animate-float-bracket { animation: float-bracket 7s ease-in-out infinite; will-change: transform,opacity; }
+
+    /* Terminal cursor typing effect */
+    @keyframes terminal-cursor {
+        0%,100% { opacity:0.2; transform:translateX(0); }
+        50%     { opacity:0.6; transform:translateX(8px); }
+    }
+    .animate-terminal-cursor { animation: terminal-cursor 8s ease-in-out infinite; will-change: transform,opacity; }
+
+    @keyframes blink-cursor {
+        0%,100% { opacity:1; }
+        50%     { opacity:0; }
+    }
+    .animate-blink-cursor { animation: blink-cursor 1s step-end infinite; will-change: opacity; }
+
+    /* Matrix-style float */
+    @keyframes matrix-float {
+        0%,100% { opacity:0.06; transform:translateY(0); }
+        50%     { opacity:0.15; transform:translateY(-8px); }
+    }
+    .animate-matrix-float { animation: matrix-float 6s ease-in-out infinite; will-change: transform,opacity; }
+
+    /* Particles */
+    @keyframes tech-float {
+        0%   { transform: translateY(100vh)  translateX(0)    translateZ(0); opacity:0; }
+        10%  { opacity:1; }
+        90%  { opacity:1; }
+        100% { transform: translateY(-100vh) translateX(100px) translateZ(0); opacity:0; }
+    }
+    .animate-tech-float { animation: tech-float 20s linear infinite; will-change: transform,opacity; }
+
+    /* Orbit ring */
+    @keyframes rotate-slow {
+        from { transform: rotate(0deg)   translateZ(0); }
+        to   { transform: rotate(360deg) translateZ(0); }
+    }
+    .animate-rotate-slow { animation: rotate-slow 20s linear infinite; will-change: transform; }
+
+    @keyframes orbit-1 {
+        0%     { cx:95; cy:50; } 33.33% { cx:50; cy:5;  } 66.66% { cx:5;  cy:50; } 100% { cx:95; cy:50; }
+    }
+    @keyframes orbit-2 {
+        0%     { cx:50; cy:5;  } 33.33% { cx:5;  cy:50; } 66.66% { cx:95; cy:50; } 100% { cx:50; cy:5;  }
+    }
+    @keyframes orbit-3 {
+        0%     { cx:5;  cy:50; } 33.33% { cx:95; cy:50; } 66.66% { cx:50; cy:5;  } 100% { cx:5;  cy:50; }
+    }
+    .animate-orbit-1 { animation: orbit-1 6s linear infinite; }
+    .animate-orbit-2 { animation: orbit-2 6s linear infinite; }
+    .animate-orbit-3 { animation: orbit-3 6s linear infinite; }
+
+    /* Status lights */
+    @keyframes status-pulse {
+        0%,100% { opacity:1;   box-shadow:0 0 10px currentColor; }
+        50%     { opacity:0.5; box-shadow:0 0 5px  currentColor; }
+    }
+    .animate-status-pulse { animation: status-pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+    @keyframes status-ping {
+        75%,100% { transform:scale(2) translateZ(0); opacity:0; }
+    }
+    .animate-status-ping { animation: status-ping 2s cubic-bezier(0,0,0.2,1) infinite; will-change: transform,opacity; }
+
+    /* Orb glow */
+    @keyframes pulse-glow {
+        0%,100% { opacity:0.5; filter:blur(30px); }
+        50%     { opacity:1;   filter:blur(15px); }
+    }
+    .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; will-change: opacity,filter; }
+
+    /* Card entrance */
+    @keyframes fade-in-up {
+        from { opacity:0; transform:translateY(30px) translateZ(0); }
+        to   { opacity:1; transform:translateY(0)     translateZ(0); }
+    }
+    .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; will-change: transform,opacity; }
+
+    /* CTA icon bounce */
+    @keyframes bounce-slow {
+        0%,100% { transform: translateY(0)     translateZ(0); }
+        50%     { transform: translateY(-10px)  translateZ(0); }
+    }
+    .animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
+
+    /* Paint containment */
+    .animate-scan-line,
+    .animate-float-tech,
+    .animate-float-bracket,
+    .animate-tech-float,
+    .animate-pulse-glow,
+    .animate-fade-in-up,
+    .animate-matrix-float,
+    .animate-terminal-cursor { contain: layout style paint; }
+
+    @media (max-width: 768px) {
+        .animate-float-tech { animation-duration: 12s; }
+        .animate-tech-float { animation-duration: 30s; }
+        .animate-float-bracket { animation-duration: 10s; }
+    }
+
+    /* Disable transitions for reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            transition-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+        }
+    }
+</style>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPT — animate bars on scroll into view
+═══════════════════════════════════════════════════════════ -->
+<script>
+    // ===================== BACK TO TOP FUNCTIONALITY =====================
+    // This function is defined globally so the onclick attribute can access it
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // ===================== BACK TO TOP BUTTON VISIBILITY =====================
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                backToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
+            }
+        });
+
+        // ===================== SKILL BARS ANIMATION =====================
+        const bars = document.querySelectorAll('.skill-bar');
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const bar = entry.target;
+                    setTimeout(function() {
+                        bar.style.width = bar.dataset.width;
+                    }, 200);
+                    observer.unobserve(bar);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        bars.forEach(function(bar) {
+            observer.observe(bar);
+        });
+    });
+</script>
+
+<%- include('./layouts/footer.ejs') %>
