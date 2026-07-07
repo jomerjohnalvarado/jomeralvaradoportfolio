@@ -882,6 +882,82 @@ aria-label="Back to top">
             animation-duration: 0.01ms !important;
         }
     }
+
+    /* ============================================================
+       MOBILE OPTIMIZATION: DISABLE HEAVY GPU EFFECTS
+       ============================================================ */
+    @media (max-width: 768px) {
+        /* 1. DISABLE BACKDROP BLUR (HEAVIEST) */
+        .backdrop-blur-sm,
+        .backdrop-blur-md,
+        .backdrop-blur-lg,
+        .backdrop-blur-xl,
+        .backdrop-blur-2xl,
+        .bg-white\/80,
+        .dark\:bg-slate-800\/80,
+        .bg-white\/90,
+        .dark\:bg-slate-900\/90,
+        .bg-black\/60,
+        .bg-white\/10,
+        .dark\:bg-black\/10,
+        [class*="backdrop-blur"] {
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        /* 2. HIDE PARTICLES */
+        .tech-particle {
+            display: none !important;
+        }
+
+        /* 3. HIDE ORBITING RINGS */
+        .animate-rotate-slow,
+        .animate-orbit-1,
+        .animate-orbit-2,
+        .animate-orbit-3 {
+            display: none !important;
+        }
+
+        /* 4. HIDE GLOWING ORBS */
+        .animate-pulse-glow {
+            display: none !important;
+        }
+
+        /* 5. REDUCE FLOATING TECH ICONS - keep only first 5 */
+        .fixed.inset-0 .animate-float-tech:nth-child(n+6) {
+            display: none !important;
+        }
+
+        /* 6. REDUCE SCAN LINES - keep only 3 */
+        .animate-scan-line:nth-child(n+4) {
+            display: none !important;
+        }
+
+        /* 7. HIDE FLOATING CODE BRACKETS */
+        .animate-float-bracket {
+            display: none !important;
+        }
+
+        /* 8. HIDE TERMINAL CURSOR LINES */
+        .animate-terminal-cursor {
+            display: none !important;
+        }
+
+        /* 9. HIDE STATUS LIGHTS (optional, light but we hide for performance) */
+        .animate-status-pulse {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* Further reduce for small phones */
+        .fixed.inset-0 .animate-float-tech:nth-child(n+3) {
+            display: none !important;
+        }
+        .animate-scan-line:nth-child(n+2) {
+            display: none !important;
+        }
+    }
 </style>
 
 <!-- ═══════════════════════════════════════════════════════════
