@@ -1,8 +1,8 @@
 <%- include('./layouts/header.ejs') %>
 
-<div class="pt-24 pb-20 min-h-screen relative overflow-hidden">
+<div class="pt-24 pb-20 min-h-screen relative overflow-hidden" id="app">
   <!-- Adaptive Animated Technology Background -->
-  <div class="fixed inset-0 -z-10 overflow-hidden">
+  <div class="fixed inset-0 -z-10 overflow-hidden" id="bg-container">
     <!-- Gradient Background - Dark Blue Theme -->
     <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/80 to-indigo-50/60 dark:from-slate-950 dark:via-blue-950/70 dark:to-indigo-950/40"></div>
     
@@ -24,91 +24,256 @@
           <stop offset="50%" style="stop-color:#4f46e5;stop-opacity:1" />
           <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:0" />
         </linearGradient>
+        <linearGradient id="lg4" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0"/>
+          <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0"/>
+        </linearGradient>
+        <linearGradient id="lg5" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0"/>
+          <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0"/>
+        </linearGradient>
       </defs>
       
       <!-- Animated Horizontal Lines -->
-      <line x1="0" y1="10%" x2="100%" y2="10%" stroke="url(#lineGradient1)" stroke-width="2" class="animate-scan-line" style="animation-delay: 0s;"/>
-      <line x1="0" y1="25%" x2="100%" y2="25%" stroke="url(#lineGradient2)" stroke-width="2" class="animate-scan-line" style="animation-delay: 1s;"/>
-      <line x1="0" y1="40%" x2="100%" y2="40%" stroke="url(#lineGradient1)" stroke-width="2" class="animate-scan-line" style="animation-delay: 2s;"/>
-      <line x1="0" y1="55%" x2="100%" y2="55%" stroke="url(#lineGradient3)" stroke-width="2" class="animate-scan-line" style="animation-delay: 3s;"/>
-      <line x1="0" y1="70%" x2="100%" y2="70%" stroke="url(#lineGradient2)" stroke-width="2" class="animate-scan-line" style="animation-delay: 1.5s;"/>
-      <line x1="0" y1="85%" x2="100%" y2="85%" stroke="url(#lineGradient1)" stroke-width="2" class="animate-scan-line" style="animation-delay: 2.5s;"/>
+      <line x1="0" y1="6%"  x2="100%" y2="6%"  stroke="url(#lineGradient1)" stroke-width="2" class="animate-scan-line" style="animation-delay: 0s;"/>
+      <line x1="0" y1="18%" x2="100%" y2="18%" stroke="url(#lineGradient2)" stroke-width="2" class="animate-scan-line" style="animation-delay: 0.6s;"/>
+      <line x1="0" y1="30%" x2="100%" y2="30%" stroke="url(#lg4)" stroke-width="2" class="animate-scan-line" style="animation-delay: 1.2s;"/>
+      <line x1="0" y1="42%" x2="100%" y2="42%" stroke="url(#lineGradient3)" stroke-width="2" class="animate-scan-line" style="animation-delay: 1.8s;"/>
+      <line x1="0" y1="54%" x2="100%" y2="54%" stroke="url(#lg5)" stroke-width="2" class="animate-scan-line" style="animation-delay: 2.4s;"/>
+      <line x1="0" y1="66%" x2="100%" y2="66%" stroke="url(#lineGradient1)" stroke-width="2" class="animate-scan-line" style="animation-delay: 3s;"/>
+      <line x1="0" y1="78%" x2="100%" y2="78%" stroke="url(#lineGradient2)" stroke-width="2" class="animate-scan-line" style="animation-delay: 0.9s;"/>
+      <line x1="0" y1="90%" x2="100%" y2="90%" stroke="url(#lg4)" stroke-width="2" class="animate-scan-line" style="animation-delay: 2.1s;"/>
     </svg>
 
-    <!-- Tech Grid Pattern -->
+    <!-- Tech Grid Patterns -->
     <svg class="absolute inset-0 w-full h-full opacity-10 dark:opacity-40" preserveAspectRatio="none">
       <defs>
         <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
           <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(30, 64, 175, 0.3)" stroke-width="1"/>
         </pattern>
+        <pattern id="grid-dot" width="60" height="60" patternUnits="userSpaceOnUse">
+          <circle cx="30" cy="30" r="1.5" fill="rgba(59,130,246,0.25)" />
+        </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#grid)" />
     </svg>
+    <svg class="absolute inset-0 w-full h-full opacity-5 dark:opacity-20" preserveAspectRatio="none">
+      <rect width="100%" height="100%" fill="url(#grid-dot)" />
+    </svg>
 
-    <!-- Floating Tech Icons -->
-    <div class="absolute top-20 left-20 w-24 h-24 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0s;">
-      <div class="w-full h-full border-t-2 border-l-2 border-blue-600 dark:border-blue-400 rounded-3xl rotate-45 flex items-center justify-center">
+    <!-- ═══ FLOATING TECH ICONS — KEPT ================ -->
+    <!-- Icon 1: Code -->
+    <div class="tech-icon absolute top-20 left-20 w-24 h-24 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0s;">
+      <div class="w-full h-full border-t-2 border-l-2 border-blue-600 dark:border-blue-400 rounded-3xl rotate-45 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
         <i class="fas fa-code text-blue-700 dark:text-blue-500 text-3xl -rotate-45"></i>
       </div>
     </div>
 
-    <div class="absolute top-40 right-32 w-20 h-20 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 2s;">
-      <div class="w-full h-full border-t-2 border-r-2 border-indigo-600 dark:border-indigo-400 rounded-full flex items-center justify-center">
+    <!-- Icon 2: Server -->
+    <div class="tech-icon absolute top-40 right-32 w-20 h-20 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 2s;">
+      <div class="w-full h-full border-t-2 border-r-2 border-indigo-600 dark:border-indigo-400 rounded-full flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
         <i class="fas fa-server text-indigo-700 dark:text-indigo-500 text-2xl"></i>
       </div>
     </div>
 
-    <div class="absolute bottom-40 left-1/4 w-28 h-28 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 4s;">
-      <div class="w-full h-full border-b-2 border-r-2 border-blue-500 dark:border-blue-400 rounded-3xl flex items-center justify-center">
+    <!-- Icon 3: Database -->
+    <div class="tech-icon absolute bottom-40 left-1/4 w-28 h-28 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 4s;">
+      <div class="w-full h-full border-b-2 border-r-2 border-blue-500 dark:border-blue-400 rounded-3xl flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
         <i class="fas fa-database text-blue-600 dark:text-blue-500 text-3xl"></i>
       </div>
     </div>
 
-    <div class="absolute bottom-20 right-20 w-24 h-24 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 1s;">
-      <div class="w-full h-full border-b-2 border-l-2 border-blue-600 dark:border-blue-400 rounded-full flex items-center justify-center">
+    <!-- Icon 4: Microchip -->
+    <div class="tech-icon absolute bottom-20 right-20 w-24 h-24 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 1s;">
+      <div class="w-full h-full border-b-2 border-l-2 border-blue-600 dark:border-blue-400 rounded-full flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
         <i class="fas fa-microchip text-blue-700 dark:text-blue-500 text-2xl"></i>
       </div>
     </div>
 
-    <div class="absolute top-1/2 right-1/4 w-20 h-20 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 3s;">
-      <div class="w-full h-full border-t-2 border-b-2 border-indigo-600 dark:border-indigo-400 rounded-3xl flex items-center justify-center">
+    <!-- Icon 5: Network -->
+    <div class="tech-icon absolute top-1/2 right-1/4 w-20 h-20 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 3s;">
+      <div class="w-full h-full border-t-2 border-b-2 border-indigo-600 dark:border-indigo-400 rounded-3xl flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
         <i class="fas fa-network-wired text-indigo-700 dark:text-indigo-500 text-xl"></i>
       </div>
     </div>
 
-    <!-- Animated Particles with Tech Style -->
-    <div class="absolute inset-0 opacity-60 dark:opacity-100">
+    <!-- ═══ NEW: HTML5 (visible on mobile, placed early) ═══ -->
+    <div class="tech-icon absolute top-32 left-1/3 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0.6s;">
+      <div class="w-full h-full border-2 border-orange-600/60 dark:border-orange-500/50 rounded-xl rotate-12 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <i class="fab fa-html5 text-orange-700 dark:text-orange-400 text-xl -rotate-12"></i>
+      </div>
+    </div>
+
+    <!-- ═══ NEW: CSS3 (visible on mobile, placed early) ═══ -->
+    <div class="tech-icon absolute top-1/3 left-10 w-14 h-14 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 2.6s;">
+      <div class="w-full h-full border-2 border-blue-600/60 dark:border-blue-500/50 rounded-xl -rotate-6 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <i class="fab fa-css3-alt text-blue-700 dark:text-blue-400 text-lg rotate-6"></i>
+      </div>
+    </div>
+
+    <!-- Icon 6: JavaScript -->
+    <div class="tech-icon absolute bottom-1/3 left-1/3 w-18 h-18 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 1.8s;">
+      <div class="w-full h-full border-2 border-cyan-600/60 dark:border-cyan-500/50 rounded-xl rotate-45 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <i class="fab fa-js text-cyan-700 dark:text-cyan-400 text-xl -rotate-45"></i>
+      </div>
+    </div>
+
+    <!-- Icon 7: Python -->
+    <div class="tech-icon absolute bottom-32 right-1/4 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0.3s;">
+      <div class="w-full h-full border-2 border-violet-600/60 dark:border-violet-500/50 rounded-xl -rotate-12 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <i class="fab fa-python text-violet-700 dark:text-violet-400 text-xl rotate-12"></i>
+      </div>
+    </div>
+
+    <!-- Icon 8: React -->
+    <div class="tech-icon absolute top-1/2 left-2/3 w-14 h-14 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 3.8s;">
+      <div class="w-full h-full border-2 border-pink-600/60 dark:border-pink-500/50 rounded-xl rotate-6 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <i class="fab fa-react text-pink-700 dark:text-pink-400 text-lg -rotate-6"></i>
+      </div>
+    </div>
+
+    <!-- Rest of icons (hidden on mobile) -->
+    <div class="tech-icon absolute top-60 right-10 w-18 h-18 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 1.4s;">
+      <div class="w-full h-full border-2 border-sky-600/60 dark:border-sky-500/50 rounded-2xl rotate-3 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <i class="fab fa-php text-sky-700 dark:text-sky-400 text-xl -rotate-3"></i>
+      </div>
+    </div>
+    <div class="tech-icon absolute bottom-1/4 right-1/5 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 2.2s;">
+      <div class="w-full h-full border-2 border-amber-600/60 dark:border-amber-500/50 rounded-full flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <i class="fas fa-cloud text-amber-700 dark:text-amber-400 text-xl"></i>
+      </div>
+    </div>
+    <div class="tech-icon absolute top-1/4 right-1/3 w-14 h-14 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0.9s;">
+      <div class="w-full h-full border-2 border-rose-600/60 dark:border-rose-500/50 rounded-xl -rotate-8 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <i class="fas fa-terminal text-rose-700 dark:text-rose-400 text-lg rotate-8"></i>
+      </div>
+    </div>
+    <div class="tech-icon absolute top-2/3 right-1/3 w-18 h-18 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 4.2s;">
+      <div class="w-full h-full border-2 border-teal-600/60 dark:border-teal-500/50 rounded-2xl rotate-12 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <i class="fas fa-cogs text-teal-700 dark:text-teal-400 text-xl -rotate-12"></i>
+      </div>
+    </div>
+    <div class="tech-icon absolute bottom-10 left-1/3 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 3.4s;">
+      <div class="w-full h-full border-2 border-fuchsia-600/60 dark:border-fuchsia-500/50 rounded-xl rotate-6 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <i class="fas fa-laptop-code text-fuchsia-700 dark:text-fuchsia-400 text-lg -rotate-6"></i>
+      </div>
+    </div>
+    <div class="tech-icon absolute top-1/4 left-2/3 w-14 h-14 opacity-8 dark:opacity-15 animate-float-tech" style="animation-delay: 5s;">
+      <div class="w-full h-full border-2 border-blue-600/50 dark:border-blue-500/40 rounded-lg rotate-45 flex items-center justify-center bg-white/5 dark:bg-black/5 backdrop-blur-sm">
+        <i class="fas fa-robot text-blue-600 dark:text-blue-400 text-lg -rotate-45"></i>
+      </div>
+    </div>
+    <div class="tech-icon absolute bottom-2/3 left-1/5 w-16 h-16 opacity-8 dark:opacity-15 animate-float-tech" style="animation-delay: 1s;">
+      <div class="w-full h-full border-2 border-indigo-600/50 dark:border-indigo-500/40 rounded-2xl -rotate-3 flex items-center justify-center bg-white/5 dark:bg-black/5 backdrop-blur-sm">
+        <i class="fas fa-shield-alt text-indigo-600 dark:text-indigo-400 text-lg rotate-3"></i>
+      </div>
+    </div>
+    <div class="tech-icon absolute top-3/4 right-2/3 w-14 h-14 opacity-8 dark:opacity-15 animate-float-tech" style="animation-delay: 3s;">
+      <div class="w-full h-full border-2 border-cyan-600/50 dark:border-cyan-500/40 rounded-full flex items-center justify-center bg-white/5 dark:bg-black/5 backdrop-blur-sm">
+        <i class="fas fa-bolt text-cyan-600 dark:text-cyan-400 text-lg"></i>
+      </div>
+    </div>
+    <div class="tech-icon absolute top-1/3 right-10 w-16 h-16 opacity-8 dark:opacity-15 animate-float-tech" style="animation-delay: 2.8s;">
+      <div class="w-full h-full border-2 border-green-600/50 dark:border-green-500/40 rounded-xl rotate-8 flex items-center justify-center bg-white/5 dark:bg-black/5 backdrop-blur-sm">
+        <i class="fab fa-git-alt text-green-700 dark:text-green-400 text-lg -rotate-8"></i>
+      </div>
+    </div>
+
+    <!-- ═══ FLOATING CODE BRACKETS ═══ -->
+    <div class="absolute top-28 left-2/3 text-4xl font-mono font-bold text-blue-600/20 dark:text-blue-400/15 animate-float-bracket" style="animation-delay:0.3s;">
+      { }
+    </div>
+    <div class="absolute bottom-32 left-1/5 text-3xl font-mono font-bold text-indigo-600/20 dark:text-indigo-400/15 animate-float-bracket" style="animation-delay:1.8s;">
+      &lt; / &gt;
+    </div>
+    <div class="absolute top-1/3 right-1/5 text-4xl font-mono font-bold text-cyan-600/15 dark:cyan-400/12 animate-float-bracket" style="animation-delay:2.6s;">
+      [ ]
+    </div>
+    <div class="absolute bottom-1/3 left-2/3 text-3xl font-mono font-bold text-violet-600/15 dark:text-violet-400/12 animate-float-bracket" style="animation-delay:0.9s;">
+      ( )
+    </div>
+    <div class="absolute top-2/3 right-1/4 text-3xl font-mono font-bold text-rose-600/15 dark:text-rose-400/12 animate-float-bracket" style="animation-delay:3.8s;">
+      { &lt; / &gt; }
+    </div>
+    <div class="absolute top-10 left-1/2 text-2xl font-mono font-bold text-blue-600/12 dark:text-blue-400/10 animate-float-bracket" style="animation-delay:4.5s;">
+      &lt; code &gt;
+    </div>
+
+    <!-- ═══ TERMINAL CURSOR LINES ═══ -->
+    <div class="absolute top-1/2 left-8 text-sm font-mono text-blue-600/20 dark:text-blue-400/15 animate-terminal-cursor hidden sm:block" style="animation-delay:0s;">
+      <span class="opacity-80">$</span>
+      <span class="text-cyan-600/25 dark:text-cyan-400/20"> npm install --save</span>
+      <span class="inline-block w-2 h-4 bg-blue-600/30 dark:bg-blue-400/25 ml-1 animate-blink-cursor"></span>
+    </div>
+    <div class="absolute bottom-1/4 right-8 text-sm font-mono text-indigo-600/20 dark:text-indigo-400/15 animate-terminal-cursor" style="animation-delay:3s;">
+      <span class="opacity-80">$</span>
+      <span class="text-violet-600/25 dark:text-violet-400/20"> git push origin main</span>
+      <span class="inline-block w-2 h-4 bg-indigo-600/30 dark:bg-indigo-400/25 ml-1 animate-blink-cursor"></span>
+    </div>
+    <div class="absolute top-3/4 left-1/4 text-sm font-mono text-cyan-600/20 dark:text-cyan-400/15 animate-terminal-cursor" style="animation-delay:6s;">
+      <span class="opacity-80">$</span>
+      <span class="text-sky-600/25 dark:text-sky-400/20"> yarn build</span>
+      <span class="inline-block w-2 h-4 bg-cyan-600/30 dark:bg-cyan-400/25 ml-1 animate-blink-cursor"></span>
+    </div>
+
+    <!-- ═══ PARTICLES — HEAVY: DISABLED ON MOBILE ═══ -->
+    <div class="absolute inset-0 opacity-60 dark:opacity-100 mobile-hide-particles">
       <!-- Blue Particles -->
       <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 15%; left: 10%; animation-delay: 0s;"></div>
       <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 35%; left: 70%; animation-delay: 1.5s;"></div>
       <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 60%; left: 20%; animation-delay: 3s;"></div>
       <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 75%; right: 15%; animation-delay: 4.5s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 45%; left: 5%; animation-delay: 6s;"></div>
       
       <!-- Indigo Particles -->
       <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top: 25%; right: 30%; animation-delay: 0.8s;"></div>
       <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top: 50%; left: 45%; animation-delay: 2.3s;"></div>
       <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top: 80%; left: 30%; animation-delay: 3.8s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top: 10%; left: 50%; animation-delay: 5.2s;"></div>
       
       <!-- Sky Particles -->
       <div class="tech-particle absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky" style="top: 40%; right: 10%; animation-delay: 1.2s;"></div>
       <div class="tech-particle absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky" style="top: 70%; right: 50%; animation-delay: 2.8s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky" style="top: 20%; left: 80%; animation-delay: 4.2s;"></div>
+      
+      <!-- Violet Particles -->
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top: 30%; left: 55%; animation-delay: 0.5s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top: 90%; right: 30%; animation-delay: 2s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top: 5%; right: 60%; animation-delay: 3.5s;"></div>
+      
+      <!-- Teal Particles -->
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-teal-500 dark:bg-teal-400 rounded-full animate-tech-float shadow-glow-teal" style="top: 10%; right: 15%; animation-delay: 0.2s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-teal-500 dark:bg-teal-400 rounded-full animate-tech-float shadow-glow-teal" style="top: 95%; left: 40%; animation-delay: 1.7s;"></div>
+      
+      <!-- Rose/Pink Particles -->
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-rose-500 dark:bg-rose-400 rounded-full animate-tech-float shadow-glow-rose" style="top: 78%; left: 10%; animation-delay: 0.7s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-rose-500 dark:bg-rose-400 rounded-full animate-tech-float shadow-glow-rose" style="top: 18%; left: 40%; animation-delay: 2.2s;"></div>
     </div>
 
-    <!-- Animated Orbits -->
-    <div class="absolute top-1/4 left-1/3 w-64 h-64 opacity-20 dark:opacity-30">
+    <!-- ═══ ANIMATED ORBITS — HEAVY: DISABLED ON MOBILE ═══ -->
+    <div class="absolute top-1/4 left-1/3 w-64 h-64 opacity-20 dark:opacity-30 mobile-hide-orbits">
       <svg class="w-full h-full animate-rotate-slow" viewBox="0 0 100 100" preserveAspectRatio="none">
         <circle cx="50" cy="50" r="45" fill="none" stroke="url(#lineGradient1)" stroke-width="0.5" opacity="0.5"/>
         <circle cx="50" cy="50" r="30" fill="none" stroke="url(#lineGradient2)" stroke-width="0.5" opacity="0.5"/>
         <circle cx="50" cy="50" r="15" fill="none" stroke="url(#lineGradient3)" stroke-width="0.5" opacity="0.5"/>
-        
-        <!-- Orbiting Dots -->
-        <circle cx="95" cy="50" r="2" fill="#1e40af" class="animate-orbit-1"/>
-        <circle cx="50" cy="5" r="2" fill="#0284c7" class="animate-orbit-2"/>
-        <circle cx="5" cy="50" r="2" fill="#4f46e5" class="animate-orbit-3"/>
+        <circle cx="95" cy="50" r="2.5" fill="#1e40af" class="animate-orbit-1"/>
+        <circle cx="50" cy="5" r="2.5" fill="#0284c7" class="animate-orbit-2"/>
+        <circle cx="5" cy="50" r="2.5" fill="#4f46e5" class="animate-orbit-3"/>
+      </svg>
+    </div>
+    <!-- Second orbit ring -->
+    <div class="absolute bottom-1/3 right-1/4 w-48 h-48 opacity-15 dark:opacity-20 mobile-hide-orbits">
+      <svg class="w-full h-full animate-rotate-slow" viewBox="0 0 100 100" preserveAspectRatio="none" style="animation-duration:25s;animation-direction:reverse">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="url(#lg4)" stroke-width="0.4" opacity="0.4"/>
+        <circle cx="50" cy="50" r="25" fill="none" stroke="url(#lg5)" stroke-width="0.4" opacity="0.4"/>
+        <circle cx="90" cy="50" r="2" fill="#06b6d4" class="animate-orbit-1" style="animation-duration:8s"/>
+        <circle cx="50" cy="10" r="2" fill="#8b5cf6" class="animate-orbit-2" style="animation-duration:8s"/>
       </svg>
     </div>
 
-    <!-- Status Indicator Lights -->
+    <!-- ═══ STATUS INDICATOR LIGHTS — KEPT (low cost) ═══ -->
     <div class="absolute top-20 right-1/3 w-3 h-3 bg-blue-500 rounded-full animate-status-pulse" style="animation-delay: 0s;">
       <div class="absolute inset-0 bg-blue-500 rounded-full animate-status-ping"></div>
     </div>
@@ -118,394 +283,22 @@
     <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-sky-500 rounded-full animate-status-pulse" style="animation-delay: 2s;">
       <div class="absolute inset-0 bg-sky-500 rounded-full animate-status-ping"></div>
     </div>
+    <div class="absolute top-2/3 left-10 w-2.5 h-2.5 bg-violet-500 rounded-full animate-status-pulse" style="animation-delay: 0.5s;">
+      <div class="absolute inset-0 bg-violet-500 rounded-full animate-status-ping"></div>
+    </div>
+    <div class="absolute bottom-20 left-1/3 w-2.5 h-2.5 bg-teal-500 rounded-full animate-status-pulse" style="animation-delay: 1.5s;">
+      <div class="absolute inset-0 bg-teal-500 rounded-full animate-status-ping"></div>
+    </div>
+    <div class="absolute top-1/2 right-10 w-2.5 h-2.5 bg-rose-500 rounded-full animate-status-pulse" style="animation-delay: 2.5s;">
+      <div class="absolute inset-0 bg-rose-500 rounded-full animate-status-ping"></div>
+    </div>
 
-    <!-- Glowing Orbs with Tech Effect -->
-    <div class="absolute top-0 left-1/3 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-indigo-200/20 dark:from-blue-500/10 dark:to-indigo-500/5 rounded-full blur-3xl animate-pulse-glow"></div>
-    <div class="absolute top-1/2 right-0 w-96 h-96 bg-gradient-to-br from-indigo-200/30 to-blue-200/20 dark:from-indigo-500/10 dark:to-blue-500/5 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 1s;"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-indigo-200/20 dark:from-blue-500/10 dark:to-indigo-500/5 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 2s;"></div>
+    <!-- ═══ GLOWING ORBS — HEAVY: DISABLED ON MOBILE ═══ -->
+    <div class="absolute top-0 left-1/3 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-indigo-200/20 dark:from-blue-500/10 dark:to-indigo-500/5 rounded-full blur-3xl animate-pulse-glow mobile-hide-glow"></div>
+    <div class="absolute top-1/2 right-0 w-96 h-96 bg-gradient-to-br from-indigo-200/30 to-blue-200/20 dark:from-indigo-500/10 dark:to-blue-500/5 rounded-full blur-3xl animate-pulse-glow mobile-hide-glow" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-indigo-200/20 dark:from-blue-500/10 dark:to-indigo-500/5 rounded-full blur-3xl animate-pulse-glow mobile-hide-glow" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-gradient-to-br from-cyan-200/15 to-violet-200/10 dark:from-cyan-500/8 dark:to-violet-500/5 rounded-full blur-3xl animate-pulse-glow mobile-hide-glow" style="animation-delay: 3s;"></div>
   </div>
-
-  <%
-  const projects = [
-  // ===== EXISTING PROJECTS (kept as-is) =====
-  {
-  id: 1,
-  title: 'Loan Interest App',
-  category: 'app',
-  description: 'Instantly calculate monthly payments, track total interest, and compare loan options with a clean, hassle-free calculator.',
-  fullDescription: 'A powerful loan interest calculator that helps you make informed financial decisions. Track monthly payments, total interest, and compare different loan options side by side with an intuitive interface.',
-  images: [
-  '/images/loan/loan1.jpg',
-  '/images/loan/loan2.jpg',
-  '/images/loan/loan3.jpg',
-  '/images/loan/loan4.jpg',
-  '/images/loan/loan5.jpg',
-  '/images/loan/loan6.jpg',
-  '/images/loan/loan7.jpg',
-  '/images/loan/loan8.jpg',
-  '/images/loan/loan9.jpg',
-  '/images/loan/loan10.jpg',
-  '/images/loan/loan11.jpg',
-  ],
-  icon: 'dumbbell',
-  gradient: 'from-blue-600 to-blue-700',
-  bgGradient: 'from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/50',
-  technologies: ['Flutter', 'Dart', 'Packages'],
-  features: ['AI Workout Plans', 'Nutrition Tracking', 'Progress Analytics', 'Social Features'],
-  githubUrl: 'https://github.com/yourusername/fittrack',
-  featured: true
-  },
-  {
-  id: 2,
-  title: 'Crypto Hub',
-  category: 'app',
-  description: 'Real-time all-in-one crypto dashboard.',
-  fullDescription: 'Track cryptocurrency prices, manage your portfolio, and get real-time market insights with this comprehensive crypto dashboard.',
-  images: [
-  '/images/Cryptohub/crypto1.jpg',
-  '/images/Cryptohub/crypto2.jpg',
-  '/images/Cryptohub/crypto3.jpg',
-  '/images/Cryptohub/crypto4.jpg',
-  ],
-  icon: 'tasks',
-  gradient: 'from-blue-500 to-blue-600',
-  bgGradient: 'from-blue-50 to-slate-50 dark:from-blue-950/50 dark:to-slate-900/50',
-  technologies: ['Flutter', 'Dart', 'Packages', 'API Integration'],
-  features: ['Real-time Sync', 'Task Management', 'Team Chat', 'Analytics Dashboard'],
-  githubUrl: 'https://github.com/yourusername/taskflow'
-  },
-  {
-  id: 3,
-  title: 'Comforter AI',
-  category: 'app',
-  description: 'Your all-in-one AI hub for personalized emotional support, comfort, and a safe space to vent.',
-  fullDescription: 'Comforter AI provides personalized emotional support through AI-powered conversations. A safe, private space to express yourself and receive compassionate responses.',
-  images: [
-  '/images/comforter/comforter1.jpg',
-  '/images/comforter/comforter2.jpg',
-  '/images/comforter/comforter3.jpg',
-  ],
-  icon: 'comments',
-  gradient: 'from-blue-700 to-blue-600',
-  bgGradient: 'from-blue-100 to-blue-50 dark:from-blue-900/50 dark:to-blue-950/50',
-  technologies: ['Flutter', 'Dart', 'Packages', 'AI Integration'],
-  features: ['End-to-End Encryption', 'Group Chats', 'Voice Calls', 'File Sharing'],
-  githubUrl: 'https://github.com/yourusername/securechat',
-  websiteUrl: 'https://aiassistants.onrender.com/'
-  },
-  {
-  id: 4,
-  title: 'Jomer AI',
-  category: 'app',
-  description: 'An inspiring AI assistant providing courage, personalized life advice, and motivational guidance to conquer your obstacles.',
-  fullDescription: 'Jomer AI is your personal motivational coach and life advisor. Get personalized guidance, daily inspiration, and actionable advice to overcome challenges.',
-  images: [
-  '/images/ai/ai1.jpg',
-  '/images/ai/ai2.jpg',
-  ],
-  icon: 'shopping-cart',
-  gradient: 'from-blue-600 to-blue-500',
-  bgGradient: 'from-slate-50 to-blue-50 dark:from-slate-900/50 dark:to-blue-950/50',
-  technologies: ['Flutter', 'Dart', 'Packages', 'AI Integration'],
-  features: ['AI Recommendations', 'Secure Payments', 'Seller Dashboard', 'Inventory Management'],
-  githubUrl: 'https://github.com/yourusername/shophub',
-  featured: true
-  },
-  {
-  id: 5,
-  title: 'Jojohn Hack Tool',
-  category: 'app',
-  description: 'A powerful, open-source automation framework used for advanced penetration testing and security vulnerability scanning.',
-  fullDescription: 'A comprehensive security testing framework with automated vulnerability scanning, penetration testing tools, and detailed reporting capabilities.',
-  images: [
-  '/images/jojohn hack/1.jpg',
-  '/images/jojohn hack/2.jpg',
-  '/images/jojohn hack/3.jpg',
-  '/images/jojohn hack/4.jpg',
-  '/images/jojohn hack/5.jpg',
-  '/images/jojohn hack/6.jpg',
-  '/images/jojohn hack/7.jpg',
-  '/images/jojohn hack/8.jpg',
-  '/images/jojohn hack/9.jpg',
-  '/images/jojohn hack/10.jpg',
-  '/images/jojohn hack/11.jpg',
-  '/images/jojohn hack/12.jpg',
-  '/images/jojohn hack/13.jpg',
-  '/images/jojohn hack/14.jpg',
-  '/images/jojohn hack/15.jpg',
-  '/images/jojohn hack/16.jpg',
-  '/images/jojohn hack/17.jpg',
-  '/images/jojohn hack/18.jpg',
-  '/images/jojohn hack/19.jpg',
-  '/images/jojohn hack/20.jpg',
-  '/images/jojohn hack/21.jpg',
-  '/images/jojohn hack/22.jpg',
-  '/images/jojohn hack/23.jpg',
-  '/images/jojohn hack/24.jpg',
-  '/images/jojohn hack/25.jpg',
-  '/images/jojohn hack/26.jpg',
-  '/images/jojohn hack/27.jpg',
-  '/images/jojohn hack/28.jpg',
-  '/images/jojohn hack/29.jpg',
-  '/images/jojohn hack/30.jpg',
-  '/images/jojohn hack/31.jpg',
-  ],
-  icon: 'chart-line',
-  gradient: 'from-blue-600 to-blue-700',
-  bgGradient: 'from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/50',
-  technologies: ['Flutter', 'Dart', 'Packages', 'API Integration'],
-  features: ['Real-time Data', 'Custom Reports', 'Data Visualization', 'Export Options'],
-  githubUrl: 'https://github.com/yourusername/analytics'
-  },
-  {
-  id: 6,
-  title: 'Link App',
-  category: 'app',
-  description: 'Your ultimate download hub, providing direct access to the latest movies, games, apps, and software.',
-  fullDescription: 'A comprehensive download platform offering curated links to the latest digital content across multiple categories.',
-  images: [
-  '/images/link/link1.jpg',
-  '/images/link/link2.jpg',
-  '/images/link/link3.jpg',
-  '/images/link/link4.jpg',
-  ],
-  icon: 'palette',
-  gradient: 'from-blue-700 to-blue-600',
-  bgGradient: 'from-blue-100 to-blue-50 dark:from-blue-900/50 dark:to-blue-950/50',
-  technologies: ['Flutter', 'Dart', 'Website Links', 'Packages'],
-  features: ['Beautiful Templates', 'Custom Domains', 'SEO Optimized', 'Analytics'],
-  githubUrl: 'https://github.com/yourusername/creative'
-  },
-  {
-  id: 7,
-  title: 'Hotline App',
-  category: 'app',
-  description: 'A dedicated hub on the Hotline app for effortlessly downloading movies, games, apps, and software.',
-  fullDescription: 'Hotline App is a streamlined download manager with a clean interface for accessing and organizing digital content.',
-  images: [
-  '/images/hotline/hotline1.jpg',
-  '/images/hotline/hotline2.jpg',
-  '/images/hotline/hotline3.jpg',
-  '/images/hotline/hotline4.jpg',
-  ],
-  icon: 'hospital',
-  gradient: 'from-blue-500 to-blue-600',
-  bgGradient: 'from-blue-50 to-slate-50 dark:from-blue-950/50 dark:to-slate-900/50',
-  technologies: ['Flutter', 'Dart', 'Website Links'],
-  features: ['Patient Records', 'Appointment System', 'Billing', 'HIPAA Compliant'],
-  githubUrl: 'https://github.com/yourusername/healthcare',
-  featured: true
-  },
-  {
-  id: 8,
-  title: 'Health lifestyle app',
-  category: 'app',
-  description: 'A dedicated health lifestyle app for downloading the latest health-related movies, games, and software.',
-  fullDescription: 'A comprehensive health lifestyle platform with curated content, wellness tracking, and personalized recommendations.',
-  images: [
-  '/images/health/health1.jpg',
-  '/images/health/health2.jpg',
-  '/images/health/health3.jpg',
-  '/images/health/health4.jpg',
-  '/images/health/health5.jpg',
-  '/images/health/health6.jpg',
-  '/images/health/health7.jpg',
-  '/images/health/health8.jpg',
-  '/images/health/health9.jpg',
-  '/images/health/health10.jpg',
-  '/images/health/health11.jpg',
-  ],
-  icon: 'boxes',
-  gradient: 'from-blue-600 to-blue-700',
-  bgGradient: 'from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/50',
-  technologies: ['Flutter', 'Dart', 'AI Integration', 'Packages', 'API Integration'],
-  features: ['Predictive Analytics', 'Auto Reordering', 'Multi-location', 'Barcode Scanning'],
-  githubUrl: 'https://github.com/yourusername/inventory'
-  },
-  
-
-  // ===== NEW WEBSITE PROJECTS =====
-  {
-  id: 10,
-  title: 'AI Web Assistants',
-  category: 'website',
-  description: 'A curated platform showcasing AI assistants and tools for productivity, creativity, and daily life.',
-  fullDescription: 'AI Assistants Hub is your gateway to the world of artificial intelligence. Discover, compare, and access the best AI tools for your needs.',
-  images: [
-  '/images/webassistant/web1.png',
-  ],
-  icon: 'robot',
-  gradient: 'from-blue-600 to-blue-700',
-  bgGradient: 'from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/50',
-  technologies: ['Html', 'Css', 'Python', 'API Integration', 'AI Integration'],
-  features: ['AI Tool Directory', 'User Reviews', 'Category Filters', 'Comparison Charts'],
-  websiteUrl: 'https://aiassistants.onrender.com/',
-  githubUrl: 'https://github.com/yourusername/ai-assistants',
-  featured: false
-  },
-  {
-  id: 11,
-  title: 'Password Generator Pro',
-  category: 'website',
-  description: 'Generate secure, strong passwords with customizable options and real-time strength analysis.',
-  fullDescription: 'A powerful password generator with customizable length, character types, and real-time strength evaluation. Generate and copy secure passwords instantly.',
-  images: [
-  '/images/generator/password1.png',
-  '/images/generator/password2.png',
-  
-  ],
-  icon: 'key',
-  gradient: 'from-blue-500 to-blue-600',
-  bgGradient: 'from-blue-50 to-slate-50 dark:from-blue-950/50 dark:to-slate-900/50',
-  technologies: ['Html', 'Css', 'Python', 'API Integration'],
-  features: ['Custom Length', 'Character Selection', 'Strength Meter', 'One-click Copy'],
-  websiteUrl: 'https://passwordgen-neon.vercel.app/',
-  githubUrl: 'https://github.com/yourusername/password-gen',
-  featured: false
-  },
-  {
-  id: 12,
-  title: 'Jojohn Bot',
-  category: 'website',
-  description: 'An interactive chatbot assistant built with modern AI technologies for engaging conversations.',
-  fullDescription: 'Jojohn Bot is a conversational AI agent designed to assist with various tasks, answer questions, and provide engaging interactions.',
-  images: [
-  '/images/assistant/assistant1.png',
-  '/images/assistant/assistant2.png',
-  ],
-  icon: 'comment-dots',
-  gradient: 'from-blue-700 to-blue-600',
-  bgGradient: 'from-blue-100 to-blue-50 dark:from-blue-900/50 dark:to-blue-950/50',
-  technologies: ['Html', 'Css', 'Python', 'API Integration', 'AI Integration'],
-  features: ['Natural Language Processing', 'Context Awareness', 'Multi-turn Conversations', 'Custom Responses'],
-  websiteUrl: 'https://jojohnbot.vercel.app/',
-  githubUrl: 'https://github.com/yourusername/jojohn-bot',
-  featured: false
-  },
-  {
-  id: 13,
-  title: 'Phishing Detector',
-  category: 'website',
-  description: 'Advanced phishing detection tool that analyzes URLs and emails for potential security threats.',
-  fullDescription: 'Protect yourself from phishing attacks with this intelligent detection system. Analyze links, emails, and websites for suspicious patterns.',
-  images: [
-  '/images/phishing/phishing.png',
-  '/images/phishing/phishing1.png',
-  ],
-  icon: 'shield-halved',
-  gradient: 'from-blue-600 to-blue-500',
-  bgGradient: 'from-slate-50 to-blue-50 dark:from-slate-900/50 dark:to-blue-950/50',
-  technologies: ['Html', 'CSS', 'Python', 'Scam Website Links'],
-  features: ['URL Analysis', 'Email Scanning', 'Threat Detection', 'Report Generation'],
-  websiteUrl: 'https://phishingdetector-4.onrender.com/',
-  githubUrl: 'https://github.com/yourusername/phishing-detector',
-  featured: true
-  },
-  {
-  id: 14,
-  title: 'URL Scam Detector',
-  category: 'website',
-  description: 'Real-time URL scam detection with advanced heuristics and threat intelligence.',
-  fullDescription: 'A comprehensive URL scam detection tool that uses advanced heuristics, threat intelligence, and machine learning to identify malicious links.',
-  images: [
-  '/images/scam/Scam.png',
-  '/images/scam/Scam1.png',
-  '/images/scam/Scam2.png',
-  ],
-  icon: 'link',
-  gradient: 'from-blue-700 to-blue-600',
-  bgGradient: 'from-blue-100 to-blue-50 dark:from-blue-900/50 dark:to-blue-950/50',
-  technologies: ['Html', 'Css', 'Python', 'Scam Url Links'],
-  features: ['Real-time Analysis', 'Threat Intelligence', 'Historical Data', 'API Access'],
-  websiteUrl: 'https://urlscamdetector.onrender.com/',
-  githubUrl: 'https://github.com/yourusername/url-scam-detector',
-  featured: false
-  },
-  {
-  id: 15,
-  title: 'WebInfo Scanner',
-  category: 'website',
-  description: 'Comprehensive website information scanner providing detailed insights about any domain.',
-  fullDescription: 'Get detailed information about any website including DNS records, SSL certificates, server details, and security headers.',
-  images: [
-  '/images/webinfo/info1.png',
-  '/images/webinfo/info2.png', 
-  '/images/webinfo/info3.png', 
-  '/images/webinfo/info4.png', 
-  ],
-  icon: 'globe',
-  gradient: 'from-blue-600 to-blue-700',
-  bgGradient: 'from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/50',
-  technologies: ['Html', 'Css', 'Python', 'Packages'],
-  features: ['DNS Lookup', 'SSL Analysis', 'Header Inspection', 'Server Details'],
-  websiteUrl: 'https://webinfo-seven.vercel.app/',
-  githubUrl: 'https://github.com/yourusername/webinfo',
-  featured: false
-  },
-
-  // ===== NEW SYSTEM PROJECTS (GitHub) =====
-  {
-  id: 16,
-  title: 'File Tracking System',
-  category: 'system',
-  description: 'A comprehensive file tracking and management system with version control and audit trails.',
-  fullDescription: 'Track every file movement across your organization with detailed logs, version history, and permission-based access control.',
-  images: ['/images/file-tracking/1.jpg', '/images/file-tracking/2.jpg', '/images/file-tracking/3.jpg'],
-  icon: 'folder-tree',
-  gradient: 'from-blue-500 to-blue-600',
-  bgGradient: 'from-blue-50 to-slate-50 dark:from-blue-950/50 dark:to-slate-900/50',
-  technologies: ['Node.js', 'Express', 'PostgreSQL'],
-  features: ['Version Control', 'Audit Trail', 'Permission Management', 'Search & Filter'],
-  githubUrl: 'https://github.com/SyntaxRepo/file-tracking-system',
-  featured: false
-  },
-  {
-  id: 17,
-  title: 'Voting System',
-  category: 'system',
-  description: 'Secure and transparent voting system with real-time results and fraud prevention.',
-  fullDescription: 'A secure online voting platform with end-to-end encryption, real-time results, and comprehensive fraud prevention measures.',
-  images: ['/images/voting/1.jpg', '/images/voting/2.jpg', '/images/voting/3.jpg'],
-  icon: 'vote-yea',
-  gradient: 'from-blue-700 to-blue-600',
-  bgGradient: 'from-blue-100 to-blue-50 dark:from-blue-900/50 dark:to-blue-950/50',
-  technologies: ['React', 'Node.js', 'Blockchain'],
-  features: ['Secure Authentication', 'Real-time Results', 'Fraud Detection', 'Audit Logs'],
-  githubUrl: 'https://github.com/SyntaxRepo/votingsystem',
-  featured: true
-  },
-  {
-  id: 18,
-  title: 'Login System with Twist',
-  category: 'system',
-  description: 'An innovative login system with multi-factor authentication and unusual security challenges.',
-  fullDescription: 'A next-generation login system that combines traditional authentication with innovative security challenges for enhanced protection.',
-  images: ['/images/login-twist/1.jpg', '/images/login-twist/2.jpg', '/images/login-twist/3.jpg'],
-  icon: 'lock',
-  gradient: 'from-blue-600 to-blue-500',
-  bgGradient: 'from-slate-50 to-blue-50 dark:from-slate-900/50 dark:to-blue-950/50',
-  technologies: ['Python', 'Django', 'JWT'],
-  features: ['Multi-factor Auth', 'Security Challenges', 'Session Management', 'Activity Logging'],
-  githubUrl: 'https://github.com/SyntaxRepo/loginsystemwithtwist',
-  featured: false
-  },
-  {
-  id: 19,
-  title: 'Lending System',
-  category: 'system',
-  description: 'Complete lending platform with loan management, payments, and credit scoring.',
-  fullDescription: 'A full-featured lending platform with loan application management, payment processing, credit scoring, and reporting.',
-  images: ['/images/lending/1.jpg', '/images/lending/2.jpg', '/images/lending/3.jpg'],
-  icon: 'hand-holding-usd',
-  gradient: 'from-blue-700 to-blue-600',
-  bgGradient: 'from-blue-100 to-blue-50 dark:from-blue-900/50 dark:to-blue-950/50',
-  technologies: ['Java', 'Spring Boot', 'MySQL'],
-  features: ['Loan Applications', 'Credit Scoring', 'Payment Processing', 'Reporting'],
-  githubUrl: 'https://github.com/SyntaxRepo/lending-system',
-  featured: false
-  }
-  ];
-  %>
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-50 dark:from-slate-900 dark:via-blue-950 dark:to-slate-900 py-20 mb-16">
@@ -984,13 +777,20 @@ class="flex items-center justify-center gap-2 px-5 py-3 bg-slate-100 dark:bg-sla
   .shadow-glow-blue {
     box-shadow: 0 0 10px rgba(30, 64, 175, 0.8), 0 0 20px rgba(30, 64, 175, 0.4);
   }
-
   .shadow-glow-indigo {
     box-shadow: 0 0 10px rgba(79, 70, 229, 0.8), 0 0 20px rgba(79, 70, 229, 0.4);
   }
-
   .shadow-glow-sky {
     box-shadow: 0 0 10px rgba(2, 132, 199, 0.8), 0 0 20px rgba(2, 132, 199, 0.4);
+  }
+  .shadow-glow-violet {
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.8), 0 0 20px rgba(139, 92, 246, 0.4);
+  }
+  .shadow-glow-teal {
+    box-shadow: 0 0 10px rgba(20, 184, 166, 0.8), 0 0 20px rgba(20, 184, 166, 0.4);
+  }
+  .shadow-glow-rose {
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.8), 0 0 20px rgba(244, 63, 94, 0.4);
   }
 
   /* Rotate Slow - GPU Accelerated */
@@ -1124,12 +924,42 @@ class="flex items-center justify-center gap-2 px-5 py-3 bg-slate-100 dark:bg-sla
     will-change: opacity, filter;
   }
 
+  /* Floating Code Brackets */
+  @keyframes float-bracket {
+    0%,100% { transform: translateY(0) scale(1) rotate(0deg); opacity:0.2; }
+    25% { transform: translateY(-15px) scale(1.05) rotate(2deg); opacity:0.35; }
+    50% { transform: translateY(-30px) scale(0.95) rotate(-2deg); opacity:0.5; }
+    75% { transform: translateY(-15px) scale(1.05) rotate(1deg); opacity:0.35; }
+  }
+  .animate-float-bracket {
+    animation: float-bracket 7s ease-in-out infinite;
+    will-change: transform,opacity;
+  }
+
+  /* Terminal cursor */
+  @keyframes terminal-cursor {
+    0%,100% { opacity:0.2; transform:translateX(0); }
+    50% { opacity:0.6; transform:translateX(8px); }
+  }
+  .animate-terminal-cursor {
+    animation: terminal-cursor 8s ease-in-out infinite;
+    will-change: transform,opacity;
+  }
+
+  @keyframes blink-cursor { 0%,100% { opacity:1; } 50% { opacity:0; } }
+  .animate-blink-cursor {
+    animation: blink-cursor 1s step-end infinite;
+    will-change: opacity;
+  }
+
   /* Performance: Contain paint and layout */
   .animate-scan-line,
   .animate-float-tech,
+  .animate-float-bracket,
   .animate-tech-float,
   .animate-rotate-slow,
-  .animate-pulse-glow {
+  .animate-pulse-glow,
+  .animate-terminal-cursor {
     contain: layout style paint;
   }
 
@@ -1139,9 +969,11 @@ class="flex items-center justify-center gap-2 px-5 py-3 bg-slate-100 dark:bg-sla
     .animate-rotate-slow {
       animation-duration: 12s;
     }
-    
     .animate-tech-float {
       animation-duration: 30s;
+    }
+    .animate-float-bracket {
+      animation-duration: 10s;
     }
   }
 
@@ -1292,6 +1124,8 @@ class="flex items-center justify-center gap-2 px-5 py-3 bg-slate-100 dark:bg-sla
     .bg-white\/90,
     .dark\:bg-slate-900\/90,
     .bg-black\/60,
+    .bg-white\/10,
+    .dark\:bg-black\/10,
     [class*="backdrop-blur"] {
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
@@ -1315,8 +1149,8 @@ class="flex items-center justify-center gap-2 px-5 py-3 bg-slate-100 dark:bg-sla
       display: none !important;
     }
 
-    /* 5. REDUCE FLOATING TECH ICONS - keep only the first 3 */
-    .fixed.inset-0 .animate-float-tech:nth-child(n+4) {
+    /* 5. REDUCE FLOATING TECH ICONS - keep only first 8 */
+    .tech-icon:nth-child(n+9) {
       display: none !important;
     }
 
@@ -1325,12 +1159,12 @@ class="flex items-center justify-center gap-2 px-5 py-3 bg-slate-100 dark:bg-sla
       display: none !important;
     }
 
-    /* 7. HIDE FLOATING CODE BRACKETS (lightweight but we hide to save) */
+    /* 7. HIDE FLOATING CODE BRACKETS */
     .animate-float-bracket {
       display: none !important;
     }
 
-    /* 8. HIDE TERMINAL CURSOR LINES (lightweight but optional) */
+    /* 8. HIDE TERMINAL CURSOR LINES */
     .animate-terminal-cursor {
       display: none !important;
     }
@@ -1338,7 +1172,7 @@ class="flex items-center justify-center gap-2 px-5 py-3 bg-slate-100 dark:bg-sla
 
   @media (max-width: 480px) {
     /* Further reduce for small phones */
-    .fixed.inset-0 .animate-float-tech:nth-child(n+2) {
+    .tech-icon:nth-child(n+5) {
       display: none !important;
     }
     .animate-scan-line:nth-child(n+2) {
