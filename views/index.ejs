@@ -36,7 +36,7 @@
         </linearGradient>
       </defs>
       
-      <!-- Animated Horizontal Lines - More lines for extra tech feel -->
+      <!-- Animated Horizontal Lines -->
       <line x1="0" y1="6%"  x2="100%" y2="6%"  stroke="url(#lineGradient1)" stroke-width="2" class="animate-scan-line" style="animation-delay: 0s;"/>
       <line x1="0" y1="18%" x2="100%" y2="18%" stroke="url(#lineGradient2)" stroke-width="2" class="animate-scan-line" style="animation-delay: 0.6s;"/>
       <line x1="0" y1="30%" x2="100%" y2="30%" stroke="url(#lg4)" stroke-width="2" class="animate-scan-line" style="animation-delay: 1.2s;"/>
@@ -63,8 +63,7 @@
       <rect width="100%" height="100%" fill="url(#grid-dot)" />
     </svg>
 
-    <!-- ═══ FLOATING TECH ICONS — EXPANDED ═══ -->
-    <!-- Row 1: General tech -->
+    <!-- ═══ FLOATING TECH ICONS ═══ -->
     <div class="absolute top-20 left-20 w-24 h-24 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0s;">
       <div class="w-full h-full border-t-2 border-l-2 border-blue-600 dark:border-blue-400 rounded-3xl rotate-45 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
         <i class="fas fa-code text-blue-700 dark:text-blue-500 text-3xl -rotate-45"></i>
@@ -95,7 +94,7 @@
       </div>
     </div>
 
-    <!-- Row 2: Programming languages & frameworks -->
+    <!-- Programming languages & frameworks -->
     <div class="absolute top-32 left-1/3 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0.6s;">
       <div class="w-full h-full border-2 border-cyan-600/60 dark:border-cyan-500/50 rounded-xl rotate-12 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
         <i class="fab fa-js text-cyan-700 dark:text-cyan-400 text-xl -rotate-12"></i>
@@ -122,7 +121,7 @@
       </div>
     </div>
 
-    <!-- Row 3: DevOps, cloud & tools -->
+    <!-- DevOps, cloud & tools -->
     <div class="absolute top-60 right-10 w-18 h-18 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 1.4s;">
       <div class="w-full h-full border-2 border-sky-600/60 dark:border-sky-500/50 rounded-2xl rotate-3 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
         <i class="fab fa-git-alt text-sky-700 dark:text-sky-400 text-xl -rotate-3"></i>
@@ -203,7 +202,7 @@
       <span class="inline-block w-2 h-4 bg-cyan-600/30 dark:bg-cyan-400/25 ml-1 animate-blink-cursor"></span>
     </div>
 
-    <!-- ═══ PARTICLES — EXPANDED ═══ -->
+    <!-- ═══ PARTICLES ═══ -->
     <div class="absolute inset-0 opacity-60 dark:opacity-100">
       <!-- Blue Particles -->
       <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 15%; left: 10%; animation-delay: 0s;"></div>
@@ -329,7 +328,7 @@
           </a>
         </div>
 
-        <!-- Stats with Animated Counters (Happy Clients Removed) -->
+        <!-- Stats -->
         <div class="grid grid-cols-2 gap-4 mt-12">
           <div class="stat-box group hover-lift animate-fade-in card-border" style="animation-delay: 0.2s;" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
             <div class="flex items-center justify-between mb-2">
@@ -349,8 +348,8 @@
         </div>
       </div>
 
-      <!-- Hero Image Section -->
-      <div class="relative hidden md:block animate-fade-in-up" style="animation-delay: 0.2s;">
+      <!-- Hero Image Section - Visible on all devices -->
+      <div class="relative animate-fade-in-up" style="animation-delay: 0.2s;">
         <!-- Animated Border Glow -->
         <div class="absolute inset-0 bg-gradient-to-r from-blue-400/40 to-indigo-400/40 dark:from-blue-500/30 dark:to-indigo-500/30 rounded-3xl blur-2xl animate-pulse"></div>
         
@@ -384,6 +383,7 @@
               src="/images/myself.jpeg" 
               alt="Jomer John V. Alvarado" 
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\\'flex items-center justify-center h-full bg-slate-200 dark:bg-slate-700 rounded-2xl\\'><i class=\\'fas fa-user text-6xl text-slate-400 dark:text-slate-500\\'></i></div>'"
             />
             <!-- Tech Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
@@ -551,9 +551,9 @@
             <% }); %>
           </div>
 
-          <!-- Links (Website + GitHub) -->
+          <!-- Links (Website + GitHub) - Website link hidden for Jojohn Hack Tool -->
           <div class="flex flex-wrap gap-3 mt-2 pt-3 border-t border-slate-200 dark:border-slate-700">
-            <% if (project.websiteUrl) { %>
+            <% if (project.websiteUrl && project.id !== 1) { %>
               <a href="<%= project.websiteUrl %>" target="_blank" 
                  class="inline-flex items-center gap-2 text-blue-700 dark:text-blue-400 font-semibold text-sm hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 group">
                 <i class="fas fa-globe"></i>
@@ -693,7 +693,7 @@
       <!-- ===== ACTION BUTTONS ===== -->
       <div class="flex flex-wrap gap-3 pt-5 border-t border-slate-200 dark:border-slate-800">
 
-        <!-- Visit Website -->
+        <!-- Visit Website (hidden for Jojohn Hack Tool via JavaScript) -->
         <a id="modalWebsiteLink" href="#" target="_blank" 
            class="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-all duration-300 shadow-md">
           <i class="fas fa-globe"></i>Visit Website
@@ -990,7 +990,7 @@
   }
   .animate-blink-cursor { animation: blink-cursor 1s step-end infinite; will-change: opacity; }
 
-  /* Matrix-style float - Removed binary content but keeping the keyframe for other elements if needed */
+  /* Matrix-style float */
   @keyframes matrix-float {
     0%,100% { opacity:0.06; transform:translateY(0); }
     50%     { opacity:0.15; transform:translateY(-8px); }
@@ -1172,16 +1172,16 @@
         featuredBadge.classList.add('hidden');
       }
 
-      // Website link
+      // --- Website Link: HIDE for project id === 1 (Jojohn Hack Tool) ---
       const websiteLink = document.getElementById('modalWebsiteLink');
-      if (project.websiteUrl) {
+      if (project.websiteUrl && project.id !== 1) {
         websiteLink.href = project.websiteUrl;
         websiteLink.style.display = 'flex';
       } else {
         websiteLink.style.display = 'none';
       }
 
-      // GitHub link
+      // --- GitHub Link ---
       const githubLink = document.getElementById('modalGithubLink');
       if (project.githubUrl) {
         githubLink.href = project.githubUrl;

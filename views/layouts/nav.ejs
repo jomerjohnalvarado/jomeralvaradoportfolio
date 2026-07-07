@@ -39,7 +39,7 @@
           <i class="fas fa-sun theme-icon" style="display: block;"></i>
           <i class="fas fa-moon theme-icon" style="display: none;"></i>
         </button>
-        <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition text-slate-900 dark:text-white">
+        <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition text-slate-900 dark:text-white" aria-label="Toggle menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -69,3 +69,111 @@
     </div>
   </div>
 </nav>
+
+<!-- ===================== NAV JAVASCRIPT ===================== -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // ============================================================
+    // 1. MOBILE MENU TOGGLE (works on Android & all touch devices)
+    // ============================================================
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMenu(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (mobileMenu) {
+        mobileMenu.classList.toggle('hidden');
+        // Optionally change the icon (hamburger -> close)
+        const svg = mobileMenuBtn.querySelector('svg');
+        if (svg) {
+          const paths = svg.querySelectorAll('path');
+          if (mobileMenu.classList.contains('hidden')) {
+            // Back to hamburger
+            paths.forEach(p => p.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'));
+          } else {
+            // Close icon
+            paths.forEach(p => p.setAttribute('d', 'M6 18L18 6M6 6l12 12'));
+          }
+        }
+      }
+    }
+
+    if (mobileMenuBtn && mobileMenu) {
+      // Use both click and touchstart for Android responsiveness
+      mobileMenuBtn.addEventListener('click', toggleMenu);
+      mobileMenuBtn.addEventListener('touchstart', toggleMenu, { passive: false });
+
+      // Close menu when a link inside it is clicked
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          // Reset hamburger icon
+          const svg = mobileMenuBtn.querySelector('svg');
+          if (svg) {
+            const paths = svg.querySelectorAll('path');
+            paths.forEach(p => p.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'));
+          }
+        });
+      });
+    }
+
+    // ============================================================
+    // 2. THEME TOGGLE (both desktop and mobile)
+    // ============================================================
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      if (isDark) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateThemeIcons();
+    }
+
+    function updateThemeIcons() {
+      const isDark = document.documentElement.classList.contains('dark');
+      document.querySelectorAll('.theme-icon.fa-sun').forEach(el => {
+        el.style.display = isDark ? 'none' : 'block';
+      });
+      document.querySelectorAll('.theme-icon.fa-moon').forEach(el => {
+        el.style.display = isDark ? 'block' : 'none';
+      });
+    }
+
+    // Desktop & mobile theme buttons
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+      themeToggle.addEventListener('touchstart', toggleTheme, { passive: true });
+    }
+    if (themeToggleMobile) {
+      themeToggleMobile.addEventListener('click', toggleTheme);
+      themeToggleMobile.addEventListener('touchstart', toggleTheme, { passive: true });
+    }
+
+    // Sync icons on load
+    updateThemeIcons();
+
+    // ============================================================
+    // 3. (Optional) Close mobile menu when screen resizes to desktop
+    // ============================================================
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 768 && mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        // Reset hamburger icon
+        const svg = mobileMenuBtn.querySelector('svg');
+        if (svg) {
+          const paths = svg.querySelectorAll('path');
+          paths.forEach(p => p.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'));
+        }
+      }
+    });
+  });
+</script>
