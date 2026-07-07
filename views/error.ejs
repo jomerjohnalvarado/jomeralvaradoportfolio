@@ -1,29 +1,29 @@
 <%- include('./layouts/header.ejs') %>
 
-<div class="pt-32 pb-20">
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="pt-32 pb-20 min-h-screen relative overflow-hidden text-gray-900 dark:text-slate-100">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center animate-fade-in-up">
       <div class="mb-8">
-        <i class="fas fa-server text-9xl text-red-500 mb-4 inline-block animate-bounce-slow"></i>
+        <i class="fas fa-server text-7xl sm:text-8xl md:text-9xl text-red-500 mb-4 inline-block animate-bounce-slow"></i>
       </div>
       
-      <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Server Error</h2>
-      <p class="text-xl text-slate-600 dark:text-slate-300 mb-4">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Server Error</h2>
+      <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 mb-4 max-w-2xl mx-auto">
         <%= message || 'Something went wrong on our end!' %>
       </p>
       
-      <div class="bg-red-50 dark:bg-red-950/20 border border-red-300 dark:border-red-800 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
-        <p class="text-red-800 dark:text-red-300 font-mono text-sm">
+      <div class="bg-red-50 dark:bg-red-950/20 border border-red-300 dark:border-red-800 rounded-lg p-4 sm:p-6 mb-8 max-w-2xl mx-auto">
+        <p class="text-red-800 dark:text-red-300 font-mono text-xs sm:text-sm break-words">
           <%= typeof error !== 'undefined' && error ? error.message : 'An unexpected error occurred' %>
         </p>
       </div>
       
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/" class="btn-primary">
+      <div class="flex flex-wrap gap-3 sm:gap-4 justify-center">
+        <a href="/" class="btn-primary text-sm sm:text-base">
           <i class="fas fa-home"></i>
           <span>Go Home</span>
         </a>
-        <a href="/contact" class="btn-secondary">
+        <a href="/contact" class="btn-secondary text-sm sm:text-base">
           <i class="fas fa-envelope"></i>
           <span>Contact Support</span>
         </a>
@@ -31,5 +31,70 @@
     </div>
   </section>
 </div>
+
+<style>
+  /* ============================================================
+     MOBILE OPTIMIZATION: DISABLE HEAVY GPU EFFECTS
+     ============================================================ */
+  @media (max-width: 768px) {
+    /* Disable backdrop blur on mobile (from header/footer) */
+    .backdrop-blur-sm,
+    .backdrop-blur-md,
+    .backdrop-blur-lg,
+    .backdrop-blur-xl,
+    .backdrop-blur-2xl,
+    .bg-white\/95,
+    .dark\:bg-slate-950\/95,
+    .bg-white\/90,
+    .dark\:bg-slate-800\/90,
+    .bg-white\/80,
+    .dark\:bg-slate-800\/80,
+    [class*="backdrop-blur"] {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    /* Disable scale transforms on mobile */
+    .hover\:scale-105:hover {
+      transform: none !important;
+    }
+    .hover\:scale-110:hover {
+      transform: none !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0) translateZ(0); }
+    50% { transform: translateY(-10px) translateZ(0); }
+  }
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(30px) translateZ(0); }
+    to { opacity: 1; transform: translateY(0) translateZ(0); }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+    will-change: transform, opacity;
+  }
+
+  .btn-primary {
+    @apply px-4 sm:px-8 py-2.5 sm:py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 transition-all duration-300 inline-flex items-center gap-2 sm:gap-3 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply px-4 sm:px-8 py-2.5 sm:py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border-2 border-blue-600 dark:border-blue-600 font-bold rounded-lg sm:rounded-xl hover:bg-blue-50 dark:hover:bg-slate-800 transition-all duration-300 inline-flex items-center gap-2 sm:gap-3 hover:scale-105;
+  }
+</style>
 
 <%- include('./layouts/footer.ejs') %>
