@@ -362,7 +362,7 @@
     </div>
   </section>
 
-  <!-- FAQ Section (UPDATED with new AI/tech support questions) -->
+  <!-- FAQ Section -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-20 relative z-10">
     <h2 class="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-3 text-center justify-center">
       <i class="fas fa-question-circle text-blue-600 dark:text-blue-400"></i>
@@ -630,6 +630,66 @@ document.addEventListener('DOMContentLoaded', function() {
     .animate-float-tech,
     .animate-rotate-slow { animation-duration: 12s; }
     .animate-tech-float { animation-duration: 30s; }
+  }
+
+  /* ============================================================
+     MOBILE OPTIMIZATION: DISABLE HEAVY GPU EFFECTS
+     ============================================================ */
+  @media (max-width: 768px) {
+    /* 1. DISABLE BACKDROP BLUR (HEAVIEST) */
+    .backdrop-blur-sm,
+    .backdrop-blur-md,
+    .backdrop-blur-lg,
+    .backdrop-blur-xl,
+    .backdrop-blur-2xl,
+    .bg-white\/80,
+    .dark\:bg-slate-800\/80,
+    .bg-white\/90,
+    .dark\:bg-slate-900\/90,
+    .bg-black\/60,
+    .bg-white\/20,
+    [class*="backdrop-blur"] {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    /* 2. HIDE PARTICLES */
+    .tech-particle {
+      display: none !important;
+    }
+
+    /* 3. HIDE ORBITING RINGS */
+    .animate-rotate-slow,
+    .animate-orbit-1,
+    .animate-orbit-2,
+    .animate-orbit-3 {
+      display: none !important;
+    }
+
+    /* 4. HIDE GLOWING ORBS */
+    .animate-pulse-glow {
+      display: none !important;
+    }
+
+    /* 5. REDUCE FLOATING TECH ICONS - keep only first 3 */
+    .fixed.inset-0 .animate-float-tech:nth-child(n+4) {
+      display: none !important;
+    }
+
+    /* 6. REDUCE SCAN LINES - keep only 2 */
+    .animate-scan-line:nth-child(n+3) {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Further reduce for small phones */
+    .fixed.inset-0 .animate-float-tech:nth-child(n+2) {
+      display: none !important;
+    }
+    .animate-scan-line:nth-child(n+2) {
+      display: none !important;
+    }
   }
 </style>
 
