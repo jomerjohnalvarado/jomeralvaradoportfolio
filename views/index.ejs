@@ -1,13 +1,13 @@
 <%- include('./layouts/header.ejs') %>
 
-<div class="pt-32 pb-20 relative overflow-hidden">
-  <!-- Adaptive Animated Technology Background -->
-  <div class="fixed inset-0 -z-10 overflow-hidden">
-    <!-- Gradient Background - Dark Blue Theme -->
+<div class="pt-32 pb-20 relative overflow-hidden" id="app">
+  <!-- ===== OPTIMIZED BACKGROUND FOR MOBILE ===== -->
+  <div class="fixed inset-0 -z-10 overflow-hidden" id="bg-container">
+    <!-- Gradient Background -->
     <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/80 to-indigo-50/60 dark:from-slate-950 dark:via-blue-950/70 dark:to-indigo-950/40"></div>
     
-    <!-- Animated Code Lines -->
-    <svg class="absolute inset-0 w-full h-full opacity-10 dark:opacity-30" preserveAspectRatio="none">
+    <!-- Scan Lines - Reduced on mobile -->
+    <svg class="absolute inset-0 w-full h-full opacity-10 dark:opacity-30 mobile-hide-scan" preserveAspectRatio="none">
       <defs>
         <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" style="stop-color:#1e40af;stop-opacity:0" />
@@ -29,385 +29,213 @@
           <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:1"/>
           <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0"/>
         </linearGradient>
-        <linearGradient id="lg5" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0"/>
-          <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1"/>
-          <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0"/>
-        </linearGradient>
       </defs>
-      
-      <!-- Animated Horizontal Lines -->
-      <line x1="0" y1="6%"  x2="100%" y2="6%"  stroke="url(#lineGradient1)" stroke-width="2" class="animate-scan-line" style="animation-delay: 0s;"/>
-      <line x1="0" y1="18%" x2="100%" y2="18%" stroke="url(#lineGradient2)" stroke-width="2" class="animate-scan-line" style="animation-delay: 0.6s;"/>
-      <line x1="0" y1="30%" x2="100%" y2="30%" stroke="url(#lg4)" stroke-width="2" class="animate-scan-line" style="animation-delay: 1.2s;"/>
-      <line x1="0" y1="42%" x2="100%" y2="42%" stroke="url(#lineGradient3)" stroke-width="2" class="animate-scan-line" style="animation-delay: 1.8s;"/>
-      <line x1="0" y1="54%" x2="100%" y2="54%" stroke="url(#lg5)" stroke-width="2" class="animate-scan-line" style="animation-delay: 2.4s;"/>
-      <line x1="0" y1="66%" x2="100%" y2="66%" stroke="url(#lineGradient1)" stroke-width="2" class="animate-scan-line" style="animation-delay: 3s;"/>
-      <line x1="0" y1="78%" x2="100%" y2="78%" stroke="url(#lineGradient2)" stroke-width="2" class="animate-scan-line" style="animation-delay: 0.9s;"/>
-      <line x1="0" y1="90%" x2="100%" y2="90%" stroke="url(#lg4)" stroke-width="2" class="animate-scan-line" style="animation-delay: 2.1s;"/>
+      <line x1="0" y1="12%" x2="100%" y2="12%" stroke="url(#lineGradient1)" stroke-width="2" class="animate-scan-line" style="animation-delay:0s;"/>
+      <line x1="0" y1="38%" x2="100%" y2="38%" stroke="url(#lineGradient2)" stroke-width="2" class="animate-scan-line" style="animation-delay:1.2s;"/>
+      <line x1="0" y1="64%" x2="100%" y2="64%" stroke="url(#lineGradient3)" stroke-width="2" class="animate-scan-line" style="animation-delay:2.4s;"/>
+      <line x1="0" y1="88%" x2="100%" y2="88%" stroke="url(#lg4)" stroke-width="2" class="animate-scan-line" style="animation-delay:3.6s;"/>
     </svg>
 
-    <!-- Tech Grid Patterns -->
-    <svg class="absolute inset-0 w-full h-full opacity-10 dark:opacity-40" preserveAspectRatio="none">
+    <!-- Grid Patterns - Simplified -->
+    <svg class="absolute inset-0 w-full h-full opacity-8 dark:opacity-30" preserveAspectRatio="none">
       <defs>
-        <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
-          <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(30, 64, 175, 0.3)" stroke-width="1"/>
-        </pattern>
-        <pattern id="grid-dot" width="60" height="60" patternUnits="userSpaceOnUse">
-          <circle cx="30" cy="30" r="1.5" fill="rgba(59,130,246,0.25)" />
+        <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+          <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(30,64,175,0.2)" stroke-width="0.5"/>
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#grid)" />
     </svg>
-    <svg class="absolute inset-0 w-full h-full opacity-5 dark:opacity-20" preserveAspectRatio="none">
-      <rect width="100%" height="100%" fill="url(#grid-dot)" />
-    </svg>
 
-    <!-- ═══ FLOATING TECH ICONS ═══ -->
-    <div class="absolute top-20 left-20 w-24 h-24 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0s;">
-      <div class="w-full h-full border-t-2 border-l-2 border-blue-600 dark:border-blue-400 rounded-3xl rotate-45 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fas fa-code text-blue-700 dark:text-blue-500 text-3xl -rotate-45"></i>
+    <!-- ===== FLOATING TECH ICONS - REDUCED on mobile ===== -->
+    <div class="tech-icon absolute top-20 left-20 w-20 h-20 opacity-10 dark:opacity-20 animate-float-tech mobile-hide-icon" style="animation-delay:0s;">
+      <div class="w-full h-full border-t-2 border-l-2 border-blue-600 dark:border-blue-400 rounded-2xl rotate-45 flex items-center justify-center bg-white/5 dark:bg-black/5">
+        <i class="fas fa-code text-blue-700 dark:text-blue-400 text-2xl -rotate-45"></i>
       </div>
     </div>
 
-    <div class="absolute top-40 right-32 w-20 h-20 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 2s;">
-      <div class="w-full h-full border-t-2 border-r-2 border-indigo-600 dark:border-indigo-400 rounded-full flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fas fa-server text-indigo-700 dark:text-indigo-500 text-2xl"></i>
+    <div class="tech-icon absolute top-40 right-20 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech mobile-hide-icon" style="animation-delay:2s;">
+      <div class="w-full h-full border-t-2 border-r-2 border-indigo-600 dark:border-indigo-400 rounded-full flex items-center justify-center bg-white/5 dark:bg-black/5">
+        <i class="fas fa-server text-indigo-700 dark:text-indigo-400 text-xl"></i>
       </div>
     </div>
 
-    <div class="absolute bottom-40 left-1/4 w-28 h-28 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 4s;">
-      <div class="w-full h-full border-b-2 border-r-2 border-blue-500 dark:border-blue-400 rounded-3xl flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fas fa-database text-blue-600 dark:text-blue-500 text-3xl"></i>
+    <div class="tech-icon absolute bottom-40 left-20 w-20 h-20 opacity-10 dark:opacity-20 animate-float-tech mobile-hide-icon" style="animation-delay:4s;">
+      <div class="w-full h-full border-b-2 border-r-2 border-blue-500 dark:border-blue-400 rounded-2xl flex items-center justify-center bg-white/5 dark:bg-black/5">
+        <i class="fas fa-database text-blue-600 dark:text-blue-400 text-2xl"></i>
       </div>
     </div>
 
-    <div class="absolute bottom-20 right-20 w-24 h-24 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 1s;">
-      <div class="w-full h-full border-b-2 border-l-2 border-blue-600 dark:border-blue-400 rounded-full flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fas fa-microchip text-blue-700 dark:text-blue-500 text-2xl"></i>
+    <div class="tech-icon absolute bottom-20 right-20 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech mobile-hide-icon" style="animation-delay:1s;">
+      <div class="w-full h-full border-b-2 border-l-2 border-blue-600 dark:border-blue-400 rounded-full flex items-center justify-center bg-white/5 dark:bg-black/5">
+        <i class="fas fa-microchip text-blue-700 dark:text-blue-400 text-xl"></i>
       </div>
     </div>
 
-    <div class="absolute top-1/2 right-1/4 w-20 h-20 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 3s;">
-      <div class="w-full h-full border-t-2 border-b-2 border-indigo-600 dark:border-indigo-400 rounded-3xl flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fas fa-network-wired text-indigo-700 dark:text-indigo-500 text-xl"></i>
-      </div>
-    </div>
+    <!-- ===== FLOATING CODE BRACKETS - HIDDEN on mobile ===== -->
+    <div class="absolute top-28 left-2/3 text-3xl font-mono font-bold text-blue-600/20 dark:text-blue-400/15 animate-float-bracket mobile-hide-bracket" style="animation-delay:0.3s;">{ }</div>
+    <div class="absolute bottom-32 left-1/5 text-2xl font-mono font-bold text-indigo-600/20 dark:text-indigo-400/15 animate-float-bracket mobile-hide-bracket" style="animation-delay:1.8s;">&lt; / &gt;</div>
+    <div class="absolute top-1/3 right-1/5 text-3xl font-mono font-bold text-cyan-600/15 dark:cyan-400/12 animate-float-bracket mobile-hide-bracket" style="animation-delay:2.6s;">[ ]</div>
 
-    <!-- Programming languages & frameworks -->
-    <div class="absolute top-32 left-1/3 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0.6s;">
-      <div class="w-full h-full border-2 border-cyan-600/60 dark:border-cyan-500/50 rounded-xl rotate-12 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fab fa-js text-cyan-700 dark:text-cyan-400 text-xl -rotate-12"></i>
-      </div>
-    </div>
-    <div class="absolute top-1/3 left-10 w-14 h-14 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 2.6s;">
-      <div class="w-full h-full border-2 border-violet-600/60 dark:border-violet-500/50 rounded-xl -rotate-6 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fab fa-python text-violet-700 dark:text-violet-400 text-lg rotate-6"></i>
-      </div>
-    </div>
-    <div class="absolute bottom-1/3 left-1/3 w-18 h-18 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 1.8s;">
-      <div class="w-full h-full border-2 border-orange-600/60 dark:border-orange-500/50 rounded-xl rotate-45 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fab fa-java text-orange-700 dark:text-orange-400 text-xl -rotate-45"></i>
-      </div>
-    </div>
-    <div class="absolute bottom-32 right-1/4 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0.3s;">
-      <div class="w-full h-full border-2 border-pink-600/60 dark:border-pink-500/50 rounded-xl -rotate-12 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fab fa-react text-pink-700 dark:text-pink-400 text-xl rotate-12"></i>
-      </div>
-    </div>
-    <div class="absolute top-1/2 left-2/3 w-14 h-14 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 3.8s;">
-      <div class="w-full h-full border-2 border-emerald-600/60 dark:border-emerald-500/50 rounded-xl rotate-6 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fab fa-php text-emerald-700 dark:text-emerald-400 text-lg -rotate-6"></i>
-      </div>
-    </div>
-
-    <!-- DevOps, cloud & tools -->
-    <div class="absolute top-60 right-10 w-18 h-18 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 1.4s;">
-      <div class="w-full h-full border-2 border-sky-600/60 dark:border-sky-500/50 rounded-2xl rotate-3 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fab fa-git-alt text-sky-700 dark:text-sky-400 text-xl -rotate-3"></i>
-      </div>
-    </div>
-    <div class="absolute bottom-1/4 right-1/5 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 2.2s;">
-      <div class="w-full h-full border-2 border-amber-600/60 dark:border-amber-500/50 rounded-full flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fas fa-cloud text-amber-700 dark:text-amber-400 text-xl"></i>
-      </div>
-    </div>
-    <div class="absolute top-1/4 right-1/3 w-14 h-14 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 0.9s;">
-      <div class="w-full h-full border-2 border-rose-600/60 dark:border-rose-500/50 rounded-xl -rotate-8 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fas fa-terminal text-rose-700 dark:text-rose-400 text-lg rotate-8"></i>
-      </div>
-    </div>
-    <div class="absolute top-2/3 right-1/3 w-18 h-18 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 4.2s;">
-      <div class="w-full h-full border-2 border-teal-600/60 dark:border-teal-500/50 rounded-2xl rotate-12 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fas fa-cogs text-teal-700 dark:text-teal-400 text-xl -rotate-12"></i>
-      </div>
-    </div>
-    <div class="absolute bottom-10 left-1/3 w-16 h-16 opacity-10 dark:opacity-20 animate-float-tech" style="animation-delay: 3.4s;">
-      <div class="w-full h-full border-2 border-fuchsia-600/60 dark:border-fuchsia-500/50 rounded-xl rotate-6 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-sm">
-        <i class="fas fa-laptop-code text-fuchsia-700 dark:text-fuchsia-400 text-lg -rotate-6"></i>
-      </div>
-    </div>
-
-    <!-- Extra tech icons -->
-    <div class="absolute top-1/4 left-2/3 w-14 h-14 opacity-8 dark:opacity-15 animate-float-tech" style="animation-delay: 5s;">
-      <div class="w-full h-full border-2 border-blue-600/50 dark:border-blue-500/40 rounded-lg rotate-45 flex items-center justify-center bg-white/5 dark:bg-black/5 backdrop-blur-sm">
-        <i class="fas fa-robot text-blue-600 dark:text-blue-400 text-lg -rotate-45"></i>
-      </div>
-    </div>
-    <div class="absolute bottom-2/3 left-1/5 w-16 h-16 opacity-8 dark:opacity-15 animate-float-tech" style="animation-delay: 1s;">
-      <div class="w-full h-full border-2 border-indigo-600/50 dark:border-indigo-500/40 rounded-2xl -rotate-3 flex items-center justify-center bg-white/5 dark:bg-black/5 backdrop-blur-sm">
-        <i class="fas fa-shield-alt text-indigo-600 dark:text-indigo-400 text-lg rotate-3"></i>
-      </div>
-    </div>
-    <div class="absolute top-3/4 right-2/3 w-14 h-14 opacity-8 dark:opacity-15 animate-float-tech" style="animation-delay: 3s;">
-      <div class="w-full h-full border-2 border-cyan-600/50 dark:border-cyan-500/40 rounded-full flex items-center justify-center bg-white/5 dark:bg-black/5 backdrop-blur-sm">
-        <i class="fas fa-bolt text-cyan-600 dark:text-cyan-400 text-lg"></i>
-      </div>
-    </div>
-
-    <!-- ═══ FLOATING CODE BRACKETS ═══ -->
-    <div class="absolute top-28 left-2/3 text-4xl font-mono font-bold text-blue-600/20 dark:text-blue-400/15 animate-float-bracket" style="animation-delay:0.3s;">
-      { }
-    </div>
-    <div class="absolute bottom-32 left-1/5 text-3xl font-mono font-bold text-indigo-600/20 dark:text-indigo-400/15 animate-float-bracket" style="animation-delay:1.8s;">
-      &lt; / &gt;
-    </div>
-    <div class="absolute top-1/3 right-1/5 text-4xl font-mono font-bold text-cyan-600/15 dark:cyan-400/12 animate-float-bracket" style="animation-delay:2.6s;">
-      [ ]
-    </div>
-    <div class="absolute bottom-1/3 left-2/3 text-3xl font-mono font-bold text-violet-600/15 dark:text-violet-400/12 animate-float-bracket" style="animation-delay:0.9s;">
-      ( )
-    </div>
-    <div class="absolute top-2/3 right-1/4 text-3xl font-mono font-bold text-rose-600/15 dark:text-rose-400/12 animate-float-bracket" style="animation-delay:3.8s;">
-      { &lt; / &gt; }
-    </div>
-    <div class="absolute top-10 left-1/2 text-2xl font-mono font-bold text-blue-600/12 dark:text-blue-400/10 animate-float-bracket" style="animation-delay:4.5s;">
-      &lt; code &gt;
-    </div>
-
-    <!-- ═══ TERMINAL CURSOR LINES ═══ -->
-    <div class="absolute top-1/2 left-8 text-sm font-mono text-blue-600/20 dark:text-blue-400/15 animate-terminal-cursor hidden sm:block" style="animation-delay:0s;">
+    <!-- ===== TERMINAL CURSOR LINES - HIDDEN on mobile ===== -->
+    <div class="absolute top-1/2 left-8 text-sm font-mono text-blue-600/20 dark:text-blue-400/15 animate-terminal-cursor hidden sm:block mobile-hide-terminal" style="animation-delay:0s;">
       <span class="opacity-80">$</span>
       <span class="text-cyan-600/25 dark:text-cyan-400/20"> npm install --save</span>
       <span class="inline-block w-2 h-4 bg-blue-600/30 dark:bg-blue-400/25 ml-1 animate-blink-cursor"></span>
     </div>
-    <div class="absolute bottom-1/4 right-8 text-sm font-mono text-indigo-600/20 dark:text-indigo-400/15 animate-terminal-cursor" style="animation-delay:3s;">
+    <div class="absolute bottom-1/4 right-8 text-sm font-mono text-indigo-600/20 dark:text-indigo-400/15 animate-terminal-cursor mobile-hide-terminal" style="animation-delay:3s;">
       <span class="opacity-80">$</span>
       <span class="text-violet-600/25 dark:text-violet-400/20"> git push origin main</span>
       <span class="inline-block w-2 h-4 bg-indigo-600/30 dark:bg-indigo-400/25 ml-1 animate-blink-cursor"></span>
     </div>
-    <div class="absolute top-3/4 left-1/4 text-sm font-mono text-cyan-600/20 dark:text-cyan-400/15 animate-terminal-cursor" style="animation-delay:6s;">
-      <span class="opacity-80">$</span>
-      <span class="text-sky-600/25 dark:text-sky-400/20"> yarn build</span>
-      <span class="inline-block w-2 h-4 bg-cyan-600/30 dark:bg-cyan-400/25 ml-1 animate-blink-cursor"></span>
+
+    <!-- ===== PARTICLES - REDUCED on mobile ===== -->
+    <div class="absolute inset-0 opacity-40 dark:opacity-80" id="particles-container">
+      <!-- Only 12 particles total (vs 20+) -->
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top:15%;left:10%;animation-delay:0s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top:35%;left:70%;animation-delay:1.5s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top:60%;left:20%;animation-delay:3s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top:75%;right:15%;animation-delay:4.5s;"></div>
+      
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top:25%;right:30%;animation-delay:0.8s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top:50%;left:45%;animation-delay:2.3s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top:80%;left:30%;animation-delay:3.8s;"></div>
+      
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky" style="top:40%;right:10%;animation-delay:1.2s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky" style="top:70%;right:50%;animation-delay:2.8s;"></div>
+      
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top:30%;left:55%;animation-delay:0.5s;"></div>
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top:90%;right:30%;animation-delay:2s;"></div>
+      
+      <div class="tech-particle absolute w-1.5 h-1.5 bg-teal-500 dark:bg-teal-400 rounded-full animate-tech-float shadow-glow-teal" style="top:10%;right:15%;animation-delay:0.2s;"></div>
     </div>
 
-    <!-- ═══ PARTICLES ═══ -->
-    <div class="absolute inset-0 opacity-60 dark:opacity-100">
-      <!-- Blue Particles -->
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 15%; left: 10%; animation-delay: 0s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 35%; left: 70%; animation-delay: 1.5s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 60%; left: 20%; animation-delay: 3s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 75%; right: 15%; animation-delay: 4.5s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full animate-tech-float shadow-glow-blue" style="top: 45%; left: 5%; animation-delay: 6s;"></div>
-      
-      <!-- Indigo Particles -->
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top: 25%; right: 30%; animation-delay: 0.8s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top: 50%; left: 45%; animation-delay: 2.3s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top: 80%; left: 30%; animation-delay: 3.8s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full animate-tech-float shadow-glow-indigo" style="top: 10%; left: 50%; animation-delay: 5.2s;"></div>
-      
-      <!-- Sky Particles -->
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky" style="top: 40%; right: 10%; animation-delay: 1.2s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky" style="top: 70%; right: 50%; animation-delay: 2.8s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-sky-500 dark:bg-sky-400 rounded-full animate-tech-float shadow-glow-sky" style="top: 20%; left: 80%; animation-delay: 4.2s;"></div>
-      
-      <!-- Violet Particles -->
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top: 30%; left: 55%; animation-delay: 0.5s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top: 90%; right: 30%; animation-delay: 2s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-violet-500 dark:bg-violet-400 rounded-full animate-tech-float shadow-glow-violet" style="top: 5%; right: 60%; animation-delay: 3.5s;"></div>
-      
-      <!-- Teal Particles -->
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-teal-500 dark:bg-teal-400 rounded-full animate-tech-float shadow-glow-teal" style="top: 10%; right: 15%; animation-delay: 0.2s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-teal-500 dark:bg-teal-400 rounded-full animate-tech-float shadow-glow-teal" style="top: 95%; left: 40%; animation-delay: 1.7s;"></div>
-      
-      <!-- Rose/Pink Particles -->
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-rose-500 dark:bg-rose-400 rounded-full animate-tech-float shadow-glow-rose" style="top: 78%; left: 10%; animation-delay: 0.7s;"></div>
-      <div class="tech-particle absolute w-1.5 h-1.5 bg-rose-500 dark:bg-rose-400 rounded-full animate-tech-float shadow-glow-rose" style="top: 18%; left: 40%; animation-delay: 2.2s;"></div>
-    </div>
-
-    <!-- ═══ ANIMATED ORBITS ═══ -->
-    <div class="absolute top-1/4 left-1/3 w-64 h-64 opacity-20 dark:opacity-30">
+    <!-- ===== ANIMATED ORBITS - DISABLED on mobile ===== -->
+    <div class="absolute top-1/4 left-1/3 w-64 h-64 opacity-15 dark:opacity-25 mobile-hide-orbits">
       <svg class="w-full h-full animate-rotate-slow" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#lineGradient1)" stroke-width="0.5" opacity="0.5"/>
-        <circle cx="50" cy="50" r="30" fill="none" stroke="url(#lineGradient2)" stroke-width="0.5" opacity="0.5"/>
-        <circle cx="50" cy="50" r="15" fill="none" stroke="url(#lineGradient3)" stroke-width="0.5" opacity="0.5"/>
-        <circle cx="95" cy="50" r="2.5" fill="#1e40af" class="animate-orbit-1"/>
-        <circle cx="50" cy="5" r="2.5" fill="#0284c7" class="animate-orbit-2"/>
-        <circle cx="5" cy="50" r="2.5" fill="#4f46e5" class="animate-orbit-3"/>
-      </svg>
-    </div>
-    <!-- Second orbit ring -->
-    <div class="absolute bottom-1/3 right-1/4 w-48 h-48 opacity-15 dark:opacity-20">
-      <svg class="w-full h-full animate-rotate-slow" viewBox="0 0 100 100" preserveAspectRatio="none" style="animation-duration:25s;animation-direction:reverse">
-        <circle cx="50" cy="50" r="40" fill="none" stroke="url(#lg4)" stroke-width="0.4" opacity="0.4"/>
-        <circle cx="50" cy="50" r="25" fill="none" stroke="url(#lg5)" stroke-width="0.4" opacity="0.4"/>
-        <circle cx="90" cy="50" r="2" fill="#06b6d4" class="animate-orbit-1" style="animation-duration:8s"/>
-        <circle cx="50" cy="10" r="2" fill="#8b5cf6" class="animate-orbit-2" style="animation-duration:8s"/>
+        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#lineGradient1)" stroke-width="0.5" opacity="0.4"/>
+        <circle cx="50" cy="50" r="30" fill="none" stroke="url(#lineGradient2)" stroke-width="0.5" opacity="0.4"/>
+        <circle cx="50" cy="50" r="15" fill="none" stroke="url(#lineGradient3)" stroke-width="0.5" opacity="0.4"/>
+        <circle cx="95" cy="50" r="2" fill="#1e40af" class="animate-orbit-1"/>
+        <circle cx="50" cy="5" r="2" fill="#0284c7" class="animate-orbit-2"/>
+        <circle cx="5" cy="50" r="2" fill="#4f46e5" class="animate-orbit-3"/>
       </svg>
     </div>
 
-    <!-- ═══ STATUS INDICATOR LIGHTS ═══ -->
-    <div class="absolute top-20 right-1/3 w-3 h-3 bg-blue-500 rounded-full animate-status-pulse" style="animation-delay: 0s;">
+    <!-- ===== STATUS LIGHTS - REDUCED on mobile ===== -->
+    <div class="absolute top-20 right-1/3 w-2.5 h-2.5 bg-blue-500 rounded-full animate-status-pulse mobile-hide-status" style="animation-delay:0s;">
       <div class="absolute inset-0 bg-blue-500 rounded-full animate-status-ping"></div>
     </div>
-    <div class="absolute top-1/3 left-1/4 w-3 h-3 bg-indigo-500 rounded-full animate-status-pulse" style="animation-delay: 1s;">
+    <div class="absolute top-1/3 left-1/4 w-2.5 h-2.5 bg-indigo-500 rounded-full animate-status-pulse mobile-hide-status" style="animation-delay:1s;">
       <div class="absolute inset-0 bg-indigo-500 rounded-full animate-status-ping"></div>
     </div>
-    <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-sky-500 rounded-full animate-status-pulse" style="animation-delay: 2s;">
+    <div class="absolute bottom-1/3 right-1/4 w-2.5 h-2.5 bg-sky-500 rounded-full animate-status-pulse mobile-hide-status" style="animation-delay:2s;">
       <div class="absolute inset-0 bg-sky-500 rounded-full animate-status-ping"></div>
     </div>
-    <div class="absolute top-2/3 left-10 w-2.5 h-2.5 bg-violet-500 rounded-full animate-status-pulse" style="animation-delay: 0.5s;">
-      <div class="absolute inset-0 bg-violet-500 rounded-full animate-status-ping"></div>
-    </div>
-    <div class="absolute bottom-20 left-1/3 w-2.5 h-2.5 bg-teal-500 rounded-full animate-status-pulse" style="animation-delay: 1.5s;">
-      <div class="absolute inset-0 bg-teal-500 rounded-full animate-status-ping"></div>
-    </div>
-    <div class="absolute top-1/2 right-10 w-2.5 h-2.5 bg-rose-500 rounded-full animate-status-pulse" style="animation-delay: 2.5s;">
-      <div class="absolute inset-0 bg-rose-500 rounded-full animate-status-ping"></div>
-    </div>
 
-    <!-- ═══ GLOWING ORBS ═══ -->
-    <div class="absolute top-0 left-1/3 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-indigo-200/20 dark:from-blue-500/10 dark:to-indigo-500/5 rounded-full blur-3xl animate-pulse-glow"></div>
-    <div class="absolute top-1/2 right-0 w-96 h-96 bg-gradient-to-br from-indigo-200/30 to-blue-200/20 dark:from-indigo-500/10 dark:to-blue-500/5 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 1s;"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-indigo-200/20 dark:from-blue-500/10 dark:to-indigo-500/5 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 2s;"></div>
-    <!-- Extra orb -->
-    <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-gradient-to-br from-cyan-200/15 to-violet-200/10 dark:from-cyan-500/8 dark:to-violet-500/5 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 3s;"></div>
+    <!-- ===== GLOWING ORBS - REDUCED on mobile ===== -->
+    <div class="absolute top-0 left-1/3 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-indigo-200/15 dark:from-blue-500/8 dark:to-indigo-500/4 rounded-full blur-3xl animate-pulse-glow mobile-hide-glow"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-indigo-200/15 dark:from-blue-500/8 dark:to-indigo-500/4 rounded-full blur-3xl animate-pulse-glow mobile-hide-glow" style="animation-delay:2s;"></div>
   </div>
 
   <!-- Hero Section -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <!-- Content -->
       <div class="animate-fade-in-up">
-        <div class="inline-block mb-6 animate-bounce-pop">
+        <div class="inline-block mb-4 md:mb-6">
           <span class="badge-glow">
-            <i class="fas fa-star text-blue-600 mr-2"></i><span class="text-blue-700 dark:text-blue-300">Welcome to my Portfolio</span>
+            <i class="fas fa-star text-blue-600 mr-2"></i><span class="text-blue-700 dark:text-blue-300 text-sm md:text-base">Welcome to my Portfolio</span>
           </span>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-black mb-6 text-slate-900 dark:text-white leading-tight animate-fade-in-up">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-4 md:mb-6 text-slate-900 dark:text-white leading-tight">
           Hi, I'm <span class="text-blue-700 dark:text-blue-400">Jomer John Alvarado</span>
-          <span class="inline-block text-5xl animate-bounce-slow ml-2">👋</span>
+          <span class="inline-block text-3xl md:text-5xl animate-bounce-slow ml-2">👋</span>
         </h1>
 
-        <p class="text-xl text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+        <p class="text-base sm:text-lg md:text-xl text-slate-700 dark:text-slate-300 mb-4 md:mb-6 leading-relaxed">
           <i class="fas fa-code text-blue-700 dark:text-blue-400 mr-2"></i>
           A developer creating beautiful, responsive web applications and mobile apps with the power of AI prompting Technology.
         </p>
 
-        <div class="mb-6 space-y-3">
-          <p class="text-lg text-slate-700 dark:text-slate-300 flex items-center gap-2 animate-fade-in-up" style="animation-delay: 0.2s;">
+        <div class="mb-4 md:mb-6 space-y-2 md:space-y-3">
+          <p class="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300 flex items-center gap-2">
             <i class="fas fa-graduation-cap text-blue-700 dark:text-blue-500"></i>
             <strong class="text-slate-900 dark:text-white">Bachelor of Science in Information Technology</strong>
           </p>
-          <p class="text-lg text-slate-700 dark:text-slate-300 flex items-center gap-2 animate-fade-in-up" style="animation-delay: 0.3s;">
+          <p class="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300 flex items-center gap-2">
             <i class="fas fa-school text-blue-600 dark:text-blue-400"></i>
             <strong class="text-slate-900 dark:text-white">St. Vincent's College Incorporated</strong>
           </p>
         </div>
         
-        <div class="flex flex-wrap gap-4 mb-8 animate-fade-in-up" style="animation-delay: 0.4s;">
-          <a href="/projects" class="btn-primary group">
+        <div class="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-8">
+          <a href="/projects" class="btn-primary text-sm md:text-base">
             <span>View My Work</span>
             <i class="fas fa-arrow-right group-hover:translate-x-2 transition"></i>
           </a>
-          <a href="/contact" class="btn-secondary group">
+          <a href="/contact" class="btn-secondary text-sm md:text-base">
             <span>Get In Touch</span>
             <i class="fas fa-envelope group-hover:scale-125 transition"></i>
           </a>
         </div>
 
         <!-- Stats -->
-        <div class="grid grid-cols-2 gap-4 mt-12">
-          <div class="stat-box group hover-lift animate-fade-in card-border" style="animation-delay: 0.2s;" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
-            <div class="flex items-center justify-between mb-2">
-              <i class="fas fa-rocket text-blue-700 dark:text-blue-400 text-2xl group-hover:animate-float"></i>
-              <span class="counter text-3xl font-bold text-blue-700 dark:text-blue-400">50</span>
+        <div class="grid grid-cols-2 gap-3 md:gap-4 mt-8 md:mt-12">
+          <div class="stat-box group hover-lift card-border" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
+            <div class="flex items-center justify-between mb-1 md:mb-2">
+              <i class="fas fa-rocket text-blue-700 dark:text-blue-400 text-xl md:text-2xl"></i>
+              <span class="counter text-2xl md:text-3xl font-bold text-blue-700 dark:text-blue-400">50</span>
             </div>
-            <p class="text-slate-600 dark:text-slate-300 text-sm">Projects</p>
+            <p class="text-slate-600 dark:text-slate-300 text-xs md:text-sm">Projects</p>
           </div>
 
-          <div class="stat-box group hover-lift animate-fade-in card-border" style="animation-delay: 0.6s;" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
-            <div class="flex items-center justify-between mb-2">
-              <i class="fas fa-award text-sky-700 dark:text-sky-400 text-2xl group-hover:animate-float"></i>
-              <span class="counter text-3xl font-bold text-sky-700 dark:text-sky-400">No </span>
+          <div class="stat-box group hover-lift card-border" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
+            <div class="flex items-center justify-between mb-1 md:mb-2">
+              <i class="fas fa-award text-sky-700 dark:text-sky-400 text-xl md:text-2xl"></i>
+              <span class="counter text-2xl md:text-3xl font-bold text-sky-700 dark:text-sky-400">No</span>
             </div>
-            <p class="text-slate-600 dark:text-slate-300 text-sm">Years Exp Yet.</p>
+            <p class="text-slate-600 dark:text-slate-300 text-xs md:text-sm">Years Exp Yet.</p>
           </div>
         </div>
       </div>
 
-      <!-- Hero Image Section - Visible on all devices -->
-      <div class="relative animate-fade-in-up" style="animation-delay: 0.2s;">
-        <!-- Animated Border Glow -->
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-400/40 to-indigo-400/40 dark:from-blue-500/30 dark:to-indigo-500/30 rounded-3xl blur-2xl animate-pulse"></div>
-        
-        <!-- Tech Border Animation -->
-        <div class="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-blue-600 to-indigo-600 p-0.5">
-          <div class="absolute inset-0 bg-white dark:bg-slate-900 rounded-3xl"></div>
-        </div>
-        
-        <!-- Floating Tech Elements -->
-        <div class="absolute -top-6 -right-6 w-20 h-20 border-t-2 border-r-2 border-blue-600 dark:border-blue-400 rounded-3xl rotate-45 animate-float-tech bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm card-border" style="animation-delay: 0s;" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
-          <div class="w-full h-full flex items-center justify-center">
-            <i class="fas fa-code text-blue-700 dark:text-blue-400 text-sm -rotate-45"></i>
-          </div>
-        </div>
-        
-        <div class="absolute -bottom-6 -left-6 w-20 h-20 border-b-2 border-l-2 border-indigo-600 dark:border-indigo-400 rounded-full animate-float-tech bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm card-border" style="animation-delay: 1.5s;" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
-          <div class="w-full h-full flex items-center justify-center">
-            <i class="fas fa-server text-indigo-700 dark:text-indigo-400 text-sm"></i>
-          </div>
-        </div>
-        
-        <div class="relative bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-950 rounded-3xl p-8 overflow-hidden group backdrop-blur-sm card-border" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
-          <!-- Animated Grid Overlay -->
+      <!-- Hero Image -->
+      <div class="relative animate-fade-in-up mt-6 md:mt-0" style="animation-delay: 0.2s;">
+        <div class="relative bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-950 rounded-2xl md:rounded-3xl p-4 md:p-8 overflow-hidden group">
           <div class="absolute inset-0 opacity-10 dark:opacity-30">
             <div class="absolute inset-0 bg-grid-tech"></div>
           </div>
           
-          <!-- Your Profile Picture -->
-          <div class="relative aspect-square rounded-2xl overflow-hidden">
+          <div class="relative aspect-square rounded-xl md:rounded-2xl overflow-hidden">
             <img 
               src="/images/myself.jpeg" 
               alt="Jomer John V. Alvarado" 
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-              onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\\'flex items-center justify-center h-full bg-slate-200 dark:bg-slate-700 rounded-2xl\\'><i class=\\'fas fa-user text-6xl text-slate-400 dark:text-slate-500\\'></i></div>'"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\\'flex items-center justify-center h-full bg-slate-200 dark:bg-slate-700 rounded-xl md:rounded-2xl\\'><i class=\\'fas fa-user text-4xl md:text-6xl text-slate-400 dark:text-slate-500\\'></i></div>'"
             />
-            <!-- Tech Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
-            <div class="absolute inset-0 border-t-2 border-l-2 border-blue-600/50 dark:border-blue-400/30 rounded-2xl group-hover:border-blue-600/70 dark:group-hover:border-blue-400/60 transition-colors duration-300"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="my-20">
+  <div class="my-12 md:my-20">
     <div class="divider max-w-7xl mx-auto border-t border-blue-300 dark:border-blue-600/30"></div>
   </div>
 
-  <!-- Featured Projects Preview -->
+  <!-- Featured Projects -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="mb-12 animate-fade-in">
-      <h2 class="section-title flex items-center gap-3 text-slate-900 dark:text-white">
-        <i class="fas fa-star text-blue-600 text-4xl"></i>Featured Projects
+    <div class="mb-8 md:mb-12">
+      <h2 class="section-title flex items-center gap-2 md:gap-3 text-slate-900 dark:text-white text-2xl sm:text-3xl md:text-4xl">
+        <i class="fas fa-star text-blue-600 text-2xl md:text-4xl"></i>Featured Projects
       </h2>
-      <p class="section-subtitle text-slate-600 dark:text-slate-300">Checkout my recent work and projects</p>
+      <p class="section-subtitle text-slate-600 dark:text-slate-300 text-base md:text-xl">Checkout my recent work and projects</p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
       <% 
       const featured = [
         {
@@ -488,74 +316,66 @@
         }
       ];
       featured.forEach((project, index) => { %>
-        <div class="feature-card animate-fade-in-up card-hover card-border" style="animation-delay: <%= index * 0.15 %>s;" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
-          <!-- Image Section with View Gallery -->
-          <div class="h-48 bg-gradient-to-br from-<%= project.color %>-100 to-indigo-100 dark:from-<%= project.color %>-950/40 dark:to-indigo-950/40 flex items-center justify-center relative overflow-hidden rounded-xl mb-6 group/image cursor-pointer" onclick='openProjectModal(<%= JSON.stringify(project).replace(/'/g, "\\'") %>)'>
+        <div class="feature-card animate-fade-in-up card-hover card-border" style="animation-delay: <%= index * 0.12 %>s;" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
+          <div class="h-40 sm:h-48 bg-gradient-to-br from-<%= project.color %>-100 to-indigo-100 dark:from-<%= project.color %>-950/40 dark:to-indigo-950/40 flex items-center justify-center relative overflow-hidden rounded-xl mb-4 md:mb-6 group/image cursor-pointer" onclick='openProjectModal(<%= JSON.stringify(project).replace(/'/g, "\\'") %>)'>
             <% if (project.images && project.images.length > 0) { %>
               <img 
                 src="<%= project.images[0] %>" 
                 alt="<%= project.title %>" 
                 class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-500"
+                loading="lazy"
                 onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';"
               />
               <div class="fallback-icon absolute inset-0 hidden items-center justify-center">
-                <i class="fas fa-<%= project.icon %> text-6xl text-<%= project.color %>-600 opacity-40 dark:opacity-50"></i>
+                <i class="fas fa-<%= project.icon %> text-4xl md:text-6xl text-<%= project.color %>-600 opacity-40 dark:opacity-50"></i>
               </div>
             <% } else { %>
-              <i class="fas fa-<%= project.icon %> text-6xl text-<%= project.color %>-600 opacity-40 dark:opacity-50 group-hover/image:scale-110 transition-all duration-300"></i>
+              <i class="fas fa-<%= project.icon %> text-4xl md:text-6xl text-<%= project.color %>-600 opacity-40 dark:opacity-50"></i>
             <% } %>
             
-            <!-- Image Count Badge -->
             <% if (project.images && project.images.length > 1) { %>
-              <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+              <div class="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-black/60 backdrop-blur-sm text-white text-[10px] md:text-xs px-1.5 py-0.5 md:px-2 md:py-1 rounded-full">
                 <i class="fas fa-images mr-1"></i><%= project.images.length %>
               </div>
             <% } %>
             
-            <!-- Featured Badge -->
             <% if (project.featured) { %>
-              <div class="absolute top-3 left-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-xs px-2 py-1 rounded-full">
+              <div class="absolute top-2 left-2 md:top-3 md:left-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-[10px] md:text-xs px-1.5 py-0.5 md:px-2 md:py-1 rounded-full">
                 <i class="fas fa-star mr-1"></i>Featured
               </div>
             <% } %>
             
-            <!-- View Gallery Overlay -->
             <div class="absolute inset-0 bg-black/60 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <span class="text-white font-bold text-sm bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                <i class="fas fa-images mr-2"></i>View Gallery
+              <span class="text-white font-bold text-xs md:text-sm bg-white/20 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full">
+                <i class="fas fa-images mr-1 md:mr-2"></i>View Gallery
               </span>
             </div>
           </div>
           
-          <!-- Category Badge -->
-          <span class="badge">
+          <span class="badge text-[10px] md:text-xs">
             <i class="fas fa-tag mr-1"></i><%= project.category %>
           </span>
           
-          <!-- Title -->
-          <h3 class="text-2xl font-bold mb-2 mt-3 text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors duration-300">
+          <h3 class="text-lg md:text-2xl font-bold mb-1 md:mb-2 mt-2 md:mt-3 text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors duration-300">
             <%= project.title %>
           </h3>
           
-          <!-- Description -->
-          <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+          <p class="text-slate-600 dark:text-slate-400 text-xs md:text-sm mb-3 md:mb-4 line-clamp-2">
             <%= project.description %>
           </p>
           
-          <!-- Tech Stack -->
-          <div class="flex flex-wrap gap-2 mb-4">
+          <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
             <% project.tech.forEach(t => { %>
-              <span class="text-xs px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800/50 font-medium">
+              <span class="text-[10px] md:text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800/50 font-medium">
                 <i class="fas fa-check-circle mr-1"></i><%= t %>
               </span>
             <% }); %>
           </div>
 
-          <!-- Links (Website + GitHub) - Website link hidden for Jojohn Hack Tool -->
-          <div class="flex flex-wrap gap-3 mt-2 pt-3 border-t border-slate-200 dark:border-slate-700">
+          <div class="flex flex-wrap gap-2 md:gap-3 mt-1 md:mt-2 pt-2 md:pt-3 border-t border-slate-200 dark:border-slate-700">
             <% if (project.websiteUrl && project.id !== 1) { %>
               <a href="<%= project.websiteUrl %>" target="_blank" 
-                 class="inline-flex items-center gap-2 text-blue-700 dark:text-blue-400 font-semibold text-sm hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 group">
+                 class="inline-flex items-center gap-1 md:gap-2 text-blue-700 dark:text-blue-400 font-semibold text-[10px] md:text-sm hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 group">
                 <i class="fas fa-globe"></i>
                 <span>Live Demo</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
@@ -564,7 +384,7 @@
             
             <% if (project.githubUrl) { %>
               <a href="<%= project.githubUrl %>" target="_blank" 
-                 class="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 font-semibold text-sm hover:text-slate-800 dark:hover:text-slate-300 transition-colors duration-300 group">
+                 class="inline-flex items-center gap-1 md:gap-2 text-slate-600 dark:text-slate-400 font-semibold text-[10px] md:text-sm hover:text-slate-800 dark:hover:text-slate-300 transition-colors duration-300 group">
                 <i class="fab fa-github"></i>
                 <span>GitHub</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
@@ -576,21 +396,18 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 relative z-10">
-    <div class="relative bg-gradient-to-r from-blue-100/80 to-indigo-100/80 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-3xl p-12 border-t-2 border-l-2 border-blue-600 dark:border-blue-600 overflow-hidden group animate-fade-in backdrop-blur-sm card-border" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
-      <!-- Tech Grid Background -->
+  <!-- CTA -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 md:mt-20 relative z-10">
+    <div class="relative bg-gradient-to-r from-blue-100/80 to-indigo-100/80 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-2xl md:rounded-3xl p-8 md:p-12 border-t-2 border-l-2 border-blue-600 dark:border-blue-600 overflow-hidden group backdrop-blur-sm card-border" onmouseenter="borderZoom(event)" onmouseleave="borderUnzoom(event)">
       <div class="absolute inset-0 opacity-10 dark:opacity-20">
         <div class="absolute inset-0 bg-grid-tech"></div>
       </div>
       
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-300/10 to-indigo-300/10 dark:from-blue-500/5 dark:to-indigo-500/5 group-hover:from-blue-300/20 group-hover:to-indigo-300/20 dark:group-hover:from-blue-500/10 dark:group-hover:to-indigo-500/10 transition-colors duration-300"></div>
-      
       <div class="relative text-center">
-        <i class="fas fa-rocket text-5xl text-blue-700 dark:text-blue-400 mb-4 inline-block animate-bounce-slow"></i>
-        <h2 class="text-4xl font-bold mb-4 text-slate-900 dark:text-white">Ready to Start Something Amazing?</h2>
-        <p class="text-lg text-slate-700 dark:text-slate-300 mb-8">Let's collaborate and bring your ideas to life!</p>
-        <a href="/contact" class="btn-primary inline-flex group">
+        <i class="fas fa-rocket text-3xl md:text-5xl text-blue-700 dark:text-blue-400 mb-3 md:mb-4 inline-block animate-bounce-slow"></i>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-4 text-slate-900 dark:text-white">Ready to Start Something Amazing?</h2>
+        <p class="text-base md:text-lg text-slate-700 dark:text-slate-300 mb-4 md:mb-8">Let's collaborate and bring your ideas to life!</p>
+        <a href="/contact" class="btn-primary inline-flex group text-sm md:text-base">
           <i class="fas fa-envelope group-hover:animate-bounce-slow"></i>
           <span>Get Started Today</span>
         </a>
@@ -599,120 +416,134 @@
   </section>
 </div>
 
-<!-- ===================== BACK TO TOP BUTTON ===================== -->
+<!-- Back to Top -->
 <button id="backToTop" 
-        class="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group opacity-0 invisible translate-y-4"
+        class="fixed bottom-6 md:bottom-8 right-6 md:right-8 z-50 w-10 h-10 md:w-14 md:h-14 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group opacity-0 invisible translate-y-4"
         onclick="scrollToTop()"
         aria-label="Back to top">
-  <i class="fas fa-arrow-up text-xl group-hover:-translate-y-1 transition-transform duration-300"></i>
-  <span class="absolute -top-2 -right-2 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-[10px] font-bold animate-pulse">↑</span>
+  <i class="fas fa-arrow-up text-sm md:text-xl group-hover:-translate-y-1 transition-transform duration-300"></i>
+  <span class="absolute -top-1 -right-1 md:-top-2 md:-right-2 w-4 h-4 md:w-5 md:h-5 bg-red-500 rounded-full flex items-center justify-center text-[8px] md:text-[10px] font-bold animate-pulse">↑</span>
 </button>
 
-<!-- ===================== PROJECT MODAL ===================== -->
-<div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-  <div class="modal-content relative w-full max-w-3xl max-h-[95vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl shadow-2xl transform transition-all duration-500 scale-95 opacity-0">
+<!-- Project Modal -->
+<div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center p-2 md:p-4 bg-black/70 backdrop-blur-sm">
+  <div class="modal-content relative w-full max-w-3xl max-h-[95vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-2xl md:rounded-3xl shadow-2xl transform transition-all duration-500 scale-95 opacity-0">
     
-    <!-- Close Button -->
     <button onclick="closeProjectModal()" 
-            class="absolute top-4 right-4 z-50 w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:bg-red-500 hover:text-white transition-all duration-300 shadow-xl border-2 border-slate-200 dark:border-slate-700 group">
-      <i class="fas fa-times group-hover:rotate-90 transition-transform duration-300"></i>
+            class="absolute top-2 right-2 md:top-4 md:right-4 z-50 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:bg-red-500 hover:text-white transition-all duration-300 shadow-xl border-2 border-slate-200 dark:border-slate-700 group">
+      <i class="fas fa-times text-sm md:text-base group-hover:rotate-90 transition-transform duration-300"></i>
     </button>
 
-    <!-- Title Bar -->
-    <div class="px-6 pt-6 pb-3">
-      <div class="flex items-center gap-2 flex-wrap pr-10">
-        <span id="modalCategory" class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 border-2 border-blue-200 dark:border-blue-800"></span>
-        <span id="modalFeatured" class="hidden px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-yellow-500 to-yellow-600 text-white">
+    <div class="px-4 md:px-6 pt-4 md:pt-6 pb-2 md:pb-3">
+      <div class="flex items-center gap-2 flex-wrap pr-8 md:pr-10">
+        <span id="modalCategory" class="px-2 py-0.5 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 border-2 border-blue-200 dark:border-blue-800"></span>
+        <span id="modalFeatured" class="hidden px-2 py-0.5 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold bg-gradient-to-r from-yellow-500 to-yellow-600 text-white">
           <i class="fas fa-star mr-1"></i>Featured
         </span>
       </div>
-      <h2 id="modalTitle" class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mt-2"></h2>
-      <p id="modalDescription" class="text-slate-500 dark:text-slate-400 mt-1 text-sm"></p>
+      <h2 id="modalTitle" class="text-xl md:text-3xl font-black text-slate-900 dark:text-white mt-1 md:mt-2"></h2>
+      <p id="modalDescription" class="text-slate-500 dark:text-slate-400 mt-0.5 md:mt-1 text-xs md:text-sm"></p>
     </div>
 
-    <!-- Image Viewer -->
-    <div class="px-6 py-3">
-      <div id="mainImageWrapper" class="relative rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800">
-        <div id="imageSlider" class="relative w-full">
-          <!-- Slides injected by JS -->
-        </div>
+    <div class="px-4 md:px-6 py-2 md:py-3">
+      <div id="mainImageWrapper" class="relative rounded-xl md:rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800">
+        <div id="imageSlider" class="relative w-full"></div>
 
-        <!-- Left Arrow -->
         <button onclick="previousImage()" id="prevBtn"
-                class="hidden absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 items-center justify-center bg-white/95 dark:bg-slate-800/95 text-slate-700 dark:text-slate-200 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg border border-slate-200 dark:border-slate-600 group">
-          <i class="fas fa-chevron-left text-sm group-hover:-translate-x-0.5 transition-transform duration-300"></i>
+                class="hidden absolute left-2 md:left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 md:w-10 md:h-10 items-center justify-center bg-white/95 dark:bg-slate-800/95 text-slate-700 dark:text-slate-200 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg border border-slate-200 dark:border-slate-600 group">
+          <i class="fas fa-chevron-left text-xs md:text-sm group-hover:-translate-x-0.5 transition-transform duration-300"></i>
         </button>
 
-        <!-- Right Arrow -->
         <button onclick="nextImage()" id="nextBtn"
-                class="hidden absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 items-center justify-center bg-white/95 dark:bg-slate-800/95 text-slate-700 dark:text-slate-200 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg border border-slate-200 dark:border-slate-600 group">
-          <i class="fas fa-chevron-right text-sm group-hover:translate-x-0.5 transition-transform duration-300"></i>
+                class="hidden absolute right-2 md:right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 md:w-10 md:h-10 items-center justify-center bg-white/95 dark:bg-slate-800/95 text-slate-700 dark:text-slate-200 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg border border-slate-200 dark:border-slate-600 group">
+          <i class="fas fa-chevron-right text-xs md:text-sm group-hover:translate-x-0.5 transition-transform duration-300"></i>
         </button>
 
-        <!-- Counter -->
-        <div id="imageCounter" class="hidden absolute top-3 right-3 z-20">
-          <span class="px-2.5 py-1 bg-black/65 backdrop-blur-sm text-white rounded-full text-xs font-bold">
+        <div id="imageCounter" class="hidden absolute top-2 right-2 md:top-3 md:right-3 z-20">
+          <span class="px-1.5 py-0.5 md:px-2.5 md:py-1 bg-black/65 backdrop-blur-sm text-white rounded-full text-[10px] md:text-xs font-bold">
             <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
           </span>
         </div>
       </div>
 
-      <!-- Thumbnails -->
-      <div id="thumbnailRow" class="hidden mt-3">
-        <div id="thumbnailContainer" class="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-          <!-- Thumbnails injected by JS -->
-        </div>
+      <div id="thumbnailRow" class="hidden mt-2 md:mt-3">
+        <div id="thumbnailContainer" class="flex gap-1.5 md:gap-2 overflow-x-auto pb-1 scrollbar-hide"></div>
       </div>
     </div>
 
-    <!-- Modal Body -->
-    <div class="px-6 pb-6">
-
-      <!-- About -->
-      <div class="mb-6">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-          <div class="w-6 h-6 rounded-md bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
-            <i class="fas fa-info-circle text-blue-600 text-xs"></i>
+    <div class="px-4 md:px-6 pb-4 md:pb-6">
+      <div class="mb-4 md:mb-6">
+        <h3 class="text-sm md:text-base font-bold text-slate-900 dark:text-white mb-1 md:mb-2 flex items-center gap-2">
+          <div class="w-5 h-5 md:w-6 md:h-6 rounded-md bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
+            <i class="fas fa-info-circle text-blue-600 text-[10px] md:text-xs"></i>
           </div>
           About This Project
         </h3>
-        <p id="modalFullDescription" class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed"></p>
+        <p id="modalFullDescription" class="text-slate-600 dark:text-slate-300 text-xs md:text-sm leading-relaxed"></p>
       </div>
 
-      <!-- Technologies -->
-      <div class="mb-6">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-          <div class="w-6 h-6 rounded-md bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
-            <i class="fas fa-code text-blue-600 text-xs"></i>
+      <div class="mb-4 md:mb-6">
+        <h3 class="text-sm md:text-base font-bold text-slate-900 dark:text-white mb-1 md:mb-2 flex items-center gap-2">
+          <div class="w-5 h-5 md:w-6 md:h-6 rounded-md bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
+            <i class="fas fa-code text-blue-600 text-[10px] md:text-xs"></i>
           </div>
           Technologies Used
         </h3>
-        <div id="modalTechnologies" class="flex flex-wrap gap-2"></div>
+        <div id="modalTechnologies" class="flex flex-wrap gap-1.5 md:gap-2"></div>
       </div>
 
-      <!-- ===== ACTION BUTTONS ===== -->
-      <div class="flex flex-wrap gap-3 pt-5 border-t border-slate-200 dark:border-slate-800">
-
-        <!-- Visit Website (hidden for Jojohn Hack Tool via JavaScript) -->
+      <div class="flex flex-wrap gap-2 md:gap-3 pt-3 md:pt-5 border-t border-slate-200 dark:border-slate-800">
         <a id="modalWebsiteLink" href="#" target="_blank" 
-           class="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-all duration-300 shadow-md">
+           class="flex-1 min-w-[100px] md:min-w-[140px] flex items-center justify-center gap-1.5 md:gap-2 px-3 md:px-5 py-2 md:py-3 bg-blue-600 text-white rounded-lg md:rounded-xl font-bold text-[10px] md:text-sm hover:bg-blue-700 transition-all duration-300 shadow-md">
           <i class="fas fa-globe"></i>Visit Website
         </a>
 
-        <!-- GitHub -->
         <a id="modalGithubLink" href="#" target="_blank" 
-           class="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-5 py-3 bg-slate-800 dark:bg-slate-700 text-white rounded-xl font-bold text-sm hover:bg-slate-900 dark:hover:bg-slate-600 transition-all duration-300 shadow-md">
+           class="flex-1 min-w-[100px] md:min-w-[140px] flex items-center justify-center gap-1.5 md:gap-2 px-3 md:px-5 py-2 md:py-3 bg-slate-800 dark:bg-slate-700 text-white rounded-lg md:rounded-xl font-bold text-[10px] md:text-sm hover:bg-slate-900 dark:hover:bg-slate-600 transition-all duration-300 shadow-md">
           <i class="fab fa-github"></i>View on GitHub
         </a>
-
       </div>
     </div>
   </div>
 </div>
 
-<!-- Optimized Technology-Based Animations CSS -->
 <style>
-  /* Performance Optimization */
+  /* ===== MOBILE PERFORMANCE OPTIMIZATIONS ===== */
+  @media (max-width: 768px) {
+    /* Hide heavy animations on mobile */
+    .mobile-hide-icon { display: none !important; }
+    .mobile-hide-bracket { display: none !important; }
+    .mobile-hide-terminal { display: none !important; }
+    .mobile-hide-orbits { display: none !important; }
+    .mobile-hide-status { display: none !important; }
+    .mobile-hide-glow { display: none !important; }
+    .mobile-hide-scan line { animation-duration: 6s !important; }
+    
+    /* Reduce particle count on mobile */
+    #particles-container .tech-particle:nth-child(n+7) { display: none !important; }
+    
+    /* Disable backdrop blur on mobile */
+    .backdrop-blur-sm { backdrop-filter: none !important; }
+    .backdrop-blur-md { backdrop-filter: none !important; }
+    
+    /* Reduce blur on glowing orbs */
+    .blur-3xl { filter: blur(20px) !important; }
+    
+    /* Simplify transitions */
+    * { transition-duration: 0.2s !important; }
+    
+    /* Disable scale transforms on mobile */
+    .hover\:scale-105:hover { transform: none !important; }
+    .group-hover\:scale-110:hover { transform: none !important; }
+  }
+
+  @media (max-width: 480px) {
+    /* Further reduce for small phones */
+    .tech-particle { display: none !important; }
+    #particles-container .tech-particle:nth-child(-n+4) { display: block !important; }
+  }
+
+  /* ===== PERFORMANCE: Reduce animation on reduced-motion preference ===== */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -723,12 +554,11 @@
     }
   }
 
-  /* Border Zoom Animation - All Cards */
+  /* ===== BASE ANIMATIONS (same as before, but optimized) ===== */
   .card-border {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
   }
-
   .card-border.border-zoom {
     border-width: 2.5px;
     border-color: #1e40af;
@@ -736,374 +566,150 @@
     box-shadow: 0 0 20px rgba(30, 64, 175, 0.3) !important;
   }
 
-  /* Scan Line Animation - GPU Accelerated */
   @keyframes scan-line {
-    0%, 100% {
-      opacity: 0;
-      transform: translateX(-100%) translateZ(0);
-    }
-    50% {
-      opacity: 1;
-    }
+    0%, 100% { opacity: 0; transform: translateX(-100%) translateZ(0); }
+    50% { opacity: 1; }
   }
+  .animate-scan-line { animation: scan-line 4s ease-in-out infinite; will-change: transform, opacity; }
 
-  .animate-scan-line {
-    animation: scan-line 4s ease-in-out infinite;
-    will-change: transform, opacity;
-  }
-
-  /* Tech Float Animation - Optimized */
   @keyframes float-tech {
-    0%, 100% {
-      transform: translateY(0px) rotateZ(0deg) translateZ(0);
-    }
-    25% {
-      transform: translateY(-20px) rotateZ(5deg) translateZ(0);
-    }
-    50% {
-      transform: translateY(-40px) rotateZ(0deg) translateZ(0);
-    }
-    75% {
-      transform: translateY(-20px) rotateZ(-5deg) translateZ(0);
-    }
+    0%, 100% { transform: translateY(0px) rotateZ(0deg) translateZ(0); }
+    25% { transform: translateY(-15px) rotateZ(3deg) translateZ(0); }
+    50% { transform: translateY(-30px) rotateZ(0deg) translateZ(0); }
+    75% { transform: translateY(-15px) rotateZ(-3deg) translateZ(0); }
   }
+  .animate-float-tech { animation: float-tech 8s ease-in-out infinite; will-change: transform; }
 
-  .animate-float-tech {
-    animation: float-tech 8s ease-in-out infinite;
-    will-change: transform;
-  }
-
-  /* Tech Particle Float - Optimized */
   @keyframes tech-float {
-    0% {
-      transform: translateY(100vh) translateX(0) translateZ(0);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-100vh) translateX(100px) translateZ(0);
-      opacity: 0;
-    }
+    0% { transform: translateY(100vh) translateX(0) translateZ(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) translateX(80px) translateZ(0); opacity: 0; }
   }
+  .animate-tech-float { animation: tech-float 20s linear infinite; will-change: transform, opacity; }
 
-  .animate-tech-float {
-    animation: tech-float 20s linear infinite;
-    will-change: transform, opacity;
-  }
+  .shadow-glow-blue { box-shadow: 0 0 8px rgba(30,64,175,0.6), 0 0 16px rgba(30,64,175,0.3); }
+  .shadow-glow-indigo { box-shadow: 0 0 8px rgba(79,70,229,0.6), 0 0 16px rgba(79,70,229,0.3); }
+  .shadow-glow-sky { box-shadow: 0 0 8px rgba(2,132,199,0.6), 0 0 16px rgba(2,132,199,0.3); }
+  .shadow-glow-violet { box-shadow: 0 0 8px rgba(139,92,246,0.6), 0 0 16px rgba(139,92,246,0.3); }
+  .shadow-glow-teal { box-shadow: 0 0 8px rgba(20,184,166,0.6), 0 0 16px rgba(20,184,166,0.3); }
+  .shadow-glow-rose { box-shadow: 0 0 8px rgba(244,63,94,0.6), 0 0 16px rgba(244,63,94,0.3); }
 
-  /* Particle Glow Effects */
-  .shadow-glow-blue {
-    box-shadow: 0 0 10px rgba(30, 64, 175, 0.8), 0 0 20px rgba(30, 64, 175, 0.4);
-  }
-
-  .shadow-glow-indigo {
-    box-shadow: 0 0 10px rgba(79, 70, 229, 0.8), 0 0 20px rgba(79, 70, 229, 0.4);
-  }
-
-  .shadow-glow-sky {
-    box-shadow: 0 0 10px rgba(2, 132, 199, 0.8), 0 0 20px rgba(2, 132, 199, 0.4);
-  }
-
-  .shadow-glow-violet {
-    box-shadow: 0 0 10px rgba(139, 92, 246, 0.8), 0 0 20px rgba(139, 92, 246, 0.4);
-  }
-
-  .shadow-glow-teal {
-    box-shadow: 0 0 10px rgba(20, 184, 166, 0.8), 0 0 20px rgba(20, 184, 166, 0.4);
-  }
-
-  .shadow-glow-rose {
-    box-shadow: 0 0 10px rgba(244, 63, 94, 0.8), 0 0 20px rgba(244, 63, 94, 0.4);
-  }
-
-  /* Rotate Slow - GPU Accelerated */
   @keyframes rotate-slow {
-    0% {
-      transform: rotate(0deg) translateZ(0);
-    }
-    100% {
-      transform: rotate(360deg) translateZ(0);
-    }
+    0% { transform: rotate(0deg) translateZ(0); }
+    100% { transform: rotate(360deg) translateZ(0); }
   }
+  .animate-rotate-slow { animation: rotate-slow 20s linear infinite; will-change: transform; }
 
-  .animate-rotate-slow {
-    animation: rotate-slow 20s linear infinite;
-    will-change: transform;
-  }
+  @keyframes orbit-1 { 0% { cx:95; cy:50; } 33.33% { cx:50; cy:5; } 66.66% { cx:5; cy:50; } 100% { cx:95; cy:50; } }
+  @keyframes orbit-2 { 0% { cx:50; cy:5; } 33.33% { cx:5; cy:50; } 66.66% { cx:95; cy:50; } 100% { cx:50; cy:5; } }
+  @keyframes orbit-3 { 0% { cx:5; cy:50; } 33.33% { cx:95; cy:50; } 66.66% { cx:50; cy:5; } 100% { cx:5; cy:50; } }
+  .animate-orbit-1 { animation: orbit-1 6s linear infinite; }
+  .animate-orbit-2 { animation: orbit-2 6s linear infinite; }
+  .animate-orbit-3 { animation: orbit-3 6s linear infinite; }
 
-  /* Orbit Animations - Optimized */
-  @keyframes orbit-1 {
-    0% {
-      cx: 95;
-      cy: 50;
-    }
-    33.33% {
-      cx: 50;
-      cy: 5;
-    }
-    66.66% {
-      cx: 5;
-      cy: 50;
-    }
-    100% {
-      cx: 95;
-      cy: 50;
-    }
-  }
-
-  @keyframes orbit-2 {
-    0% {
-      cx: 50;
-      cy: 5;
-    }
-    33.33% {
-      cx: 5;
-      cy: 50;
-    }
-    66.66% {
-      cx: 95;
-      cy: 50;
-    }
-    100% {
-      cx: 50;
-      cy: 5;
-    }
-  }
-
-  @keyframes orbit-3 {
-    0% {
-      cx: 5;
-      cy: 50;
-    }
-    33.33% {
-      cx: 95;
-      cy: 50;
-    }
-    66.66% {
-      cx: 50;
-      cy: 5;
-    }
-    100% {
-      cx: 5;
-      cy: 50;
-    }
-  }
-
-  .animate-orbit-1 {
-    animation: orbit-1 6s linear infinite;
-  }
-
-  .animate-orbit-2 {
-    animation: orbit-2 6s linear infinite;
-  }
-
-  .animate-orbit-3 {
-    animation: orbit-3 6s linear infinite;
-  }
-
-  /* Status Pulse - Optimized */
   @keyframes status-pulse {
-    0%, 100% {
-      opacity: 1;
-      box-shadow: 0 0 10px currentColor;
-    }
-    50% {
-      opacity: 0.5;
-      box-shadow: 0 0 5px currentColor;
-    }
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px currentColor; }
+    50% { opacity: 0.5; box-shadow: 0 0 4px currentColor; }
   }
+  .animate-status-pulse { animation: status-pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
 
-  .animate-status-pulse {
-    animation: status-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  @keyframes status-ping { 75%, 100% { transform: scale(2) translateZ(0); opacity: 0; } }
+  .animate-status-ping { animation: status-ping 2s cubic-bezier(0,0,0.2,1) infinite; will-change: transform, opacity; }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.4; filter: blur(30px); }
+    50% { opacity: 0.7; filter: blur(20px); }
   }
+  .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; will-change: opacity, filter; }
 
-  /* Status Ping - GPU Accelerated */
-  @keyframes status-ping {
-    75%, 100% {
-      transform: scale(2) translateZ(0);
-      opacity: 0;
-    }
+  @keyframes float-bracket {
+    0%,100% { transform: translateY(0) scale(1) rotate(0deg); opacity:0.2; }
+    25% { transform: translateY(-12px) scale(1.03) rotate(2deg); opacity:0.3; }
+    50% { transform: translateY(-24px) scale(0.97) rotate(-2deg); opacity:0.4; }
+    75% { transform: translateY(-12px) scale(1.03) rotate(1deg); opacity:0.3; }
   }
+  .animate-float-bracket { animation: float-bracket 7s ease-in-out infinite; will-change: transform,opacity; }
 
-  .animate-status-ping {
-    animation: status-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-    will-change: transform, opacity;
+  @keyframes terminal-cursor {
+    0%,100% { opacity:0.2; transform:translateX(0); }
+    50% { opacity:0.5; transform:translateX(6px); }
   }
+  .animate-terminal-cursor { animation: terminal-cursor 8s ease-in-out infinite; will-change: transform,opacity; }
 
-  /* Tech Grid Pattern - Adaptive */
+  @keyframes blink-cursor { 0%,100% { opacity:1; } 50% { opacity:0; } }
+  .animate-blink-cursor { animation: blink-cursor 1s step-end infinite; will-change: opacity; }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px) translateZ(0); }
+    to { opacity: 1; transform: translateY(0) translateZ(0); }
+  }
+  .animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; will-change: transform, opacity; }
+
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0) translateZ(0); }
+    50% { transform: translateY(-8px) translateZ(0); }
+  }
+  .animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
+
   .bg-grid-tech {
     background-image: 
-      linear-gradient(0deg, transparent 24%, rgba(30, 64, 175, 0.05) 25%, rgba(30, 64, 175, 0.05) 26%, transparent 27%, transparent 74%, rgba(30, 64, 175, 0.05) 75%, rgba(30, 64, 175, 0.05) 76%, transparent 77%, transparent),
-      linear-gradient(90deg, transparent 24%, rgba(30, 64, 175, 0.05) 25%, rgba(30, 64, 175, 0.05) 26%, transparent 27%, transparent 74%, rgba(30, 64, 175, 0.05) 75%, rgba(30, 64, 175, 0.05) 76%, transparent 77%, transparent);
+      linear-gradient(0deg, transparent 24%, rgba(30,64,175,0.04) 25%, rgba(30,64,175,0.04) 26%, transparent 27%, transparent 74%, rgba(30,64,175,0.04) 75%, rgba(30,64,175,0.04) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, rgba(30,64,175,0.04) 25%, rgba(30,64,175,0.04) 26%, transparent 27%, transparent 74%, rgba(30,64,175,0.04) 75%, rgba(30,64,175,0.04) 76%, transparent 77%, transparent);
     background-size: 50px 50px;
   }
 
   @media (prefers-color-scheme: dark) {
     .bg-grid-tech {
       background-image: 
-        linear-gradient(0deg, transparent 24%, rgba(30, 64, 175, 0.08) 25%, rgba(30, 64, 175, 0.08) 26%, transparent 27%, transparent 74%, rgba(30, 64, 175, 0.08) 75%, rgba(30, 64, 175, 0.08) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, rgba(30, 64, 175, 0.08) 25%, rgba(30, 64, 175, 0.08) 26%, transparent 27%, transparent 74%, rgba(30, 64, 175, 0.08) 75%, rgba(30, 64, 175, 0.08) 76%, transparent 77%, transparent);
+        linear-gradient(0deg, transparent 24%, rgba(30,64,175,0.06) 25%, rgba(30,64,175,0.06) 26%, transparent 27%, transparent 74%, rgba(30,64,175,0.06) 75%, rgba(30,64,175,0.06) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(30,64,175,0.06) 25%, rgba(30,64,175,0.06) 26%, transparent 27%, transparent 74%, rgba(30,64,175,0.06) 75%, rgba(30,64,175,0.06) 76%, transparent 77%, transparent);
     }
   }
 
-  /* Pulse Glow - Optimized */
-  @keyframes pulse-glow {
-    0%, 100% {
-      opacity: 0.5;
-      filter: blur(30px);
-    }
-    50% {
-      opacity: 1;
-      filter: blur(15px);
-    }
-  }
+  .stat-box { @apply bg-white dark:bg-slate-900 backdrop-blur-sm border-t-2 border-l-2 border-blue-300 dark:border-blue-700/50 rounded-xl p-3 md:p-4; }
+  .stat-box:hover { @apply border-blue-600 dark:border-blue-600 shadow-lg shadow-blue-200/50 dark:shadow-blue-900/50; }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 4s ease-in-out infinite;
-    will-change: opacity, filter;
-  }
+  .feature-card { @apply bg-white dark:bg-slate-900 backdrop-blur-sm border-t-2 border-l-2 border-blue-300 dark:border-blue-700/50 rounded-xl md:rounded-2xl p-4 md:p-6; }
+  .feature-card:hover { @apply border-blue-600 dark:border-blue-600 shadow-lg; }
 
-  /* Floating Code Brackets */
-  @keyframes float-bracket {
-    0%,100% { transform: translateY(0) scale(1) rotate(0deg); opacity:0.2; }
-    25%     { transform: translateY(-15px) scale(1.05) rotate(2deg); opacity:0.35; }
-    50%     { transform: translateY(-30px) scale(0.95) rotate(-2deg); opacity:0.5; }
-    75%     { transform: translateY(-15px) scale(1.05) rotate(1deg); opacity:0.35; }
-  }
-  .animate-float-bracket { animation: float-bracket 7s ease-in-out infinite; will-change: transform,opacity; }
+  .badge { @apply text-[10px] md:text-xs px-2 md:px-3 py-1 md:py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800/50 font-medium; }
+  .badge-glow { @apply inline-flex items-center px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-blue-100 dark:bg-blue-900/40 border-2 border-blue-600 dark:border-blue-600 font-bold text-sm md:text-base; }
 
-  /* Terminal cursor typing effect */
-  @keyframes terminal-cursor {
-    0%,100% { opacity:0.2; transform:translateX(0); }
-    50%     { opacity:0.6; transform:translateX(8px); }
-  }
-  .animate-terminal-cursor { animation: terminal-cursor 8s ease-in-out infinite; will-change: transform,opacity; }
+  .btn-primary { @apply px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-lg md:rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 transition-all duration-300 inline-flex items-center gap-2 md:gap-3 hover:scale-105; }
+  .btn-secondary { @apply px-4 md:px-8 py-2.5 md:py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border-2 border-blue-600 dark:border-blue-600 font-bold rounded-lg md:rounded-xl hover:bg-blue-50 dark:hover:bg-slate-800 transition-all duration-300 inline-flex items-center gap-2 md:gap-3 hover:scale-105; }
 
-  @keyframes blink-cursor {
-    0%,100% { opacity:1; }
-    50%     { opacity:0; }
-  }
-  .animate-blink-cursor { animation: blink-cursor 1s step-end infinite; will-change: opacity; }
+  .section-title { @apply text-2xl sm:text-3xl md:text-5xl font-black mb-2 md:mb-4; }
+  .section-subtitle { @apply text-base sm:text-lg md:text-2xl; }
 
-  /* Matrix-style float */
-  @keyframes matrix-float {
-    0%,100% { opacity:0.06; transform:translateY(0); }
-    50%     { opacity:0.15; transform:translateY(-8px); }
-  }
-  .animate-matrix-float { animation: matrix-float 6s ease-in-out infinite; will-change: transform,opacity; }
+  .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-  /* Adaptive Stat Box */
-  .stat-box {
-    @apply bg-white dark:bg-slate-900 backdrop-blur-sm border-t-2 border-l-2 border-blue-300 dark:border-blue-700/50 rounded-xl p-4;
-  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
-  .stat-box:hover {
-    @apply border-blue-600 dark:border-blue-600 shadow-lg shadow-blue-200/50 dark:shadow-blue-900/50;
-  }
+  .modal-content::-webkit-scrollbar { width: 4px; }
+  .modal-content::-webkit-scrollbar-track { background: rgb(241 245 249); border-radius: 10px; }
+  .dark .modal-content::-webkit-scrollbar-track { background: rgb(30 41 59); }
+  .modal-content::-webkit-scrollbar-thumb { background: rgb(59 130 246); border-radius: 10px; }
 
-  /* Feature Card */
-  .feature-card {
-    @apply bg-white dark:bg-slate-900 backdrop-blur-sm border-t-2 border-l-2 border-blue-300 dark:border-blue-700/50 rounded-2xl p-6;
-  }
-
-  .feature-card:hover {
-    @apply border-blue-600 dark:border-blue-600 shadow-lg;
-  }
-
-  /* Badge */
-  .badge {
-    @apply text-xs px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800/50 font-medium;
-  }
-
-  /* Badge Glow */
-  .badge-glow {
-    @apply inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/40 border-2 border-blue-600 dark:border-blue-600 font-bold;
-  }
-
-  /* Button Primary */
-  .btn-primary {
-    @apply px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105;
-  }
-
-  /* Button Secondary */
-  .btn-secondary {
-    @apply px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border-2 border-blue-600 dark:border-blue-600 font-bold rounded-xl hover:bg-blue-50 dark:hover:bg-slate-800 transition-all duration-300 inline-flex items-center gap-3 hover:scale-105;
-  }
-
-  /* Section Title */
-  .section-title {
-    @apply text-4xl md:text-5xl font-black mb-4;
-  }
-
-  /* Section Subtitle */
-  .section-subtitle {
-    @apply text-xl md:text-2xl;
-  }
-
-  /* Line Clamp */
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* Scrollbar Hide */
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  /* Modal Scrollbar */
-  .modal-content::-webkit-scrollbar {
-    width: 5px;
-  }
-  .modal-content::-webkit-scrollbar-track {
-    background: rgb(241 245 249);
-    border-radius: 10px;
-  }
-  .dark .modal-content::-webkit-scrollbar-track {
-    background: rgb(30 41 59);
-  }
-  .modal-content::-webkit-scrollbar-thumb {
-    background: rgb(59 130 246);
-    border-radius: 10px;
-  }
-
-  /* Performance: Contain paint and layout */
   .animate-scan-line,
   .animate-float-tech,
   .animate-float-bracket,
   .animate-tech-float,
   .animate-rotate-slow,
   .animate-pulse-glow,
-  .animate-matrix-float,
   .animate-terminal-cursor {
     contain: layout style paint;
   }
 
-  /* Reduce animations on mobile */
   @media (max-width: 768px) {
-    .animate-float-tech,
-    .animate-rotate-slow {
-      animation-duration: 12s;
-    }
-    
-    .animate-tech-float {
-      animation-duration: 30s;
-    }
+    .animate-float-tech { animation-duration: 12s; }
+    .animate-tech-float { animation-duration: 25s; }
+    .animate-float-bracket { animation-duration: 10s; }
+  }
 
-    .animate-float-bracket {
-      animation-duration: 10s;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   }
 </style>
 
@@ -1111,18 +717,12 @@
   let currentProject = null;
   let currentImageIndex = 0;
 
-  // ===================== BACK TO TOP FUNCTIONALITY =====================
   function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Show/hide back to top button based on scroll position
   document.addEventListener('DOMContentLoaded', function() {
     const backToTopBtn = document.getElementById('backToTop');
-    
     window.addEventListener('scroll', function() {
       if (window.scrollY > 300) {
         backToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
@@ -1132,47 +732,31 @@
         backToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
       }
     });
+
+    // Detect mobile and add class for further optimizations
+    if (window.innerWidth <= 768) {
+      document.body.classList.add('mobile-device');
+    }
   });
 
-  function borderZoom(event) {
-    const element = event.currentTarget;
-    element.classList.add('border-zoom');
-  }
+  function borderZoom(e) { e.currentTarget.classList.add('border-zoom'); }
+  function borderUnzoom(e) { e.currentTarget.classList.remove('border-zoom'); }
 
-  function borderUnzoom(event) {
-    const element = event.currentTarget;
-    element.classList.remove('border-zoom');
-  }
-
-  // Open Modal
   function openProjectModal(project) {
     try {
-      console.log('Opening modal for:', project);
       currentProject = project;
       currentImageIndex = 0;
-
       const modal = document.getElementById('projectModal');
-      if (!modal) {
-        console.error('Modal element not found!');
-        return;
-      }
       const modalContent = modal.querySelector('.modal-content');
 
-      // Set text content
       document.getElementById('modalTitle').textContent = project.title || 'Untitled Project';
       document.getElementById('modalDescription').textContent = project.description || '';
       document.getElementById('modalFullDescription').textContent = project.fullDescription || project.description || 'No description available.';
       document.getElementById('modalCategory').textContent = (project.category || 'General').toUpperCase();
 
-      // Featured badge
       const featuredBadge = document.getElementById('modalFeatured');
-      if (project.featured) {
-        featuredBadge.classList.remove('hidden');
-      } else {
-        featuredBadge.classList.add('hidden');
-      }
+      project.featured ? featuredBadge.classList.remove('hidden') : featuredBadge.classList.add('hidden');
 
-      // --- Website Link: HIDE for project id === 1 (Jojohn Hack Tool) ---
       const websiteLink = document.getElementById('modalWebsiteLink');
       if (project.websiteUrl && project.id !== 1) {
         websiteLink.href = project.websiteUrl;
@@ -1181,7 +765,6 @@
         websiteLink.style.display = 'none';
       }
 
-      // --- GitHub Link ---
       const githubLink = document.getElementById('modalGithubLink');
       if (project.githubUrl) {
         githubLink.href = project.githubUrl;
@@ -1190,32 +773,24 @@
         githubLink.style.display = 'none';
       }
 
-      // Technologies
       const techArray = project.tech || project.technologies || [];
       document.getElementById('modalTechnologies').innerHTML = techArray.map(function(tech) {
-        return `<span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-2 border-blue-200 dark:border-blue-800">${tech}</span>`;
+        return `<span class="px-2 md:px-3 py-1 md:py-1.5 rounded-lg text-[10px] md:text-xs font-semibold bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-2 border-blue-200 dark:border-blue-800">${tech}</span>`;
       }).join('');
 
-      // Build slider
-      const images = project.images || [];
-      buildSlider(images);
-
-      // Show modal
+      buildSlider(project.images || []);
       modal.classList.remove('hidden');
       modal.classList.add('flex');
       setTimeout(function() {
         modalContent.classList.remove('scale-95', 'opacity-0');
         modalContent.classList.add('scale-100', 'opacity-100');
       }, 10);
-
       document.body.style.overflow = 'hidden';
     } catch (error) {
       console.error('Error opening modal:', error);
-      alert('Error opening project details. Please check console for details.');
     }
   }
 
-  // Build Slider
   function buildSlider(images) {
     const slider = document.getElementById('imageSlider');
     const thumbContainer = document.getElementById('thumbnailContainer');
@@ -1240,11 +815,7 @@
       const slide = document.createElement('div');
       slide.className = 'slider-slide w-full relative';
       slide.style.display = 'block';
-      slide.innerHTML = `
-        <div class="flex items-center justify-center h-64 bg-slate-200 dark:bg-slate-700 rounded-xl">
-          <i class="fas fa-image text-6xl text-slate-400 dark:text-slate-500"></i>
-        </div>
-      `;
+      slide.innerHTML = `<div class="flex items-center justify-center h-48 md:h-64 bg-slate-200 dark:bg-slate-700 rounded-xl"><i class="fas fa-image text-4xl md:text-6xl text-slate-400 dark:text-slate-500"></i></div>`;
       slider.appendChild(slide);
       return;
     }
@@ -1254,43 +825,25 @@
       slide.className = 'slider-slide w-full';
       slide.style.display = i === 0 ? 'block' : 'none';
       slide.style.position = i === 0 ? 'relative' : 'absolute';
-      if (i !== 0) {
-        slide.style.top = '0';
-        slide.style.left = '0';
-        slide.style.width = '100%';
-      }
-      slide.innerHTML = `
-        <img 
-          src="${src}" 
-          alt="Slide ${i + 1}"
-          class="w-full h-auto block"
-          style="max-height: 500px; object-fit: contain;"
-          onerror="this.parentElement.innerHTML = '<div class=\\'flex items-center justify-center h-64 bg-slate-200 dark:bg-slate-700 rounded-xl\\'><i class=\\'fas fa-image text-6xl text-slate-400 dark:text-slate-500\\'></i></div>'"
-        />
-      `;
+      if (i !== 0) { slide.style.top = '0'; slide.style.left = '0'; slide.style.width = '100%'; }
+      slide.innerHTML = `<img src="${src}" alt="Slide ${i+1}" class="w-full h-auto block" style="max-height:350px; object-fit:contain;" onerror="this.parentElement.innerHTML='<div class=\\'flex items-center justify-center h-48 md:h-64 bg-slate-200 dark:bg-slate-700 rounded-xl\\'><i class=\\'fas fa-image text-4xl md:text-6xl text-slate-400 dark:text-slate-500\\'></i></div>'" />`;
       slider.appendChild(slide);
     });
 
     images.forEach(function(src, i) {
       const btn = document.createElement('button');
-      btn.className = 'thumb-btn flex-shrink-0 w-14 h-14 rounded-lg overflow-hidden border-2 transition-all duration-300 ' + 
-        (i === 0
-          ? 'border-blue-600 ring-2 ring-blue-400 ring-offset-1 opacity-100'
-          : 'border-slate-300 dark:border-slate-600 opacity-50 hover:opacity-80');
-      btn.innerHTML = `<img src="${src}" alt="thumb ${i + 1}" class="w-full h-full object-cover" onerror="this.style.display='none'" />`;
+      btn.className = 'thumb-btn flex-shrink-0 w-10 h-10 md:w-14 md:h-14 rounded-lg overflow-hidden border-2 transition-all duration-300 ' + (i === 0 ? 'border-blue-600 ring-2 ring-blue-400 ring-offset-1 opacity-100' : 'border-slate-300 dark:border-slate-600 opacity-50 hover:opacity-80');
+      btn.innerHTML = `<img src="${src}" alt="thumb ${i+1}" class="w-full h-full object-cover" onerror="this.style.display='none'" />`;
       btn.onclick = function() { goToImage(i); };
       thumbContainer.appendChild(btn);
     });
-
     updateCounter();
   }
 
-  // Go to image
   function goToImage(index) {
     const slides = document.querySelectorAll('.slider-slide');
     const thumbs = document.querySelectorAll('.thumb-btn');
     const slider = document.getElementById('imageSlider');
-
     if (!slides.length || index < 0 || index >= slides.length) return;
 
     const currentSlide = slides[currentImageIndex];
@@ -1300,14 +853,11 @@
       currentSlide.style.display = 'none';
       currentSlide.style.position = 'absolute';
     }
-
     if (thumbs[currentImageIndex]) {
       thumbs[currentImageIndex].classList.remove('border-blue-600', 'ring-2', 'ring-blue-400', 'ring-offset-1', 'opacity-100');
       thumbs[currentImageIndex].classList.add('border-slate-300', 'opacity-50');
     }
-
     currentImageIndex = index;
-
     const newSlide = slides[currentImageIndex];
     if (newSlide) {
       newSlide.style.position = 'absolute';
@@ -1316,12 +866,10 @@
       newSlide.style.width = '100%';
       newSlide.style.display = 'block';
     }
-
     if (thumbs[currentImageIndex]) {
       thumbs[currentImageIndex].classList.add('border-blue-600', 'ring-2', 'ring-blue-400', 'ring-offset-1', 'opacity-100');
       thumbs[currentImageIndex].classList.remove('border-slate-300', 'opacity-50');
     }
-
     if (newSlide) {
       const newImg = newSlide.querySelector('img');
       const releaseHeight = function() {
@@ -1332,17 +880,10 @@
         newSlide.style.left = '';
         newSlide.style.width = '';
       };
-      if (newImg && newImg.complete) {
-        releaseHeight();
-      } else if (newImg) {
-        newImg.onload = releaseHeight;
-        newImg.onerror = releaseHeight;
-        setTimeout(releaseHeight, 800);
-      } else {
-        releaseHeight();
-      }
+      if (newImg && newImg.complete) releaseHeight();
+      else if (newImg) { newImg.onload = releaseHeight; newImg.onerror = releaseHeight; setTimeout(releaseHeight, 600); }
+      else releaseHeight();
     }
-
     updateCounter();
     if (thumbs[currentImageIndex]) {
       thumbs[currentImageIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
@@ -1361,21 +902,14 @@
 
   function updateCounter() {
     const total = document.getElementById('totalImages').textContent;
-    if (parseInt(total) > 0) {
-      document.getElementById('currentImageIndex').textContent = currentImageIndex + 1;
-    } else {
-      document.getElementById('currentImageIndex').textContent = '0';
-    }
+    document.getElementById('currentImageIndex').textContent = parseInt(total) > 0 ? currentImageIndex + 1 : '0';
   }
 
-  // Close Modal
   function closeProjectModal() {
     const modal = document.getElementById('projectModal');
     const modalContent = modal.querySelector('.modal-content');
-
     modalContent.classList.remove('scale-100', 'opacity-100');
     modalContent.classList.add('scale-95', 'opacity-0');
-
     setTimeout(function() {
       modal.classList.remove('flex');
       modal.classList.add('hidden');
@@ -1385,20 +919,12 @@
     }, 300);
   }
 
-  // Modal click outside to close
-  document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('projectModal');
-    if (modal) {
-      modal.addEventListener('click', function(e) {
-        if (e.target === this) closeProjectModal();
-      });
-    }
+  document.getElementById('projectModal').addEventListener('click', function(e) {
+    if (e.target === this) closeProjectModal();
   });
 
-  // Keyboard shortcuts
   document.addEventListener('keydown', function(e) {
-    const modal = document.getElementById('projectModal');
-    if (!modal || modal.classList.contains('hidden')) return;
+    if (document.getElementById('projectModal').classList.contains('hidden')) return;
     if (e.key === 'ArrowLeft') previousImage();
     else if (e.key === 'ArrowRight') nextImage();
     else if (e.key === 'Escape') closeProjectModal();
